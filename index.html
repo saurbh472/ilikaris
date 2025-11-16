@@ -310,6 +310,236 @@
             color: #b0b8d4;
         }
 
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            border-color: #00d4ff;
+            transform: scale(1.05);
+            box-shadow: 0 10px 50px rgba(0, 212, 255, 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #00d4ff;
+        }
+
+        .plan-subtitle {
+            color: #b0b8d4;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            color: #b0b8d4;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0.3rem;
+        }
+
+        .period {
+            color: #b0b8d4;
+            font-size: 1rem;
+        }
+
+        .free-tag, .usage-note {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            padding: 0.7rem 0;
+            color: #b0b8d4;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .features-list i {
+            color: #00d4ff;
+            font-size: 0.9rem;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00d4ff;
+            border-radius: 10px;
+            color: #00d4ff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .pricing-button:hover {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .pricing-button.primary {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: #fff;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 25px;
+            color: #b0b8d4;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .blog-category {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .blog-date {
+            color: #b0b8d4;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: #b0b8d4;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
         /* Mobile Menu */
         .mobile-menu {
             display: none;
@@ -353,7 +583,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="cta-button">Get Started</button>
@@ -405,6 +636,168 @@
                 <h3>Web Consulting</h3>
                 <p>Expert guidance on digital strategy, architecture, and optimization. Transform your online presence with professional consulting services.</p>
             </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>DevOps Solutions</h3>
+                <p>Streamline your deployment pipeline with automated CI/CD, cloud infrastructure, and container orchestration for maximum efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Find a Plan to Power Your Vision</h2>
+        <p style="text-align: center; color: #b0b8d4; font-size: 1.2rem; margin-bottom: 3rem;">iLikaris supports businesses of all sizes, with pricing that scales with your growth</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <p class="plan-subtitle">Perfect for individuals and small projects</p>
+                <div class="price">
+                    <span class="currency">$</span>
+                    <span class="amount">0</span>
+                    <span class="period">/month</span>
+                </div>
+                <p class="free-tag">Free forever</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Basic website template</li>
+                    <li><i class="fas fa-check"></i> 1 chatbot integration</li>
+                    <li><i class="fas fa-check"></i> Community support</li>
+                    <li><i class="fas fa-check"></i> SSL certificate</li>
+                    <li><i class="fas fa-check"></i> Basic analytics</li>
+                    <li><i class="fas fa-check"></i> 99.9% uptime SLA</li>
+                </ul>
+                <button class="pricing-button">Get Started</button>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Professional</h3>
+                <p class="plan-subtitle">Everything you need to scale your business</p>
+                <div class="price">
+                    <span class="currency">$</span>
+                    <span class="amount">199</span>
+                    <span class="period">/month</span>
+                </div>
+                <p class="usage-note">+ additional usage</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> All Starter features</li>
+                    <li><i class="fas fa-check"></i> Custom website design</li>
+                    <li><i class="fas fa-check"></i> Unlimited chatbots</li>
+                    <li><i class="fas fa-check"></i> AI/ML model integration</li>
+                    <li><i class="fas fa-check"></i> DevOps automation (CI/CD)</li>
+                    <li><i class="fas fa-check"></i> Priority support (24/7)</li>
+                    <li><i class="fas fa-check"></i> Advanced analytics & insights</li>
+                    <li><i class="fas fa-check"></i> Monthly consulting sessions</li>
+                    <li><i class="fas fa-check"></i> Performance optimization</li>
+                </ul>
+                <button class="pricing-button primary">Start Free Trial</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <p class="plan-subtitle">Advanced security, dedicated support & custom solutions</p>
+                <div class="price">
+                    <span class="amount" style="font-size: 2rem;">Custom</span>
+                </div>
+                <p class="usage-note">Contact for pricing</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> All Professional features</li>
+                    <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check"></i> Custom AI/ML models</li>
+                    <li><i class="fas fa-check"></i> Advanced security & compliance</li>
+                    <li><i class="fas fa-check"></i> Multi-region deployment</li>
+                    <li><i class="fas fa-check"></i> Load balancing & failover</li>
+                    <li><i class="fas fa-check"></i> 99.99% uptime SLA</li>
+                    <li><i class="fas fa-check"></i> White-label solutions</li>
+                    <li><i class="fas fa-check"></i> On-premise deployment option</li>
+                    <li><i class="fas fa-check"></i> Custom training & workshops</li>
+                </ul>
+                <button class="pricing-button">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <h2 class="section-title">Latest Insights & Updates</h2>
+        
+        <div class="blog-filters">
+            <button class="filter-btn active" data-filter="all">All Posts</button>
+            <button class="filter-btn" data-filter="engineering">Engineering</button>
+            <button class="filter-btn" data-filter="ai">AI & ML</button>
+            <button class="filter-btn" data-filter="devops">DevOps</button>
+            <button class="filter-btn" data-filter="company">Company News</button>
+            <button class="filter-btn" data-filter="tutorials">Tutorials</button>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card" data-category="company">
+                <div class="blog-meta">
+                    <span class="blog-category">Company Milestone</span>
+                    <span class="blog-date">Nov 15, 2024</span>
+                </div>
+                <h3>iLikaris Reaches 500+ Successful Projects</h3>
+                <p>We're thrilled to announce that we've successfully delivered over 500 custom web and AI solutions to clients worldwide, marking a significant milestone in our journey.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card" data-category="ai">
+                <div class="blog-meta">
+                    <span class="blog-category">AI & Innovation</span>
+                    <span class="blog-date">Nov 10, 2024</span>
+                </div>
+                <h3>Private AI Models: Why Data Privacy Matters</h3>
+                <p>Explore how our custom AI/ML solutions protect your sensitive data while delivering powerful insights and automation for your business needs.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card" data-category="engineering">
+                <div class="blog-meta">
+                    <span class="blog-category">Engineering</span>
+                    <span class="blog-date">Nov 5, 2024</span>
+                </div>
+                <h3>Building Scalable Web Applications in 2024</h3>
+                <p>Discover the modern architecture patterns and best practices we use to create lightning-fast, scalable web applications for our clients.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card" data-category="devops">
+                <div class="blog-meta">
+                    <span class="blog-category">DevOps</span>
+                    <span class="blog-date">Oct 28, 2024</span>
+                </div>
+                <h3>Automating Your Deployment Pipeline</h3>
+                <p>Learn how CI/CD automation can reduce deployment time by 80% and eliminate human errors in your software release process.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card" data-category="tutorials">
+                <div class="blog-meta">
+                    <span class="blog-category">Tutorial</span>
+                    <span class="blog-date">Oct 20, 2024</span>
+                </div>
+                <h3>Integrating Chatbots: A Step-by-Step Guide</h3>
+                <p>From setup to deployment, here's everything you need to know about adding an intelligent chatbot to your website in just a few hours.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card" data-category="ai">
+                <div class="blog-meta">
+                    <span class="blog-category">AI & Innovation</span>
+                    <span class="blog-date">Oct 15, 2024</span>
+                </div>
+                <h3>The Future of Machine Learning in Business</h3>
+                <p>How AI and ML are transforming industries and what it means for your business growth strategy in the coming years.</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="cta-button">View All Posts</button>
         </div>
     </section>
 
@@ -473,6 +866,29 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // Blog filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter cards
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
     </script>
