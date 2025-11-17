@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -44,7 +44,6 @@
             75% { transform: translateY(-150px) translateX(-50px); }
         }
 
-        /* Header */
         header {
             background: rgba(10, 14, 39, 0.95);
             backdrop-filter: blur(10px);
@@ -75,13 +74,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .logo i {
-            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.5rem;
         }
 
         .nav-links {
@@ -136,7 +128,6 @@
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 80px;
             padding: 8rem 5% 6rem;
@@ -168,7 +159,49 @@
             margin-right: auto;
         }
 
-        /* Services Section */
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 5%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #b0b8d4;
+            font-size: 1rem;
+        }
+
         .services {
             padding: 4rem 5%;
             max-width: 1400px;
@@ -202,26 +235,10 @@
             overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 47, 247, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
         .service-card:hover {
             transform: translateY(-10px);
             border-color: #00d4ff;
             box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
         }
 
         .service-icon {
@@ -233,84 +250,631 @@
             background-clip: text;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .service-card p {
-            color: #b0b8d4;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(10, 14, 39, 0.95);
-            border-top: 2px solid rgba(0, 212, 255, 0.3);
-            padding: 3rem 5% 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
+        /* Technology Stack */
+        .tech-stack {
+            padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
         }
 
-        .footer-section h3 {
-            color: #00d4ff;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #b0b8d4;
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #00d4ff;
-        }
-
-        .social-links {
+        .tech-filters {
             display: flex;
+            justify-content: center;
             gap: 1rem;
-            margin-top: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+        .tech-filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 25px;
+            color: #b0b8d4;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tech-filter-btn:hover, .tech-filter-btn.active {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .tech-item i {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-name {
+            color: #b0b8d4;
+            font-size: 0.9rem;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00d4ff 0%, #7b2ff7 100%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .timeline-duration {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(123, 47, 247, 0.3) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .portfolio-desc {
+            color: #b0b8d4;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             transition: all 0.3s;
         }
 
-        .social-links a:hover {
-            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .stars {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
             color: #b0b8d4;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
-        /* Pricing Section */
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            color: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #b0b8d4;
+            font-size: 0.85rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .about-content p {
+            color: #b0b8d4;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .value-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cost Calculator */
+        .calculator {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .calculator-container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .calculator-option {
+            margin-bottom: 2rem;
+        }
+
+        .calculator-option label {
+            display: block;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .option-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .option-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .option-item:hover {
+            border-color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .option-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .calculator-result {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(123, 47, 247, 0.2) 100%);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .result-label {
+            color: #b0b8d4;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #b0b8d4;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Chatbot Widget */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+            transition: all 0.3s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 212, 255, 0.7);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: rgba(10, 14, 39, 0.98);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-window.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            padding: 1rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .message.bot {
+            background: rgba(0, 212, 255, 0.2);
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: rgba(123, 47, 247, 0.2);
+            margin-left: auto;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .chat-input button {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+        }
+
         .pricing {
             padding: 4rem 5%;
             max-width: 1400px;
@@ -352,94 +916,6 @@
             font-weight: bold;
         }
 
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: #00d4ff;
-        }
-
-        .plan-subtitle {
-            color: #b0b8d4;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .price {
-            display: flex;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-
-        .currency {
-            font-size: 1.5rem;
-            color: #b0b8d4;
-        }
-
-        .amount {
-            font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0 0.3rem;
-        }
-
-        .period {
-            color: #b0b8d4;
-            font-size: 1rem;
-        }
-
-        .free-tag, .usage-note {
-            color: #00d4ff;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .features-list li {
-            padding: 0.7rem 0;
-            color: #b0b8d4;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .features-list i {
-            color: #00d4ff;
-            font-size: 0.9rem;
-        }
-
-        .pricing-button {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 212, 255, 0.1);
-            border: 2px solid #00d4ff;
-            border-radius: 10px;
-            color: #00d4ff;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-
-        .pricing-button:hover {
-            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
-        }
-
-        .pricing-button.primary {
-            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            color: #fff;
-        }
-
-        /* Blog Section */
         .blog {
             padding: 4rem 5%;
             max-width: 1400px;
@@ -462,7 +938,6 @@
             color: #b0b8d4;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.95rem;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -493,54 +968,22 @@
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            border-top: 2px solid rgba(0, 212, 255, 0.3);
+            padding: 3rem 5% 1.5rem;
+            margin-top: 4rem;
         }
 
-        .blog-category {
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-weight: 600;
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .blog-date {
-            color: #b0b8d4;
-        }
-
-        .blog-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            line-height: 1.4;
-        }
-
-        .blog-card p {
-            color: #b0b8d4;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-
-        .read-more:hover {
-            gap: 1rem;
-        }
-
-        /* Mobile Menu */
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
@@ -552,21 +995,24 @@
             .nav-links {
                 display: none;
             }
-
             .mobile-menu {
                 display: block;
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .hero p {
-                font-size: 1rem;
+            .timeline::before {
+                left: 20px;
             }
-
-            .section-title {
-                font-size: 2rem;
+            .timeline-item {
+                flex-direction: column !important;
+            }
+            .timeline-content {
+                width: 100%;
+                margin-left: 60px;
+            }
+            .timeline-icon {
+                left: 20px;
             }
         }
     </style>
@@ -583,8 +1029,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="cta-button">Get Started</button>
@@ -600,6 +1047,28 @@
         <button class="cta-button" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
             <i class="fas fa-rocket"></i> Start Your Project
         </button>
+    </section>
+
+    <!-- Live Statistics Counter -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="300">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="1000000">0</div>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9<span style="font-size: 1.5rem;">%</span></div>
+                <div class="stat-label">Uptime SLA</div>
+            </div>
+        </div>
     </section>
 
     <section class="services" id="services">
@@ -647,6 +1116,281 @@
         </div>
     </section>
 
+    <!-- Technology Stack Showcase -->
+    <section class="tech-stack" id="tech-stack">
+        <h2 class="section-title">Technologies We Master</h2>
+        <div class="tech-filters">
+            <button class="tech-filter-btn active" data-filter="all">All</button>
+            <button class="tech-filter-btn" data-filter="frontend">Frontend</button>
+            <button class="tech-filter-btn" data-filter="backend">Backend</button>
+            <button class="tech-filter-btn" data-filter="ai">AI/ML</button>
+            <button class="tech-filter-btn" data-filter="devops">DevOps</button>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item" data-category="frontend">
+                <i class="fab fa-react"></i>
+                <div class="tech-name">React</div>
+            </div>
+            <div class="tech-item" data-category="frontend">
+                <i class="fab fa-vuejs"></i>
+                <div class="tech-name">Vue.js</div>
+            </div>
+            <div class="tech-item" data-category="backend">
+                <i class="fab fa-node-js"></i>
+                <div class="tech-name">Node.js</div>
+            </div>
+            <div class="tech-item" data-category="backend">
+                <i class="fab fa-python"></i>
+                <div class="tech-name">Python</div>
+            </div>
+            <div class="tech-item" data-category="ai">
+                <i class="fas fa-robot"></i>
+                <div class="tech-name">TensorFlow</div>
+            </div>
+            <div class="tech-item" data-category="ai">
+                <i class="fas fa-brain"></i>
+                <div class="tech-name">PyTorch</div>
+            </div>
+            <div class="tech-item" data-category="devops">
+                <i class="fab fa-docker"></i>
+                <div class="tech-name">Docker</div>
+            </div>
+            <div class="tech-item" data-category="devops">
+                <i class="fab fa-aws"></i>
+                <div class="tech-name">AWS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-timeline" id="process">
+        <h2 class="section-title">Our Development Process</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Discovery & Planning</h3>
+                    <p>We analyze your requirements, understand your vision, and create a comprehensive project roadmap.</p>
+                    <div class="timeline-duration">⏱️ 1-2 weeks</div>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Design & Prototyping</h3>
+                    <p>Create stunning UI/UX designs and interactive prototypes for your approval before development begins.</p>
+                    <div class="timeline-duration">⏱️ 2-3 weeks</div>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Development</h3>
+                    <p>Our expert developers bring your project to life with clean, scalable, and efficient code.</p>
+                    <div class="timeline-duration">⏱️ 4-8 weeks</div>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Testing & QA</h3>
+                    <p>Rigorous testing across devices and browsers to ensure flawless performance and user experience.</p>
+                    <div class="timeline-duration">⏱️ 1-2 weeks</div>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Launch & Support</h3>
+                    <p>Seamless deployment and ongoing support to ensure your success in the digital world.</p>
+                    <div class="timeline-duration">⏱️ Ongoing</div>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">E-Commerce Platform</h3>
+                    <p class="portfolio-desc">Built a full-featured online store with AI-powered product recommendations, increasing sales by 45%.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">AI/ML</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Healthcare Chatbot</h3>
+                    <p class="portfolio-desc">Developed HIPAA-compliant chatbot handling 10,000+ patient inquiries monthly with 95% satisfaction rate.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Analytics Dashboard</h3>
+                    <p class="portfolio-desc">Created real-time analytics platform with ML-powered insights, reducing decision-making time by 60%.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"iLikaris transformed our customer service with their AI chatbot. Response times dropped by 80% and customer satisfaction soared. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>John Doe</h4>
+                        <p>CEO, TechCorp Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The website they built exceeded all expectations. Modern design, lightning-fast performance, and ongoing support has been exceptional."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div class="author-info">
+                        <h4>Sarah Kumar</h4>
+                        <p>Founder, StartupHub</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Their AI/ML solutions helped us process data 10x faster while maintaining complete privacy. True experts in their field!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MP</div>
+                    <div class="author-info">
+                        <h4>Michael Park</h4>
+                        <p>CTO, DataSecure Inc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About iLikaris</h2>
+        <div class="about-content">
+            <p>Founded in 2020, iLikaris has been at the forefront of digital innovation, helping businesses worldwide transform their digital presence. With a team of passionate developers, designers, and AI specialists, we've successfully delivered over 500 projects across 30+ countries.</p>
+            <p>Our mission is simple: leverage cutting-edge technology to solve real-world business problems while maintaining the highest standards of quality, security, and client satisfaction.</p>
+            
+            <div class="about-values">
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Staying ahead with latest technologies and best practices</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security</h3>
+                    <p>Your data privacy and protection is our top priority</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Partnership</h3>
+                    <p>Building long-term relationships with our clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator -->
+    <section class="calculator" id="calculator">
+        <h2 class="section-title">Project Cost Calculator</h2>
+        <div class="calculator-container">
+            <div class="calculator-option">
+                <label>Select Services:</label>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="3000" id="web">
+                        <label for="web">Website Development - $3,000</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="2500" id="chatbot">
+                        <label for="chatbot">Chatbot Integration - $2,500</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="5000" id="ai">
+                        <label for="ai">AI/ML Solution - $5,000</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="1500" id="consulting">
+                        <label for="consulting">Consulting - $1,500/month</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-option">
+                <label>Additional Features:</label>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="800" id="ecommerce">
+                        <label for="ecommerce">E-commerce - $800</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="600" id="cms">
+                        <label for="cms">CMS Integration - $600</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="1000" id="custom-api">
+                        <label for="custom-api">Custom API - $1,000</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" class="calc-service" data-cost="400" id="seo">
+                        <label for="seo">SEO Optimization - $400</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-result">
+                <div class="result-label">Estimated Project Cost:</div>
+                <div class="result-amount">$<span id="total-cost">0</span></div>
+                <button class="cta-button" style="margin-top: 1rem;">Get Detailed Quote</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <h2 class="section-title">Find a Plan to Power Your Vision</h2>
@@ -655,151 +1399,93 @@
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Starter</h3>
-                <p class="plan-subtitle">Perfect for individuals and small projects</p>
-                <div class="price">
-                    <span class="currency">$</span>
-                    <span class="amount">0</span>
-                    <span class="period">/month</span>
-                </div>
-                <p class="free-tag">Free forever</p>
-                <ul class="features-list">
-                    <li><i class="fas fa-check"></i> Basic website template</li>
-                    <li><i class="fas fa-check"></i> 1 chatbot integration</li>
-                    <li><i class="fas fa-check"></i> Community support</li>
-                    <li><i class="fas fa-check"></i> SSL certificate</li>
-                    <li><i class="fas fa-check"></i> Basic analytics</li>
-                    <li><i class="fas fa-check"></i> 99.9% uptime SLA</li>
+                <p style="color: #b0b8d4; margin-bottom: 1.5rem;">Perfect for individuals and small projects</p>
+                <div style="font-size: 3rem; font-weight: bold; background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">$0<span style="font-size: 1rem;">/month</span></div>
+                <button class="cta-button" style="width: 100%; margin-bottom: 1.5rem;">Get Started</button>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Basic website template</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> 1 chatbot integration</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Community support</li>
                 </ul>
-                <button class="pricing-button">Get Started</button>
             </div>
 
             <div class="pricing-card popular">
                 <div class="popular-badge">Most Popular</div>
                 <h3>Professional</h3>
-                <p class="plan-subtitle">Everything you need to scale your business</p>
-                <div class="price">
-                    <span class="currency">$</span>
-                    <span class="amount">199</span>
-                    <span class="period">/month</span>
-                </div>
-                <p class="usage-note">+ additional usage</p>
-                <ul class="features-list">
-                    <li><i class="fas fa-check"></i> All Starter features</li>
-                    <li><i class="fas fa-check"></i> Custom website design</li>
-                    <li><i class="fas fa-check"></i> Unlimited chatbots</li>
-                    <li><i class="fas fa-check"></i> AI/ML model integration</li>
-                    <li><i class="fas fa-check"></i> DevOps automation (CI/CD)</li>
-                    <li><i class="fas fa-check"></i> Priority support (24/7)</li>
-                    <li><i class="fas fa-check"></i> Advanced analytics & insights</li>
-                    <li><i class="fas fa-check"></i> Monthly consulting sessions</li>
-                    <li><i class="fas fa-check"></i> Performance optimization</li>
+                <p style="color: #b0b8d4; margin-bottom: 1.5rem;">Everything you need to scale</p>
+                <div style="font-size: 3rem; font-weight: bold; background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">$199<span style="font-size: 1rem;">/month</span></div>
+                <button class="cta-button" style="width: 100%; margin-bottom: 1.5rem;">Start Free Trial</button>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Custom website design</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Unlimited chatbots</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> AI/ML integration</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> 24/7 Priority support</li>
                 </ul>
-                <button class="pricing-button primary">Start Free Trial</button>
             </div>
 
             <div class="pricing-card">
                 <h3>Enterprise</h3>
-                <p class="plan-subtitle">Advanced security, dedicated support & custom solutions</p>
-                <div class="price">
-                    <span class="amount" style="font-size: 2rem;">Custom</span>
-                </div>
-                <p class="usage-note">Contact for pricing</p>
-                <ul class="features-list">
-                    <li><i class="fas fa-check"></i> All Professional features</li>
-                    <li><i class="fas fa-check"></i> Dedicated account manager</li>
-                    <li><i class="fas fa-check"></i> Custom AI/ML models</li>
-                    <li><i class="fas fa-check"></i> Advanced security & compliance</li>
-                    <li><i class="fas fa-check"></i> Multi-region deployment</li>
-                    <li><i class="fas fa-check"></i> Load balancing & failover</li>
-                    <li><i class="fas fa-check"></i> 99.99% uptime SLA</li>
-                    <li><i class="fas fa-check"></i> White-label solutions</li>
-                    <li><i class="fas fa-check"></i> On-premise deployment option</li>
-                    <li><i class="fas fa-check"></i> Custom training & workshops</li>
+                <p style="color: #b0b8d4; margin-bottom: 1.5rem;">Custom solutions & dedicated support</p>
+                <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Custom</div>
+                <button class="cta-button" style="width: 100%; margin-bottom: 1.5rem;">Contact Sales</button>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Dedicated account manager</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> Custom AI/ML models</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> White-label solutions</li>
+                    <li style="padding: 0.5rem 0; color: #b0b8d4;"><i class="fas fa-check" style="color: #00d4ff; margin-right: 0.5rem;"></i> 99.99% uptime SLA</li>
                 </ul>
-                <button class="pricing-button">Contact Sales</button>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
-        <h2 class="section-title">Latest Insights & Updates</h2>
-        
-        <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all">All Posts</button>
-            <button class="filter-btn" data-filter="engineering">Engineering</button>
-            <button class="filter-btn" data-filter="ai">AI & ML</button>
-            <button class="filter-btn" data-filter="devops">DevOps</button>
-            <button class="filter-btn" data-filter="company">Company News</button>
-            <button class="filter-btn" data-filter="tutorials">Tutorials</button>
-        </div>
-
-        <div class="blog-grid">
-            <article class="blog-card" data-category="company">
-                <div class="blog-meta">
-                    <span class="blog-category">Company Milestone</span>
-                    <span class="blog-date">Nov 15, 2024</span>
-                </div>
-                <h3>iLikaris Reaches 500+ Successful Projects</h3>
-                <p>We're thrilled to announce that we've successfully delivered over 500 custom web and AI solutions to clients worldwide, marking a significant milestone in our journey.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="blog-card" data-category="ai">
-                <div class="blog-meta">
-                    <span class="blog-category">AI & Innovation</span>
-                    <span class="blog-date">Nov 10, 2024</span>
-                </div>
-                <h3>Private AI Models: Why Data Privacy Matters</h3>
-                <p>Explore how our custom AI/ML solutions protect your sensitive data while delivering powerful insights and automation for your business needs.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="blog-card" data-category="engineering">
-                <div class="blog-meta">
-                    <span class="blog-category">Engineering</span>
-                    <span class="blog-date">Nov 5, 2024</span>
-                </div>
-                <h3>Building Scalable Web Applications in 2024</h3>
-                <p>Discover the modern architecture patterns and best practices we use to create lightning-fast, scalable web applications for our clients.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="blog-card" data-category="devops">
-                <div class="blog-meta">
-                    <span class="blog-category">DevOps</span>
-                    <span class="blog-date">Oct 28, 2024</span>
-                </div>
-                <h3>Automating Your Deployment Pipeline</h3>
-                <p>Learn how CI/CD automation can reduce deployment time by 80% and eliminate human errors in your software release process.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="blog-card" data-category="tutorials">
-                <div class="blog-meta">
-                    <span class="blog-category">Tutorial</span>
-                    <span class="blog-date">Oct 20, 2024</span>
-                </div>
-                <h3>Integrating Chatbots: A Step-by-Step Guide</h3>
-                <p>From setup to deployment, here's everything you need to know about adding an intelligent chatbot to your website in just a few hours.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="blog-card" data-category="ai">
-                <div class="blog-meta">
-                    <span class="blog-category">AI & Innovation</span>
-                    <span class="blog-date">Oct 15, 2024</span>
-                </div>
-                <h3>The Future of Machine Learning in Business</h3>
-                <p>How AI and ML are transforming industries and what it means for your business growth strategy in the coming years.</p>
-                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <button class="cta-button">View All Posts</button>
-        </div>
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Let's Build Something Amazing</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="website">Website Development</option>
+                    <option value="chatbot">Chatbot Integration</option>
+                    <option value="ai-ml">AI/ML Solutions</option>
+                    <option value="consulting">Web Consulting</option>
+                    <option value="devops">DevOps Solutions</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget" name="budget">
+                    <option value="">Select budget</option>
+                    <option value="<5k">Less than $5,000</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k+">$25,000+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Project Details *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
     </section>
+
 
     <footer>
         <div class="footer-content">
@@ -832,8 +1518,8 @@
 
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> info@ilikaris.com</p>
-                <p><i class="fas fa-phone"></i> +1 (XXX) XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i>ilikaris.tech@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 (952) 112-4440</p>
                 <p><i class="fas fa-map-marker-alt"></i> Your Location</p>
             </div>
         </div>
