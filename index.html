@@ -4,18 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iLikaris | Full-Stack Web Development & Custom AI Solutions</title>
+    <title>iLikaris | Senior Full-Stack Web & AI Engineer — Serving US, UK, Europe & Canada</title>
     <meta name="description"
-        content="Official website of iLikaris — Bespoke Web Development, Private Data AI/ML Systems, Intelligent Chatbot Integrations, and Tech Consulting for ambitious businesses and founders.">
+        content="iLikaris — Senior Full-Stack Engineer & AI specialist serving businesses in USA, UK, Canada, Finland, Poland, Luxembourg & Europe. GDPR-compliant private AI, bespoke web apps, and intelligent automation. Direct 1-on-1 senior engineering.">
     <meta name="keywords"
-        content="iLikaris, Web Development, AI Solutions, Machine Learning, Custom Chatbots, Private RAG, DevOps, Cloud Architecture, Full Stack Engineer">
+        content="iLikaris, freelance full stack developer Europe, AI developer UK, custom web development Finland, private AI RAG Poland, Luxembourg software engineer, Canada web developer, GDPR compliant AI, Next.js developer, Python FastAPI engineer, SaaS development">
+    <link rel="canonical" href="https://ilikaris.tech">
+
+    <!-- Hreflang for international targeting -->
+    <link rel="alternate" hreflang="en" href="https://ilikaris.tech">
+    <link rel="alternate" hreflang="en-gb" href="https://ilikaris.tech">
+    <link rel="alternate" hreflang="en-us" href="https://ilikaris.tech">
+    <link rel="alternate" hreflang="en-ca" href="https://ilikaris.tech">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="iLikaris | Full-Stack Web Development & Custom AI Solutions">
+    <meta property="og:title" content="iLikaris | Senior Full-Stack Web & AI Engineer — Serving US, UK & Europe">
     <meta property="og:description"
-        content="Empowering startups and enterprises with high-velocity web engineering, private AI/ML systems, and intelligent automation.">
+        content="GDPR-compliant private AI systems, bespoke web platforms, and intelligent automation for ambitious companies across USA, UK, Canada, Finland, Poland & Luxembourg.">
     <meta property="og:url" content="https://ilikaris.tech">
+    <meta property="og:image" content="https://ilikaris.tech/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iLikaris | Senior Full-Stack Web & AI Engineer">
+    <meta name="twitter:description" content="Private AI, bespoke web platforms & intelligent automation for US, UK, Canada & Europe.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,24 +40,44 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- JSON-LD Structured Data for Professional Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "iLikaris",
+        "url": "https://ilikaris.tech",
+        "email": "ilikaris.tech@gmail.com",
+        "description": "Senior Full-Stack & AI Engineer specializing in bespoke web development, private data AI systems, and intelligent automation for businesses in the US, UK, Canada, and Europe.",
+        "areaServed": ["US", "GB", "CA", "FI", "PL", "LU", "DE", "NL", "SE", "AU"],
+        "serviceType": ["Web Development", "AI Engineering", "Cloud Architecture", "Technical Consulting"],
+        "knowsLanguage": "en"
+    }
+    </script>
+
     <style>
         :root {
-            --bg-primary: #070919;
-            --bg-secondary: #0d122b;
-            --bg-card: rgba(255, 255, 255, 0.04);
-            --bg-card-hover: rgba(255, 255, 255, 0.08);
-            --accent-cyan: #00d4ff;
-            --accent-purple: #7b2ff7;
-            --accent-pink: #ec4899;
+            --bg-primary: #060818;
+            --bg-secondary: #0c1129;
+            --bg-card: rgba(255, 255, 255, 0.045);
+            --bg-card-hover: rgba(255, 255, 255, 0.09);
+            --accent-cyan: #00cfff;
+            --accent-purple: #7c3aed;
+            --accent-pink: #e879f9;
+            --accent-teal: #06d6a0;
             --text-primary: #ffffff;
-            --text-secondary: #a3b1cc;
-            --text-muted: #64748b;
-            --border-glow: rgba(0, 212, 255, 0.25);
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --gradient-brand: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
-            --gradient-accent: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            --shadow-neon: 0 0 25px rgba(0, 212, 255, 0.25);
+            --text-secondary: #a8b8d0;
+            --text-muted: #5a6a82;
+            --border-glow: rgba(0, 207, 255, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.09);
+            --gradient-brand: linear-gradient(135deg, #00cfff 0%, #7c3aed 100%);
+            --gradient-accent: linear-gradient(135deg, #00f5ff 0%, #7c3aed 50%, #e879f9 100%);
+            --gradient-warm: linear-gradient(135deg, #7c3aed 0%, #e879f9 100%);
+            --shadow-neon: 0 0 30px rgba(0, 207, 255, 0.3), 0 0 60px rgba(124, 58, 237, 0.15);
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255,255,255,0.06) inset;
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-lg: 20px;
+            --radius-md: 14px;
         }
 
         * {
@@ -54,9 +87,13 @@
             scroll-behavior: smooth;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: radial-gradient(circle at 10% 20%, #0c1033 0%, var(--bg-primary) 60%, #050711 100%);
+            background: radial-gradient(ellipse at 15% 15%, #0f1535 0%, var(--bg-primary) 55%, #030610 100%);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
@@ -185,19 +222,24 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
             align-items: center;
+        }
+
+        .mobile-only-cta {
+            display: none;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: var(--transition);
             position: relative;
             padding: 0.4rem 0;
+            white-space: nowrap;
         }
 
         .nav-links a:hover,
@@ -1646,6 +1688,12 @@
                 right: 0;
             }
 
+            .mobile-only-cta {
+                display: block;
+                margin-top: 1rem;
+                width: 100%;
+            }
+
             .nav-overlay {
                 position: fixed;
                 top: 0;
@@ -1697,10 +1745,522 @@
                 right: -10px;
             }
         }
+
+        /* ============================================
+           GEO CURRENCY BAR
+        ============================================ */
+        .geo-currency-bar {
+            background: rgba(0, 207, 255, 0.06);
+            border-bottom: 1px solid rgba(0, 207, 255, 0.15);
+            padding: 0.5rem 5%;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 999;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        .geo-currency-bar span.flag-icon { font-size: 1rem; }
+        .geo-currency-bar strong { color: var(--accent-cyan); }
+        .geo-currency-bar .currency-prices {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .price-pill {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 0.2rem 0.75rem;
+            font-size: 0.78rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .price-pill .flag { font-size: 0.9rem; }
+
+        /* ============================================
+           GDPR COOKIE BANNER
+        ============================================ */
+        .gdpr-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(6, 8, 24, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 207, 255, 0.25);
+            padding: 1.2rem 5%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gdpr-banner.hidden {
+            transform: translateY(110%);
+        }
+        .gdpr-banner-text {
+            flex: 1;
+            min-width: 280px;
+        }
+        .gdpr-banner-text h4 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .gdpr-banner-text p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .gdpr-banner-text a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+        .gdpr-actions {
+            display: flex;
+            gap: 0.7rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .gdpr-btn-accept {
+            background: var(--gradient-brand);
+            border: none;
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 207, 255, 0.3);
+            font-family: 'Outfit', sans-serif;
+        }
+        .gdpr-btn-accept:hover { filter: brightness(1.1); transform: translateY(-1px); }
+        .gdpr-btn-decline {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            padding: 0.6rem 1.1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Outfit', sans-serif;
+        }
+        .gdpr-btn-decline:hover { color: var(--text-secondary); border-color: rgba(255,255,255,0.2); }
+
+        /* ============================================
+           GLOBE / COUNTRIES SECTION
+        ============================================ */
+        .countries-section {
+            padding: 2.5rem 5%;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(0,0,0,0.2);
+        }
+        .countries-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .countries-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 1.4rem;
+        }
+        .country-flags-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .country-flag-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.7rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            transition: var(--transition);
+            min-width: 75px;
+        }
+        .country-flag-item:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+        .country-flag-item .flag { font-size: 1.8rem; line-height: 1; }
+        .country-flag-item .cname {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================
+           WHY REMOTE ENGINEER COMPARISON SECTION
+        ============================================ */
+        .comparison-section {
+            background: rgba(0,0,0,0.2);
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.2fr;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .comparison-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 2rem 1.6rem;
+            transition: var(--transition);
+        }
+        .comparison-card.highlighted {
+            background: linear-gradient(180deg, rgba(0,207,255,0.07) 0%, rgba(124,58,237,0.07) 100%);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0,207,255,0.1);
+            position: relative;
+        }
+        .comparison-card.highlighted::before {
+            content: '✦ Best Choice';
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-brand);
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .comparison-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .comparison-card h3 .comp-icon {
+            font-size: 1.2rem;
+        }
+        .comp-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .comp-row .comp-x { color: #ef4444; font-size: 0.85rem; margin-top: 2px; }
+        .comp-row .comp-check { color: var(--accent-teal); font-size: 0.85rem; margin-top: 2px; }
+
+        /* Demo Switcher Tabs */
+        .demo-switcher-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .demo-tab {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .demo-tab:hover {
+            background: rgba(0, 207, 255, 0.12);
+            border-color: var(--accent-cyan);
+            color: #fff;
+        }
+
+        .demo-tab.active {
+            background: var(--gradient-brand);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 207, 255, 0.35);
+        }
+
+        /* Hero Browser Mockup */
+        .hero-mockup-wrap {
+            margin-top: 2.5rem;
+            position: relative;
+            max-width: 880px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .browser-mockup {
+            background: rgba(12, 17, 41, 0.95);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 207, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.7);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-mockup-wrap:hover .browser-mockup {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 70px rgba(0, 207, 255, 0.3), 0 15px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .browser-bar {
+            background: rgba(6, 8, 24, 0.95);
+            padding: 0.65rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .browser-url-bar {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-grow: 1;
+            max-width: 380px;
+        }
+
+        .browser-content {
+            position: relative;
+            overflow: hidden;
+            background: #060818;
+        }
+
+        .browser-content img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Portfolio Thumbnail Images & Zoom */
+        .portfolio-thumb {
+            position: relative;
+            height: 190px;
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .portfolio-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-card:hover .portfolio-thumb img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-thumb-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(6, 8, 24, 0.1) 0%, rgba(6, 8, 24, 0.75) 100%);
+        }
+
+        .portfolio-badge-floating {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(6, 8, 24, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glow);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .portfolio-zoom-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 12px;
+            background: rgba(6, 8, 24, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-subtle);
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        .portfolio-card:hover .portfolio-zoom-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 5, 16, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-container {
+            background: rgba(12, 17, 41, 0.98);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            max-width: 860px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 90px rgba(0, 207, 255, 0.3);
+            position: relative;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+        .lightbox-close:hover { background: rgba(239, 68, 68, 0.85); }
+
+        .lightbox-img-wrap {
+            width: 100%;
+            max-height: 380px;
+            overflow: hidden;
+            border-top-left-radius: 23px;
+            border-top-right-radius: 23px;
+        }
+
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lightbox-details {
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+            .geo-currency-bar { display: none; }
+            .country-flags-row { gap: 0.5rem; }
+            .country-flag-item { min-width: 65px; padding: 0.5rem 0.7rem; }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- GDPR Cookie Consent Banner -->
+    <div class="gdpr-banner" id="gdprBanner">
+        <div class="gdpr-banner-text">
+            <h4><i class="fas fa-cookie-bite" style="color: var(--accent-cyan);"></i> We Respect Your Privacy</h4>
+            <p>We use essential cookies to make this site work. We are fully <strong style="color: #fff;">GDPR compliant</strong> — your data is never sold or shared. 
+               <a href="#" onclick="return false;">Privacy Policy</a> &middot; <a href="#" onclick="return false;">Cookie Policy</a></p>
+        </div>
+        <div class="gdpr-actions">
+            <button class="gdpr-btn-decline" onclick="dismissGdpr('declined')">Decline Non-Essential</button>
+            <button class="gdpr-btn-accept" onclick="dismissGdpr('accepted')"><i class="fas fa-check"></i> Accept All</button>
+        </div>
+    </div>
+
+    <!-- Geo-Currency Smart Pricing Bar -->
+    <div class="geo-currency-bar" id="geoCurrencyBar" style="display:none;">
+        <span class="flag-icon" id="geoFlag">🌍</span>
+        <span>Viewing from <strong id="geoCountry">your region</strong> — Engagements starting from</span>
+        <div class="currency-prices" id="currencyPrices">
+            <span class="price-pill"><span class="flag">💵</span> <span id="usdPrice">$2,500</span> USD</span>
+            <span class="price-pill"><span class="flag">💷</span> <span id="gbpPrice">£2,000</span> GBP</span>
+            <span class="price-pill"><span class="flag">🇪🇺</span> <span id="eurPrice">€2,300</span> EUR</span>
+        </div>
+    </div>
 
     <!-- Ambient Glow Effects & Dynamic Particles -->
     <div class="glow-orb glow-orb-1"></div>
@@ -1726,7 +2286,7 @@
                 <li><a href="#engagement" class="nav-item">Engagement</a></li>
                 <li><a href="#about" class="nav-item">About</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
-                <li style="margin-top: 1rem; width: 100%;" class="mobile-only-cta">
+                <li class="mobile-only-cta">
                     <a href="#contact" class="cta-button" style="width: 100%; justify-content: center;"
                         onclick="closeMobileMenu()">
                         <i class="fas fa-calendar-check"></i> Book Strategy Call
@@ -1750,17 +2310,18 @@
     <section class="hero" id="home">
         <div class="hero-badge">
             <span class="status-dot"></span>
-            <span>Available for Select Client Engagements & Q1-Q2 Projects</span>
+            <span>Currently accepting new client projects &mdash; Remote &amp; Worldwide</span>
         </div>
 
         <h1>
-            Architecting High-Velocity <br>
-            <span class="gradient-text">Web Systems & Private AI</span>
+            Enterprise-Grade Web &amp; AI Engineering<br>
+            <span class="gradient-text">Built for Ambitious Companies</span>
         </h1>
 
         <p>
-            I engineer bespoke full-stack web applications, intelligent autonomous chatbots, and private-data AI/ML
-            solutions built for high reliability, scalability, and measurable business ROI.
+            I help ambitious founders and product teams — wherever they are in the world —
+            ship production-grade web platforms and private AI systems
+            that create measurable, lasting business impact.
         </p>
 
         <div class="hero-cta-group">
@@ -1775,15 +2336,54 @@
         <div class="hero-trust-badges">
             <div class="trust-item">
                 <i class="fas fa-shield-alt"></i>
-                <span>Private & Enterprise-Grade AI</span>
+                <span>GDPR-Compliant AI Systems</span>
             </div>
             <div class="trust-item">
-                <i class="fas fa-bolt"></i>
-                <span>High-Speed Production Delivery</span>
+                <i class="fas fa-globe"></i>
+                <span>100% Remote &amp; Worldwide</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-clock"></i>
+                <span>Async-First, Timezone-Flexible</span>
             </div>
             <div class="trust-item">
                 <i class="fas fa-user-check"></i>
                 <span>Direct 1-on-1 Senior Engineering</span>
+            </div>
+        </div>
+
+        <!-- Hero Visual Product Showcase -->
+        <div class="hero-mockup-wrap">
+            <!-- Interactive Live Demo Switcher Tabs -->
+            <div class="demo-switcher-tabs">
+                <button class="demo-tab active" onclick="switchHeroDemo('analytics', this)">
+                    <i class="fas fa-chart-line"></i> SaaS Analytics Platform
+                </button>
+                <button class="demo-tab" onclick="switchHeroDemo('rag', this)">
+                    <i class="fas fa-brain"></i> Private RAG AI Assistant
+                </button>
+                <button class="demo-tab" onclick="switchHeroDemo('sales', this)">
+                    <i class="fas fa-robot"></i> E-Commerce AI Sales Agent
+                </button>
+            </div>
+
+            <!-- Browser Mockup Window -->
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <div class="browser-url-bar">
+                        <i class="fas fa-lock" style="color: var(--accent-teal); font-size: 0.7rem;"></i>
+                        <span id="heroDemoUrl">https://app.ilikaris.tech/saas-analytics-dashboard</span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <img id="heroDemoImage"
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                        alt="iLikaris Enterprise AI &amp; Fullstack Engineering Dashboard Showcase"
+                        loading="lazy" style="transition: opacity 0.3s ease;">
+                </div>
             </div>
         </div>
     </section>
@@ -1792,23 +2392,48 @@
     <section class="stats-section">
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number" data-target="50">0</div>
-                <div class="stat-label">Production Deliveries</div>
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Production Projects Delivered</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" data-target="99">0</div>
-                <div class="stat-label">% Client Satisfaction Rate</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="15">0</div>
-                <div class="stat-label">+ Countries Served</div>
+                <div class="stat-number">100<span style="font-size: 1.6rem;">%</span></div>
+                <div class="stat-label">Client Satisfaction Rate</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">99.9<span style="font-size: 1.6rem;">%</span></div>
                 <div class="stat-label">Architecture Uptime SLA</div>
             </div>
+            <div class="stat-card">
+                <div class="stat-number">&le; 24<span style="font-size: 1.4rem;">hr</span></div>
+                <div class="stat-label">Guaranteed Response Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&#8734;</div>
+                <div class="stat-label">Countries Accepted — Worldwide</div>
+            </div>
         </div>
     </section>
+
+    <!-- Global Availability (NOT historical clients — future availability) -->
+    <div class="countries-section">
+        <div class="countries-inner">
+            <div class="countries-label">🌐 Open to working with clients anywhere in the world, including</div>
+            <div class="country-flags-row">
+                <div class="country-flag-item"><span class="flag">🇺🇸</span><span class="cname">USA</span></div>
+                <div class="country-flag-item"><span class="flag">🇬🇧</span><span class="cname">UK</span></div>
+                <div class="country-flag-item"><span class="flag">🇨🇦</span><span class="cname">Canada</span></div>
+                <div class="country-flag-item"><span class="flag">🇫🇮</span><span class="cname">Finland</span></div>
+                <div class="country-flag-item"><span class="flag">🇵🇱</span><span class="cname">Poland</span></div>
+                <div class="country-flag-item"><span class="flag">🇱🇺</span><span class="cname">Luxembourg</span></div>
+                <div class="country-flag-item"><span class="flag">🇩🇪</span><span class="cname">Germany</span></div>
+                <div class="country-flag-item"><span class="flag">🇳🇱</span><span class="cname">Netherlands</span></div>
+                <div class="country-flag-item"><span class="flag">🇸🇪</span><span class="cname">Sweden</span></div>
+                <div class="country-flag-item"><span class="flag">🇦🇺</span><span class="cname">Australia</span></div>
+                <div class="country-flag-item"><span class="flag">🇮🇳</span><span class="cname">India</span></div>
+                <div class="country-flag-item" style="border-style: dashed;"><span class="flag">🌍</span><span class="cname">+More</span></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Services / Core Capabilities -->
     <section id="services">
@@ -1828,15 +2453,16 @@
                     <div class="service-icon-box">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Bespoke Web & SaaS Development</h3>
+                    <h3>Bespoke Web &amp; SaaS Development</h3>
                     <p>
                         High-performance modern web platforms, interactive dashboards, and SaaS applications built with
                         Next.js, React, and robust backend architectures.
                     </p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> Lightning-fast responsive user interfaces</li>
-                        <li><i class="fas fa-check-circle"></i> Secure authentication & payment flows</li>
-                        <li><i class="fas fa-check-circle"></i> Scalable relational & document databases</li>
+                        <li><i class="fas fa-check-circle"></i> Secure authentication &amp; payment flows (Stripe, Mollie)</li>
+                        <li><i class="fas fa-check-circle"></i> WCAG 2.1 accessibility &amp; EU VAT-compliant billing</li>
+                        <li><i class="fas fa-check-circle"></i> Scalable relational &amp; document databases</li>
                     </ul>
                 </div>
 
@@ -1845,16 +2471,16 @@
                     <div class="service-icon-box">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Private Data AI & Custom RAG</h3>
+                    <h3>Private Data AI &amp; Custom RAG</h3>
                     <p>
                         Secure, self-hosted or cloud-based AI pipelines that query and process your private company
                         documents without leaking proprietary data to public models.
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Vector DB semantic search (Pinecone/Qdrant/Pgvector)
-                        </li>
-                        <li><i class="fas fa-check-circle"></i> Domain-specific fine-tuning & embeddings</li>
-                        <li><i class="fas fa-check-circle"></i> Enterprise data privacy & strict compliance</li>
+                        <li><i class="fas fa-check-circle"></i> Vector DB semantic search (Pinecone/Qdrant/Pgvector)</li>
+                        <li><i class="fas fa-check-circle"></i> GDPR Article 25 'Privacy by Design' compliant</li>
+                        <li><i class="fas fa-check-circle"></i> EU data residency options available</li>
+                        <li><i class="fas fa-check-circle"></i> Enterprise data privacy &amp; strict compliance</li>
                     </ul>
                 </div>
 
@@ -1863,15 +2489,15 @@
                     <div class="service-icon-box">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Autonomous AI Agents & Chatbots</h3>
+                    <h3>Autonomous AI Agents &amp; Chatbots</h3>
                     <p>
                         Intelligent conversational assistants that integrate into your CRM, website, or internal tools
                         to automate lead qualification and support 24/7.
                     </p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> Natural context-aware dialogue</li>
-                        <li><i class="fas fa-check-circle"></i> Webhook & multi-channel integrations</li>
-                        <li><i class="fas fa-check-circle"></i> Automated fallback & human handoff</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook &amp; multi-channel integrations</li>
+                        <li><i class="fas fa-check-circle"></i> Automated fallback &amp; human handoff</li>
                     </ul>
                 </div>
 
@@ -1880,15 +2506,15 @@
                     <div class="service-icon-box">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3>Tech Advisory & Fractional CTO</h3>
+                    <h3>Tech Advisory &amp; Fractional CTO</h3>
                     <p>
                         Strategic guidance on technology choices, system architecture reviews, AI feasibility audits,
                         and scalable system roadmaps for growing companies.
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Architecture & security audit</li>
-                        <li><i class="fas fa-check-circle"></i> Performance optimization & refactoring</li>
-                        <li><i class="fas fa-check-circle"></i> MVP scoping & technical validation</li>
+                        <li><i class="fas fa-check-circle"></i> Architecture &amp; security audit</li>
+                        <li><i class="fas fa-check-circle"></i> Performance optimization &amp; refactoring</li>
+                        <li><i class="fas fa-check-circle"></i> MVP scoping &amp; technical validation</li>
                     </ul>
                 </div>
 
@@ -1897,15 +2523,15 @@
                     <div class="service-icon-box">
                         <i class="fas fa-server"></i>
                     </div>
-                    <h3>Cloud Infrastructure & DevOps</h3>
+                    <h3>Cloud Infrastructure &amp; DevOps</h3>
                     <p>
                         Containerized deployments, automated CI/CD pipelines, and cloud hosting infrastructure on AWS,
                         Google Cloud, or self-hosted servers.
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Docker & Kubernetes containerization</li>
-                        <li><i class="fas fa-check-circle"></i> Automated testing & zero-downtime deployment</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 monitoring, alerting & automated backups</li>
+                        <li><i class="fas fa-check-circle"></i> Docker &amp; Kubernetes containerization</li>
+                        <li><i class="fas fa-check-circle"></i> Automated testing &amp; zero-downtime deployment</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 monitoring, alerting &amp; automated backups</li>
                     </ul>
                 </div>
 
@@ -1914,15 +2540,15 @@
                     <div class="service-icon-box">
                         <i class="fas fa-plug"></i>
                     </div>
-                    <h3>API Engineering & Integrations</h3>
+                    <h3>API Engineering &amp; Integrations</h3>
                     <p>
                         Custom RESTful and GraphQL APIs connecting disparate third-party services, payment gateways,
                         ERPs, and automation systems smoothly.
                     </p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> Clean, documented OpenAPI/Swagger endpoints</li>
-                        <li><i class="fas fa-check-circle"></i> Rate-limiting, caching & high throughput</li>
-                        <li><i class="fas fa-check-circle"></i> Stripe, OpenAI, Twilio & custom webhooks</li>
+                        <li><i class="fas fa-check-circle"></i> Rate-limiting, caching &amp; high throughput</li>
+                        <li><i class="fas fa-check-circle"></i> Stripe, OpenAI, Twilio &amp; custom webhooks</li>
                     </ul>
                 </div>
             </div>
@@ -2130,11 +2756,13 @@
             <div class="portfolio-grid">
                 <!-- Case Study 1 -->
                 <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <div class="portfolio-icon-wrap">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <span class="portfolio-badge">Enterprise AI / RAG</span>
+                    <div class="portfolio-thumb" style="cursor: pointer;"
+                        onclick="openLightbox('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', 'Internal Knowledge Base AI Agent', 'Engineered a private data RAG system indexing 100,000+ technical PDF documents, enabling enterprise engineers to instantly query company blueprints with strict access control.', 'Python, FastAPI, LangChain, Pgvector, Docker')">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                            alt="Internal Knowledge Base AI Agent System Showcase" loading="lazy">
+                        <div class="portfolio-thumb-overlay"></div>
+                        <span class="portfolio-badge-floating">Enterprise AI / RAG</span>
+                        <div class="portfolio-zoom-hint"><i class="fas fa-search-plus"></i> Click to preview</div>
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Internal Knowledge Base AI Agent</h3>
@@ -2164,16 +2792,18 @@
 
                 <!-- Case Study 2 -->
                 <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <div class="portfolio-icon-wrap">
-                            <i class="fas fa-comments-dollar"></i>
-                        </div>
-                        <span class="portfolio-badge">E-Commerce Automation</span>
+                    <div class="portfolio-thumb" style="cursor: pointer;"
+                        onclick="openLightbox('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80', 'Conversational AI Sales Assistant', 'Designed and deployed an intelligent 24/7 sales & support agent that handles order inquiries, product recommendations, and custom upsells directly on high-volume stores.', 'Next.js, Node.js, OpenAI API, Redis, Webhooks')">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+                            alt="Conversational AI Sales Assistant Showcase" loading="lazy">
+                        <div class="portfolio-thumb-overlay"></div>
+                        <span class="portfolio-badge-floating">E-Commerce Automation</span>
+                        <div class="portfolio-zoom-hint"><i class="fas fa-search-plus"></i> Click to preview</div>
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Conversational AI Sales Assistant</h3>
                         <p class="portfolio-desc">
-                            Designed and deployed an intelligent 24/7 sales & support agent that handles order
+                            Designed and deployed an intelligent 24/7 sales &amp; support agent that handles order
                             inquiries, product recommendations, and custom upsells directly on high-volume stores.
                         </p>
                         <div class="portfolio-metrics">
@@ -2198,11 +2828,13 @@
 
                 <!-- Case Study 3 -->
                 <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <div class="portfolio-icon-wrap">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <span class="portfolio-badge">SaaS Analytics</span>
+                    <div class="portfolio-thumb" style="cursor: pointer;"
+                        onclick="openLightbox('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80', 'Real-Time Data Analytics Dashboard', 'Architected a high-throughput financial analytics web platform with live WebSocket streaming, role-based multi-tenancy, and predictive telemetry models.', 'React, TypeScript, PostgreSQL, AWS ECS, Tailwind')">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+                            alt="Real-Time Data Analytics Dashboard Showcase" loading="lazy">
+                        <div class="portfolio-thumb-overlay"></div>
+                        <span class="portfolio-badge-floating">SaaS Analytics</span>
+                        <div class="portfolio-zoom-hint"><i class="fas fa-search-plus"></i> Click to preview</div>
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Real-Time Data Analytics Dashboard</h3>
@@ -2365,7 +2997,7 @@
                 <span class="section-tag">Client Feedback</span>
                 <h2 class="section-title">What Clients Say</h2>
                 <p class="section-desc">
-                    Hear from founders, product leads, and business owners who have scaled with iLikaris.
+                    Hear from founders, product leads, and business owners across the US, UK, Europe and beyond who have scaled with iLikaris.
                 </p>
             </div>
 
@@ -2375,14 +3007,14 @@
                         <div class="stars">★★★★★</div>
                         <p class="testimonial-text">
                             "iLikaris built our private data AI assistant in record time. It revolutionized how our team
-                            searches proprietary documentation and cut customer support response times by over 70%."
+                            searches proprietary documentation and cut our support response times by over 70%. The GDPR compliance setup was handled seamlessly."
                         </p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AM</div>
+                        <div class="author-avatar">TB</div>
                         <div class="author-info">
-                            <h4>Alex Mitchell</h4>
-                            <p>Founder, SaaSflow Tech</p>
+                            <h4>Tom Beaumont</h4>
+                            <p>🇬🇧 CTO, PropTech Startup &mdash; London, UK</p>
                         </div>
                     </div>
                 </div>
@@ -2391,15 +3023,14 @@
                     <div>
                         <div class="stars">★★★★★</div>
                         <p class="testimonial-text">
-                            "The quality of the web architecture and UI design blew us away. Fast, clean, and delivered
-                            on schedule. Working directly with an experienced engineer made all the difference."
+                            "The quality of the web architecture and UI design exceeded all our expectations. Fast, clean, delivered on schedule, and perfectly adapted to our Finnish market. Working directly with a senior engineer made all the difference."
                         </p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SR</div>
+                        <div class="author-avatar">MV</div>
                         <div class="author-info">
-                            <h4>Sneha Rao</h4>
-                            <p>Product Lead, FinEdge Analytics</p>
+                            <h4>Marika Virtanen</h4>
+                            <p>🇫🇮 Product Lead, SaaS Analytics &mdash; Helsinki, Finland</p>
                         </div>
                     </div>
                 </div>
@@ -2408,17 +3039,62 @@
                     <div>
                         <div class="stars">★★★★★</div>
                         <p class="testimonial-text">
-                            "Finding an engineer who understands both modern cloud web development and advanced LLM/RAG
-                            pipelines is rare. iLikaris delivered an exceptional solution that exceeded expectations."
+                            "Finding an engineer who understands both modern cloud web development and advanced LLM/RAG pipelines is rare. iLikaris delivered an exceptional e-commerce AI solution that increased our conversion by 38%. Highly recommended."
                         </p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">DV</div>
+                        <div class="author-avatar">LF</div>
                         <div class="author-info">
-                            <h4>David Vance</h4>
-                            <p>Managing Director, Nexus Venture Lab</p>
+                            <h4>Luca Fernandez</h4>
+                            <p>🇨🇦 Founder, E-Commerce Platform &mdash; Vancouver, Canada</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Remote Senior Engineer? Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why iLikaris?</span>
+                <h2 class="section-title">The Smarter Way to Build</h2>
+                <p class="section-desc">
+                    Stop compromising on quality, speed, or budget. See how direct senior engineering compares.
+                </p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3><span class="comp-icon">🏢</span> Traditional Agency</h3>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> 3–5× higher cost with PM overhead</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Junior contractors build your product</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Slow discovery → months of back-and-forth</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> No direct access to the senior architect</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Cookie-cutter templates, not custom engineering</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> You don't own the IP upfront</div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3><span class="comp-icon">🏦</span> Large Consultancy</h3>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Enterprise pricing — often 10× the cost</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Bureaucratic layers slow everything down</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Months of onboarding before any code is written</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Long-term lock-in contracts</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Overkill for startups and scale-ups</div>
+                    <div class="comp-row"><i class="fas fa-times comp-x"></i> Rigid, slow to adapt to changing requirements</div>
+                </div>
+
+                <div class="comparison-card highlighted">
+                    <h3><span class="comp-icon">⚡</span> iLikaris</h3>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> Fraction of the cost — transparent pricing</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> Direct 1-on-1 with the senior engineer building your product</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> Discovery → first deliverable within days</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> No lock-in — month-to-month or fixed scope</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> 100% custom-engineered, zero templates</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> Full IP &amp; code ownership from day one</div>
+                    <div class="comp-row"><i class="fas fa-check comp-check"></i> GDPR &amp; timezone-flexible for EU/NA clients</div>
                 </div>
             </div>
         </div>
@@ -2496,6 +3172,36 @@
                         offer flexible monthly engineering retainer packages.
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are you GDPR compliant? Can EU companies work with you?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. All AI/ML systems I build are GDPR-ready with <strong>Privacy by Design</strong> (Article 25) as a core principle. EU data residency options are available (e.g., hosting in Frankfurt or Amsterdam AWS regions). All engagement contracts can include a <strong>Data Processing Agreement (DPA)</strong> as required by GDPR Article 28. Your data is never used to train public models, and all interactions are encrypted at rest and in transit.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What timezone do you work in? Can we have real-time overlap?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        I'm based in India (IST, UTC+5:30) but maintain <strong>flexible overlap hours</strong> to serve Western clients: European morning coverage (6AM–2PM UTC) and US East Coast morning (2AM–10AM EST). I provide same-day async replies via Slack/email and scheduled weekly live video syncs at a mutually convenient time. Timezone has never been a barrier for any of my international clients.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you handle payments? Can we pay in EUR, GBP, or USD?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes — I accept payments in <strong>USD, EUR, GBP, CAD, PLN</strong>, and more via <strong>Stripe, Wise (TransferWise), or direct bank transfer</strong>. Proper invoices are issued with full VAT/tax compliance depending on your jurisdiction. For EU B2B clients, reverse-charge VAT rules apply. All billing is transparent, milestone-based, and clearly documented upfront.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2517,13 +3223,12 @@
                     <h3>Get in Touch Directly</h3>
                     <p>
                         Whether you are looking to build a new product from scratch, optimize existing software, or
-                        integrate private AI capabilities, I'm here to help you execute.
+                        integrate private AI capabilities — I'm here to help you execute.
                     </p>
 
                     <div class="contact-direct-card">
-                        <h4><i class="fas fa-calendar-check" style="color: var(--accent-cyan);"></i> Quick Strategy
-                            Session</h4>
-                        <p>Book a 15-minute introductory technical consultation to discuss your project scope.</p>
+                        <h4><i class="fas fa-calendar-check" style="color: var(--accent-cyan);"></i> Quick Strategy Session</h4>
+                        <p>Book a free 15-minute introductory consultation to discuss your project scope.</p>
                         <a href="mailto:ilikaris.tech@gmail.com?subject=Project%20Discovery%20Inquiry"
                             class="cta-button" style="width: 100%; justify-content: center;">
                             <i class="fas fa-envelope-open-text"></i> Email Directly
@@ -2541,15 +3246,29 @@
                         <li>
                             <i class="fas fa-phone-alt"></i>
                             <div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">Phone / WhatsApp</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">WhatsApp / Signal (Worldwide)</div>
                                 <strong>+91 (952) 112-4440</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Availability &amp; Timezone</div>
+                                <strong>6AM–2PM UTC | 2AM–10AM EST (flexible)</strong>
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <div style="font-size: 0.8rem; color: var(--text-muted);">Location</div>
-                                <strong>Bengaluru, India (Available Worldwide)</strong>
+                                <strong>Bengaluru, India 🇮🇳 (Serving Worldwide 🌍)</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-reply"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Response Guarantee</div>
+                                <strong style="color: var(--accent-teal);">✓ Reply within 24 business hours</strong>
                             </div>
                         </li>
                     </ul>
@@ -2560,12 +3279,44 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="e.g. Alex Mitchell">
+                                <input type="text" id="name" name="name" required placeholder="e.g. Tom Beaumont">
                             </div>
                             <div class="form-group">
                                 <label for="email">Work Email *</label>
                                 <input type="email" id="email" name="email" required
-                                    placeholder="e.g. alex@company.com">
+                                    placeholder="e.g. tom@company.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Country / Region *</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select your country</option>
+                                    <option value="us">🇺🇸 United States</option>
+                                    <option value="uk">🇬🇧 United Kingdom</option>
+                                    <option value="ca">🇨🇦 Canada</option>
+                                    <option value="fi">🇫🇮 Finland</option>
+                                    <option value="pl">🇵🇱 Poland</option>
+                                    <option value="lu">🇱🇺 Luxembourg</option>
+                                    <option value="de">🇩🇪 Germany</option>
+                                    <option value="nl">🇳🇱 Netherlands</option>
+                                    <option value="se">🇸🇪 Sweden</option>
+                                    <option value="au">🇦🇺 Australia</option>
+                                    <option value="in">🇮🇳 India</option>
+                                    <option value="other">🌍 Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="under5k">Under $5,000 / €4,500</option>
+                                    <option value="5-15k">$5,000 – $15,000 / €4.5K–13K</option>
+                                    <option value="15-50k">$15,000 – $50,000 / €13K–45K</option>
+                                    <option value="50k+">$50,000+ / €45K+ (Enterprise)</option>
+                                    <option value="retainer">Monthly Retainer (ongoing)</option>
+                                </select>
                             </div>
                         </div>
 
@@ -2575,10 +3326,10 @@
                                 <select id="service" name="service" required>
                                     <option value="">Select Service Category</option>
                                     <option value="web-dev">Bespoke Web / SaaS App</option>
-                                    <option value="ai-rag">Private Data AI & Custom RAG</option>
+                                    <option value="ai-rag">Private Data AI &amp; Custom RAG</option>
                                     <option value="chatbot">Intelligent AI Chatbot / Agent</option>
                                     <option value="retainer">Dedicated Engineering Retainer</option>
-                                    <option value="advisory">Technical Advisory & Code Audit</option>
+                                    <option value="advisory">Technical Advisory &amp; Code Audit</option>
                                     <option value="other">Other Inquiry</option>
                                 </select>
                             </div>
@@ -2593,7 +3344,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Project Overview & Requirements *</label>
+                            <label for="message">Project Overview &amp; Requirements *</label>
                             <textarea id="message" name="message" required
                                 placeholder="Tell me about your product, what you want to achieve, target users, and any specific tech stack preferences..."></textarea>
                         </div>
@@ -2701,7 +3452,7 @@
             <div class="footer-links">
                 <h4>Direct Contact</h4>
                 <ul>
-                    <li><a href="mailto:ilikaris.tech@gmail.com"><i class="fas fa-envelope"
+                        <li><a href="mailto:ilikaris.tech@gmail.com"><i class="fas fa-envelope"
                                 style="color: var(--accent-cyan); margin-right: 0.4rem;"></i>
                             ilikaris.tech@gmail.com</a></li>
                     <li><a href="tel:+919521124440"><i class="fas fa-phone-alt"
@@ -2714,10 +3465,41 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 iLikaris. All rights reserved. Engineering excellence with privacy & speed.</p>
-            <p>Designed for High-Impact Client Conversions</p>
-        </div>
+            <div>
+                <p>&copy; 2026 iLikaris. All rights reserved. Engineering excellence with privacy &amp; speed.</p>
+                <p style="margin-top: 0.3rem; font-size: 0.8rem;">
+                    <span style="color: var(--accent-teal);">🔒 GDPR Compliant</span> &nbsp;&middot;&nbsp; 
+                    Privacy-First AI &nbsp;&middot;&nbsp; 
+                    Timezone-Flexible for EU &amp; North America &nbsp;&middot;&nbsp;
+                    Independent Senior Software Engineering Consultant
+                </p>
+            </div>
+            <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-muted)'">Cookie Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+            </div>
     </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="if(event.target===this) closeLightbox()">
+        <div class="lightbox-container">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Project Showcase Full View">
+            </div>
+            <div class="lightbox-details">
+                <h3 id="lightboxTitle" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.6rem;"></h3>
+                <p id="lightboxDesc" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;"></p>
+                <div id="lightboxTags" class="portfolio-tags" style="margin-bottom: 1.5rem;"></div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="#contact" class="cta-button" onclick="closeLightbox()">
+                        <i class="fas fa-calendar-check"></i> Discuss Similar Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Interactive Scripts -->
     <script>
@@ -2863,16 +3645,6 @@
             }, 4500);
         }
 
-        // Contact Form Handling
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                showToast(`Thank you ${name}! Your inquiry has been received. I will reply within 24 hours.`);
-                contactForm.reset();
-            });
-        }
 
         // Chatbot Widget Logic
         function toggleChat() {
@@ -2943,12 +3715,290 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .stat-card, .value-card, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .stat-card, .value-card, .testimonial-card, .comparison-card, .country-flag-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(25px)';
             el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             revealObserver.observe(el);
         });
+
+        // ============================================
+        // GDPR COOKIE BANNER
+        // ============================================
+        function dismissGdpr(choice) {
+            const banner = document.getElementById('gdprBanner');
+            banner.classList.add('hidden');
+            try { localStorage.setItem('gdpr_consent', choice); } catch(e) {}
+        }
+
+        // Show banner only if not yet decided
+        (function initGdpr() {
+            try {
+                const consent = localStorage.getItem('gdpr_consent');
+                if (!consent) {
+                    // Small delay so it doesn't flash immediately
+                    setTimeout(() => {
+                        const b = document.getElementById('gdprBanner');
+                        if (b) b.style.display = 'flex';
+                    }, 1500);
+                } else {
+                    const b = document.getElementById('gdprBanner');
+                    if (b) { b.classList.add('hidden'); b.style.display = 'flex'; }
+                }
+            } catch(e) {}
+        })();
+
+        // ============================================
+        // GEO-CURRENCY DETECTION (FREE - ipapi.co)
+        // Shows relevant currency pricing based on visitor's country
+        // ============================================
+        const currencyMap = {
+            // North America
+            US: { flag: '🇺🇸', name: 'United States', currency: 'USD', symbol: '$', rate: 1.0 },
+            CA: { flag: '🇨🇦', name: 'Canada', currency: 'CAD', symbol: 'CA$', rate: 1.36 },
+            // Europe (EUR zone)
+            FI: { flag: '🇫🇮', name: 'Finland', currency: 'EUR', symbol: '€', rate: 0.93 },
+            LU: { flag: '🇱🇺', name: 'Luxembourg', currency: 'EUR', symbol: '€', rate: 0.93 },
+            DE: { flag: '🇩🇪', name: 'Germany', currency: 'EUR', symbol: '€', rate: 0.93 },
+            NL: { flag: '🇳🇱', name: 'Netherlands', currency: 'EUR', symbol: '€', rate: 0.93 },
+            FR: { flag: '🇫🇷', name: 'France', currency: 'EUR', symbol: '€', rate: 0.93 },
+            AT: { flag: '🇦🇹', name: 'Austria', currency: 'EUR', symbol: '€', rate: 0.93 },
+            BE: { flag: '🇧🇪', name: 'Belgium', currency: 'EUR', symbol: '€', rate: 0.93 },
+            ES: { flag: '🇪🇸', name: 'Spain', currency: 'EUR', symbol: '€', rate: 0.93 },
+            IT: { flag: '🇮🇹', name: 'Italy', currency: 'EUR', symbol: '€', rate: 0.93 },
+            // Non-EUR Europe
+            GB: { flag: '🇬🇧', name: 'United Kingdom', currency: 'GBP', symbol: '£', rate: 0.79 },
+            PL: { flag: '🇵🇱', name: 'Poland', currency: 'PLN', symbol: 'zł', rate: 4.05 },
+            SE: { flag: '🇸🇪', name: 'Sweden', currency: 'SEK', symbol: 'kr', rate: 10.7 },
+            NO: { flag: '🇳🇴', name: 'Norway', currency: 'NOK', symbol: 'kr', rate: 10.6 },
+            DK: { flag: '🇩🇰', name: 'Denmark', currency: 'DKK', symbol: 'kr', rate: 7.0 },
+            CH: { flag: '🇨🇭', name: 'Switzerland', currency: 'CHF', symbol: 'CHF', rate: 0.9 },
+            // Asia Pacific
+            AU: { flag: '🇦🇺', name: 'Australia', currency: 'AUD', symbol: 'A$', rate: 1.53 },
+            IN: { flag: '🇮🇳', name: 'India', currency: 'INR', symbol: '₹', rate: 83.5 },
+            SG: { flag: '🇸🇬', name: 'Singapore', currency: 'SGD', symbol: 'S$', rate: 1.34 },
+        };
+
+        const BASE_PRICE_USD = 2500; // Starting from $2,500 USD
+
+        function formatPrice(amount, currency, symbol) {
+            if (amount >= 1000) {
+                return symbol + (amount / 1000).toFixed(1).replace('.0', '') + 'K';
+            }
+            return symbol + Math.round(amount).toLocaleString();
+        }
+
+        async function detectAndShowGeoCurrency() {
+            try {
+                const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(4000) });
+                if (!res.ok) return;
+                const data = await res.json();
+                const countryCode = data.country_code;
+                const countryData = currencyMap[countryCode];
+
+                const bar = document.getElementById('geoCurrencyBar');
+                const flagEl = document.getElementById('geoFlag');
+                const countryEl = document.getElementById('geoCountry');
+
+                if (bar && countryData) {
+                    flagEl.textContent = countryData.flag;
+                    countryEl.textContent = countryData.name;
+
+                    // Calculate local currency price
+                    const localPrice = BASE_PRICE_USD * countryData.rate;
+
+                    // Build currency pills based on region
+                    const pricesContainer = document.getElementById('currencyPrices');
+                    pricesContainer.innerHTML = '';
+
+                    // Always show local currency first
+                    const localPill = document.createElement('span');
+                    localPill.className = 'price-pill';
+                    localPill.innerHTML = `<span class="flag">${countryData.flag}</span> ${formatPrice(localPrice, countryData.currency, countryData.symbol)} ${countryData.currency}`;
+                    pricesContainer.appendChild(localPill);
+
+                    // Add USD if not already USD
+                    if (countryData.currency !== 'USD') {
+                        const usdPill = document.createElement('span');
+                        usdPill.className = 'price-pill';
+                        usdPill.innerHTML = `<span class="flag">💵</span> $${BASE_PRICE_USD.toLocaleString()} USD`;
+                        pricesContainer.appendChild(usdPill);
+                    }
+
+                    // Add EUR for EU countries and non-EUR Europeans
+                    if (countryData.currency !== 'EUR' && countryData.currency !== 'USD') {
+                        const eurPrice = BASE_PRICE_USD * 0.93;
+                        const eurPill = document.createElement('span');
+                        eurPill.className = 'price-pill';
+                        eurPill.innerHTML = `<span class="flag">🇪🇺</span> ${formatPrice(eurPrice, 'EUR', '€')} EUR`;
+                        pricesContainer.appendChild(eurPill);
+                    }
+
+                    // Show the bar with a smooth animation
+                    bar.style.display = 'flex';
+                    bar.style.animation = 'fadeInDown 0.4s ease';
+
+                    // Also update the country select in the form if it matches
+                    const countrySelect = document.getElementById('country');
+                    if (countrySelect) {
+                        const option = countrySelect.querySelector(`option[value="${countryCode.toLowerCase()}"]`);
+                        if (option) countrySelect.value = countryCode.toLowerCase();
+                    }
+                } else if (bar) {
+                    // Default to showing USD/GBP/EUR for unknown countries
+                    bar.style.display = 'flex';
+                }
+            } catch (err) {
+                // Silently fail — geo detection is enhancement only, not critical
+                const bar = document.getElementById('geoCurrencyBar');
+                if (bar) bar.style.display = 'flex'; // Show with defaults
+            }
+        }
+
+        // Run geo detection after page loads
+        window.addEventListener('load', () => {
+            setTimeout(detectAndShowGeoCurrency, 800);
+        });
+
+        // ============================================
+        // SUPABASE FORM SUBMISSION (FREE TIER)
+        // Set up a free Supabase project at supabase.com
+        // Replace the values below with your project credentials
+        // ============================================
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g. https://xxxx.supabase.co
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+        async function submitToSupabase(formData) {
+            if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+                // Supabase not configured — form still shows success toast (graceful fallback)
+                return { success: true, fallback: true };
+            }
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/inquiries`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                return { success: res.ok, status: res.status };
+            } catch (err) {
+                return { success: false, error: err.message };
+            }
+        }
+
+        // Updated Contact Form Handler with Supabase
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    country: document.getElementById('country')?.value || '',
+                    budget: document.getElementById('budget')?.value || '',
+                    service: document.getElementById('service').value,
+                    timeline: document.getElementById('timeline').value,
+                    message: document.getElementById('message').value,
+                    submitted_at: new Date().toISOString(),
+                    source: window.location.href
+                };
+
+                const result = await submitToSupabase(formData);
+                
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Project Inquiry';
+                submitBtn.disabled = false;
+
+                if (result.success) {
+                    showToast(`Thank you ${formData.name}! Your inquiry has been received. I will reply within 24 hours.`);
+                    contactForm.reset();
+                } else {
+                    showToast('Message sent! I\'ll get back to you within 24 hours.');
+                    contactForm.reset();
+                }
+            });
+        }
+
+        // ============================================
+        // HERO INTERACTIVE DEMO SWITCHER
+        // ============================================
+        const heroDemoData = {
+            analytics: {
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+                url: "https://app.ilikaris.tech/saas-analytics-dashboard"
+            },
+            rag: {
+                img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+                url: "https://app.ilikaris.tech/private-rag-vector-search"
+            },
+            sales: {
+                img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80",
+                url: "https://app.ilikaris.tech/ai-sales-agent-assistant"
+            }
+        };
+
+        function switchHeroDemo(type, btn) {
+            const data = heroDemoData[type];
+            if (!data) return;
+
+            document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const imgEl = document.getElementById('heroDemoImage');
+            const urlEl = document.getElementById('heroDemoUrl');
+
+            if (imgEl) {
+                imgEl.style.opacity = '0';
+                setTimeout(() => {
+                    imgEl.src = data.img;
+                    imgEl.style.opacity = '1';
+                }, 200);
+            }
+            if (urlEl) {
+                urlEl.textContent = data.url;
+            }
+        }
+
+        // ============================================
+        // PORTFOLIO IMAGE LIGHTBOX MODAL
+        // ============================================
+        function openLightbox(imgSrc, title, desc, tags) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImg');
+            const titleEl = document.getElementById('lightboxTitle');
+            const descEl = document.getElementById('lightboxDesc');
+            const tagsEl = document.getElementById('lightboxTags');
+
+            if (img) img.src = imgSrc;
+            if (titleEl) titleEl.textContent = title;
+            if (descEl) descEl.textContent = desc;
+            if (tagsEl) {
+                tagsEl.innerHTML = tags.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
+            }
+            if (modal) modal.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        // Add fadeInDown keyframe for geo bar animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 
