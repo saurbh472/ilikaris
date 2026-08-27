@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+    <defs>
+        <!-- Top Diamond Gradient -->
+        <linearGradient id="topPieceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f2fe" />
+            <stop offset="60%" stop-color="#0080ff" />
+            <stop offset="100%" stop-color="#0055ff" />
+        </linearGradient>
+        <!-- Middle Bar Gradient -->
+        <linearGradient id="midPieceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00a2ff" />
+            <stop offset="50%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#6366f1" />
+        </linearGradient>
+        <!-- Bottom Folded Ribbon Gradient -->
+        <linearGradient id="botPieceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f46e5" />
+            <stop offset="50%" stop-color="#6366f1" />
+            <stop offset="100%" stop-color="#8b5cf6" />
+        </linearGradient>
+        <!-- Ambient Neon Glow -->
+        <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g filter="url(#logoGlow)">
+        <!-- Top Diamond -->
+        <polygon points="44,12 55,17 51,30 40,26" fill="url(#topPieceGrad)" />
+
+        <!-- Middle Slanted Bar -->
+        <polygon points="40,36 69,31 70,44 22,49" fill="url(#midPieceGrad)" />
+
+        <!-- Bottom Folded Ribbon -->
+        <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#botPieceGrad)" />
+    </g>
+</svg>
