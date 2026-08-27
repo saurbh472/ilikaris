@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | iLikaris — Senior Full-Stack & AI Engineering Firm</title>
+    <meta name="description"
+        content="Learn about iLikaris: A boutique senior engineering practice partnering with ambitious product teams worldwide to ship private AI architectures and high-velocity web platforms.">
+    <meta name="keywords"
+        content="About iLikaris, AI engineering company, senior web engineers, bespoke software engineering, GDPR compliant AI, SaaS development">
+    <link rel="canonical" href="https://ilikaris.tech/about.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | iLikaris — Engineering Excellence With Speed">
+    <meta property="og:description"
+        content="Direct senior full-stack & AI engineering. Learn about our mission, principles, and worldwide client track record.">
+    <meta property="og:url" content="https://ilikaris.tech/about.html">
+    <meta property="og:image" content="https://ilikaris.tech/assets/private-rag-ai-assistant.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #060818;
+            --bg-secondary: #0c1129;
+            --bg-card: rgba(255, 255, 255, 0.045);
+            --bg-card-hover: rgba(255, 255, 255, 0.09);
+            --accent-cyan: #00cfff;
+            --accent-purple: #7c3aed;
+            --accent-pink: #e879f9;
+            --accent-teal: #06d6a0;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b8d0;
+            --text-muted: #5a6a82;
+            --border-glow: rgba(0, 207, 255, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.09);
+            --gradient-brand: linear-gradient(135deg, #00cfff 0%, #7c3aed 100%);
+            --gradient-accent: linear-gradient(135deg, #00f5ff 0%, #7c3aed 50%, #e879f9 100%);
+            --shadow-neon: 0 0 30px rgba(0, 207, 255, 0.3), 0 0 60px rgba(124, 58, 237, 0.15);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at 15% 15%, #0f1535 0%, var(--bg-primary) 55%, #030610 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Ambient Glow */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.22;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glow-orb-1 {
+            top: 10%;
+            left: 5%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, #00cfff 0%, transparent 70%);
+        }
+
+        .glow-orb-2 {
+            top: 60%;
+            right: 5%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.1rem 5%;
+            transition: var(--transition);
+            background: rgba(6, 8, 24, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        nav {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.45rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .logo-text-gradient {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.4rem 0;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #fff;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-brand);
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.2rem;
+        }
+
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            cursor: pointer;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.65rem;
+            transition: transform 0.3s ease;
+            color: var(--accent-cyan);
+        }
+
+        .nav-dropdown:hover .dropdown-toggle i,
+        .nav-dropdown.active .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            background: rgba(8, 12, 34, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 0.6rem;
+            min-width: 270px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 207, 255, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        /* Seamless Invisible Hover Bridge (prevents vanishing on diagonal movement) */
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -25px;
+            right: -25px;
+            height: 30px;
+            background: transparent;
+            z-index: 1;
+        }
+
+        /* Top arrow indicator */
+        .dropdown-menu::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: rgba(0, 207, 255, 0.4);
+            pointer-events: none;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .nav-dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex !important;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.85rem !important;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+            background: transparent;
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 207, 255, 0.08) !important;
+            transform: translateX(3px);
+        }
+
+        .dropdown-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(0, 207, 255, 0.1);
+            border: 1px solid rgba(0, 207, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .dropdown-item:nth-child(2) .dropdown-item-icon {
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #a855f7;
+        }
+
+        .dropdown-item:nth-child(3) .dropdown-item-icon {
+            background: rgba(6, 214, 160, 0.12);
+            border-color: rgba(6, 214, 160, 0.3);
+            color: #06d6a0;
+        }
+
+        .dropdown-item:nth-child(4) .dropdown-item-icon {
+            background: rgba(232, 121, 249, 0.12);
+            border-color: rgba(232, 121, 249, 0.3);
+            color: #e879f9;
+        }
+
+        .dropdown-item-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .dropdown-item-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.2;
+        }
+
+        .dropdown-item-desc {
+            font-size: 0.72rem;
+            color: var(--text-muted) !important;
+            line-height: 1.3;
+        }
+
+        .dropdown-item:hover .dropdown-item-title {
+            color: var(--accent-cyan) !important;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-brand);
+            color: #fff;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 207, 255, 0.45);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .mobile-only-cta {
+            display: none;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            padding: 9.5rem 0 4.5rem;
+            text-align: center;
+        }
+
+        .section-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 207, 255, 0.08);
+            border: 1px solid rgba(0, 207, 255, 0.35);
+            color: var(--accent-cyan);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 20px rgba(0, 207, 255, 0.15);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 4.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .page-hero p {
+            font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Story & Mission Section */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 5.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 28px;
+            padding: 3.5rem;
+        }
+
+        .story-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.25;
+        }
+
+        .story-content p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .story-visual {
+            background: linear-gradient(135deg, rgba(0, 207, 255, 0.1) 0%, rgba(124, 58, 237, 0.15) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-stat-box {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .stat-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(0, 207, 255, 0.12);
+            border: 1px solid var(--border-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .stat-meta h4 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 0.1rem;
+        }
+
+        .stat-meta p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Pillars Grid */
+        .pillars-section {
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0.5rem auto 0;
+            font-size: 1rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2.2rem 1.8rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 207, 255, 0.15);
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(0, 207, 255, 0.12);
+            border: 1px solid rgba(0, 207, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .pillar-card:nth-child(2) .pillar-icon {
+            background: rgba(124, 58, 237, 0.15);
+            border-color: rgba(124, 58, 237, 0.4);
+            color: #a855f7;
+        }
+
+        .pillar-card:nth-child(3) .pillar-icon {
+            background: rgba(6, 214, 160, 0.15);
+            border-color: rgba(6, 214, 160, 0.4);
+            color: #06d6a0;
+        }
+
+        .pillar-card:nth-child(4) .pillar-icon {
+            background: rgba(232, 121, 249, 0.15);
+            border-color: rgba(232, 121, 249, 0.4);
+            color: #e879f9;
+        }
+
+        .pillar-card:nth-child(5) .pillar-icon {
+            background: rgba(255, 189, 46, 0.15);
+            border-color: rgba(255, 189, 46, 0.4);
+            color: #ffbd2e;
+        }
+
+        .pillar-card:nth-child(6) .pillar-icon {
+            background: rgba(0, 207, 255, 0.15);
+            border-color: rgba(0, 207, 255, 0.4);
+            color: var(--accent-cyan);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .pillar-card p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* Work Model / Collaboration */
+        .work-model-section {
+            background: linear-gradient(135deg, rgba(16, 24, 60, 0.8) 0%, rgba(6, 8, 24, 0.95) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 28px;
+            padding: 3.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .work-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .work-step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 1.8rem 1.4rem;
+            position: relative;
+        }
+
+        .step-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: rgba(0, 207, 255, 0.25);
+            margin-bottom: 0.6rem;
+        }
+
+        .work-step-card h4 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-step-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(0, 207, 255, 0.08) 0%, rgba(124, 58, 237, 0.12) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 3.5rem 5%;
+            text-align: center;
+            margin-bottom: 5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-banner p {
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(4, 6, 18, 0.95);
+            border-top: 1px solid var(--border-subtle);
+            padding: 4.5rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            max-width: 1240px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 1rem 0 1.5rem;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            background: rgba(0, 207, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-cyan);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .story-section {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .work-steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(6, 8, 24, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.6rem;
+                padding: 2rem;
+                transition: right 0.4s ease;
+                border-left: 1px solid var(--border-subtle);
+                z-index: 2000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid var(--border-subtle);
+                width: 100%;
+                margin-top: 0.4rem;
+                padding: 0.4rem;
+                box-shadow: none;
+            }
+
+            .dropdown-menu::before {
+                display: none;
+            }
+
+            .mobile-only-cta {
+                display: block;
+            }
+
+            .header-cta-desktop {
+                display: none;
+            }
+
+            .pillars-grid, .work-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ambient Glow Effects -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- Header Navigation -->
+    <header id="mainHeader">
+        <nav>
+            <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                <svg class="logo-mark" viewBox="0 0 100 100" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navTopPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f2fe" />
+                            <stop offset="100%" stop-color="#0066ff" />
+                        </linearGradient>
+                        <linearGradient id="navMidPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00a2ff" />
+                            <stop offset="100%" stop-color="#6366f1" />
+                        </linearGradient>
+                        <linearGradient id="navBotPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4f46e5" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="44,12 55,17 51,30 40,26" fill="url(#navTopPiece)" />
+                    <polygon points="40,36 69,31 70,44 22,49" fill="url(#navMidPiece)" />
+                    <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#navBotPiece)" />
+                </svg>
+                <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" class="nav-item">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-item dropdown-toggle active">
+                        Company <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-building"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">About Us</span>
+                                <span class="dropdown-item-desc">Mission, values &amp; story</span>
+                            </div>
+                        </a>
+                        <a href="leadership.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Leadership</span>
+                                <span class="dropdown-item-desc">Founder &amp; CEO profile</span>
+                            </div>
+                        </a>
+                        <a href="why-choose-us.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-award"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Why Choose Us</span>
+                                <span class="dropdown-item-desc">Senior 1-on-1 vs agencies</span>
+                            </div>
+                        </a>
+                        <a href="index.html#global-reach" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-globe"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Global Reach</span>
+                                <span class="dropdown-item-desc">10+ countries &amp; timezones</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="index.html#services" class="nav-item">Services</a></li>
+                <li><a href="index.html#tech-stack" class="nav-item">Tech Stack</a></li>
+                <li><a href="index.html#portfolio" class="nav-item">Case Studies</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="index.html#engagement" class="nav-item">Engagement</a></li>
+                <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="index.html#contact" class="cta-button" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-calendar-check"></i> Book Strategy Call
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="index.html#contact" class="cta-button header-cta-desktop">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
+                </a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Hero Header -->
+        <section class="page-hero">
+            <div class="section-pill">
+                <i class="fas fa-building"></i>
+                <span>WHO WE ARE &amp; HOW WE BUILD</span>
+            </div>
+            <h1>Engineering Without Compromise &mdash; <span class="gradient-text">Built for Ambitious Teams</span></h1>
+            <p>
+                iLikaris is a specialized senior engineering firm partnering with founders and product leaders worldwide to ship mission-critical software, high-throughput web applications, and enterprise-grade private AI systems.
+            </p>
+        </section>
+
+        <!-- Our Story & Why We Exist -->
+        <section class="story-section">
+            <div class="story-content">
+                <div class="section-pill" style="margin-bottom: 0.8rem;">
+                    <i class="fas fa-compass"></i>
+                    <span>OUR MISSION &amp; ORIGIN</span>
+                </div>
+                <h2>Dismantling the Broken Agency Model</h2>
+                <p>
+                    Most companies hiring software agencies experience the same disappointing loop: you speak with charismatic sales executives during onboarding, only to have your mission-critical product handed off to junior developers, bloated management tiers, and endless status meetings.
+                </p>
+                <p>
+                    <strong>iLikaris was founded on a simple antithesis:</strong> Pair ambitious product teams directly with a battle-tested Senior Engineer. No middlemen. No outsourced juniors. Just high-velocity execution, rigorous architecture, and complete technical ownership from day one.
+                </p>
+                <p>
+                    We operate remotely and seamlessly across European, North American, and APAC time zones, providing daily transparency, production-grade code reviews, and enterprise data security.
+                </p>
+            </div>
+
+            <div class="story-visual">
+                <div class="story-stat-box">
+                    <div class="stat-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-meta">
+                        <h4>100% Senior Engineering</h4>
+                        <p>Every single line of code written and reviewed by senior hands.</p>
+                    </div>
+                </div>
+
+                <div class="story-stat-box">
+                    <div class="stat-icon-wrap"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-meta">
+                        <h4>10+ Worldwide Hubs</h4>
+                        <p>Active delivery across USA, UK, Germany, Canada &amp; Australia.</p>
+                    </div>
+                </div>
+
+                <div class="story-stat-box">
+                    <div class="stat-icon-wrap"><i class="fas fa-lock"></i></div>
+                    <div class="stat-meta">
+                        <h4>GDPR &amp; EU AI Act Compliant</h4>
+                        <p>Privacy-first architectures with on-premise vector security.</p>
+                    </div>
+                </div>
+
+                <div class="story-stat-box">
+                    <div class="stat-icon-wrap"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="stat-meta">
+                        <h4>99.9% Production SLA</h4>
+                        <p>Sub-100ms API latency and zero-downtime rolling deploys.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Engineering Pillars -->
+        <section class="pillars-section">
+            <div class="section-header">
+                <div class="section-pill">
+                    <i class="fas fa-cubes"></i>
+                    <span>OUR FOUNDATIONAL PRINCIPLES</span>
+                </div>
+                <h2>The 6 Pillars That Define Our Work</h2>
+                <p>We don’t cut corners or build throwaway MVPs. We engineer scalable assets that grow with your company.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Direct Senior Partnership</h3>
+                    <p>You work 1-on-1 with a Senior Architect. Instant technical dialogue, real-time problem solving, and zero bureaucratic friction.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Privacy &amp; Data Sovereignty</h3>
+                    <p>Enterprise data is proprietary. We build air-gapped, GDPR-compliant RAG and AI systems where your data never trains third-party public models.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Async-First Velocity</h3>
+                    <p>Structured daily async standups, recorded Loom video walkthroughs, and flexible timezone overlap ensure rapid forward momentum.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Modular Modern Stacks</h3>
+                    <p>Next.js 15, TypeScript, FastAPI, PostgreSQL, Pgvector, and Docker. Clean separation of concerns with 100% full-stack typing.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Milestone-Based Transparency</h3>
+                    <p>Clear sprint scopes with fixed milestone pricing. You always know exactly what is being delivered, when, and at what cost.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>30-Day Post-Launch SLA</h3>
+                    <p>Every production release is backed by a 30-day warranty window for bug fixes, performance monitoring, and architecture handoff.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work / Engagement Model -->
+        <section class="work-model-section">
+            <div style="text-align: center;">
+                <div class="section-pill">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>EXECUTION BLUEPRINT</span>
+                </div>
+                <h2 style="font-size: 2.2rem; color: #fff; margin-top: 0.4rem;">How We Take You from Scope to Production</h2>
+            </div>
+
+            <div class="work-steps-grid">
+                <div class="work-step-card">
+                    <div class="step-num">01</div>
+                    <h4>Architecture Sprint</h4>
+                    <p>48-hour deep dive to align on system requirements, schema design, latency targets, and compliance guardrails.</p>
+                </div>
+
+                <div class="work-step-card">
+                    <div class="step-num">02</div>
+                    <h4>Sprint Milestones</h4>
+                    <p>Bi-weekly release cycles with working staging environments, CI/CD automated test runs, and direct Slack updates.</p>
+                </div>
+
+                <div class="work-step-card">
+                    <div class="step-num">03</div>
+                    <h4>Production Deployment</h4>
+                    <p>Containerized zero-downtime deployment on AWS, Vercel, or on-premise infrastructure with real-time telemetry.</p>
+                </div>
+
+                <div class="work-step-card">
+                    <div class="step-num">04</div>
+                    <h4>Warranty &amp; Scale</h4>
+                    <p>30 days of active SLA monitoring, complete codebase documentation, and smooth engineering handoff to your team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="section-pill" style="margin-bottom: 0.8rem;">
+                <i class="fas fa-paper-plane"></i>
+                <span>GET STARTED TODAY</span>
+            </div>
+            <h2>Ready to Ship Enterprise-Grade Software?</h2>
+            <p>
+                Let’s discuss your platform architecture, timeline, and deliverables with direct senior engineer insight.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html#contact" class="cta-button" style="padding: 0.85rem 2.2rem; font-size: 1.05rem;">
+                    <i class="fas fa-calendar-alt"></i> Book a Free Strategy Call
+                </a>
+                <a href="leadership.html" class="cta-button" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-glow); padding: 0.85rem 2.2rem; font-size: 1.05rem;">
+                    <i class="fas fa-user-tie"></i> Meet Our Leadership
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                    <svg class="logo-mark" viewBox="0 0 100 100" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="44,12 55,17 51,30 40,26" fill="url(#navTopPiece)" />
+                        <polygon points="40,36 69,31 70,44 22,49" fill="url(#navMidPiece)" />
+                        <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#navBotPiece)" />
+                    </svg>
+                    <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+                </a>
+                <p>
+                    Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems for ambitious teams worldwide.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Case Studies</a></li>
+                    <li><a href="blog.html">Blog &amp; Insights</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Web &amp; SaaS Engineering</a></li>
+                    <li><a href="index.html#services">Private Data AI &amp; RAG</a></li>
+                    <li><a href="index.html#services">Autonomous Chatbots</a></li>
+                    <li><a href="index.html#services">Fractional Tech Advisory</a></li>
+                    <li><a href="index.html#services">Cloud &amp; DevOps</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Direct Contact</h4>
+                <ul>
+                    <li><a href="mailto:ilikaris.tech@gmail.com"><i class="fas fa-envelope" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> ilikaris.tech@gmail.com</a></li>
+                    <li><a href="tel:+919521124440"><i class="fas fa-phone-alt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> +91 (952) 112-4440</a></li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> Bengaluru, India (Remote &amp; Worldwide)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <p>&copy; 2026 iLikaris. All rights reserved. Engineering excellence with privacy &amp; speed.</p>
+                <p style="margin-top: 0.3rem; font-size: 0.8rem;">
+                    <span style="color: var(--accent-teal);">🔒 GDPR Compliant</span> &nbsp;&middot;&nbsp;
+                    Privacy-First AI &nbsp;&middot;&nbsp;
+                    Timezone-Flexible for EU &amp; North America
+                </p>
+            </div>
+            <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Header Scroll & Mobile Script -->
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 40) {
+                header.style.padding = '0.75rem 5%';
+                header.style.background = 'rgba(6, 8, 24, 0.95)';
+            } else {
+                header.style.padding = '1.1rem 5%';
+                header.style.background = 'rgba(6, 8, 24, 0.85)';
+            }
+        });
+    </script>
+</body>
+
+</html>

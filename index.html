@@ -250,7 +250,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.4rem;
             list-style: none;
             align-items: center;
         }
@@ -275,7 +275,7 @@
             color: #ffffff;
         }
 
-        .nav-links a::after {
+        .nav-links a.nav-item::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -287,8 +287,166 @@
             border-radius: 2px;
         }
 
-        .nav-links a:hover::after {
+        .nav-links a.nav-item:hover::after {
             width: 100%;
+        }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.2rem;
+        }
+
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            cursor: pointer;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.65rem;
+            transition: transform 0.3s ease;
+            color: var(--accent-cyan);
+        }
+
+        .nav-dropdown:hover .dropdown-toggle i,
+        .nav-dropdown.active .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            background: rgba(8, 12, 34, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 0.6rem;
+            min-width: 270px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 207, 255, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        /* Seamless Invisible Hover Bridge (prevents vanishing on diagonal movement) */
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -25px;
+            right: -25px;
+            height: 30px;
+            background: transparent;
+            z-index: 1;
+        }
+
+        /* Top arrow indicator */
+        .dropdown-menu::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: rgba(0, 207, 255, 0.4);
+            pointer-events: none;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .nav-dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex !important;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.85rem !important;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+            background: transparent;
+            width: 100%;
+        }
+
+        .dropdown-item::after {
+            display: none !important;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 207, 255, 0.08) !important;
+            transform: translateX(3px);
+        }
+
+        .dropdown-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(0, 207, 255, 0.1);
+            border: 1px solid rgba(0, 207, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .dropdown-item:nth-child(2) .dropdown-item-icon {
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #a855f7;
+        }
+
+        .dropdown-item:nth-child(3) .dropdown-item-icon {
+            background: rgba(6, 214, 160, 0.12);
+            border-color: rgba(6, 214, 160, 0.3);
+            color: #06d6a0;
+        }
+
+        .dropdown-item:nth-child(4) .dropdown-item-icon {
+            background: rgba(232, 121, 249, 0.12);
+            border-color: rgba(232, 121, 249, 0.3);
+            color: #e879f9;
+        }
+
+        .dropdown-item-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .dropdown-item-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.2;
+        }
+
+        .dropdown-item-desc {
+            font-size: 0.72rem;
+            color: var(--text-muted) !important;
+            line-height: 1.3;
+        }
+
+        .dropdown-item:hover .dropdown-item-title {
+            color: var(--accent-cyan) !important;
         }
 
         .header-actions {
@@ -2825,6 +2983,30 @@
             .geo-currency-bar {
                 display: none;
             }
+
+            .nav-dropdown {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid var(--border-subtle);
+                width: 100%;
+                margin-top: 0.4rem;
+                padding: 0.4rem;
+                box-shadow: none;
+            }
+
+            .dropdown-menu::before {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -2895,12 +3077,46 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-item">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-item dropdown-toggle">
+                        Company <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-building"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">About Us</span>
+                                <span class="dropdown-item-desc">Mission, values &amp; story</span>
+                            </div>
+                        </a>
+                        <a href="leadership.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Leadership</span>
+                                <span class="dropdown-item-desc">Founder &amp; CEO profile</span>
+                            </div>
+                        </a>
+                        <a href="why-choose-us.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-award"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Why Choose Us</span>
+                                <span class="dropdown-item-desc">Senior 1-on-1 vs agencies</span>
+                            </div>
+                        </a>
+                        <a href="#global-reach" class="dropdown-item" onclick="closeMobileMenu()">
+                            <div class="dropdown-item-icon"><i class="fas fa-globe"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Global Reach</span>
+                                <span class="dropdown-item-desc">10+ countries &amp; timezones</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
                 <li><a href="#services" class="nav-item">Services</a></li>
                 <li><a href="#tech-stack" class="nav-item">Tech Stack</a></li>
                 <li><a href="#portfolio" class="nav-item">Case Studies</a></li>
                 <li><a href="blog.html" class="nav-item">Blog</a></li>
                 <li><a href="#engagement" class="nav-item">Engagement</a></li>
-                <li><a href="#about" class="nav-item">About</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
                 <li class="mobile-only-cta">
                     <a href="#contact" class="cta-button" style="width: 100%; justify-content: center;"
@@ -4551,11 +4767,12 @@
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#tech-stack">Tech Stack</a></li>
                     <li><a href="#portfolio">Case Studies</a></li>
-                    <li><a href="blog.html">Blog &amp; Achievements</a></li>
-                    <li><a href="#engagement">Engagement</a></li>
+                    <li><a href="blog.html">Blog &amp; Insights</a></li>
                 </ul>
             </div>
 
