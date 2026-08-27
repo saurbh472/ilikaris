@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Achievements | iLikaris — Engineering Insights, AI Research & Milestones</title>
+    <meta name="description"
+        content="Technical essays, architectural breakdowns, production benchmarks, and company milestones from Senior Full-Stack & AI Engineer iLikaris.">
+    <meta name="keywords"
+        content="iLikaris blog, AI engineering articles, private RAG architecture, Next.js 15 performance, SaaS analytics engineering, GDPR compliant AI insights">
+    <link rel="canonical" href="https://ilikaris.tech/blog.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog & Achievements | iLikaris — Engineering Insights & Milestones">
+    <meta property="og:description"
+        content="Deep-dive technical essays, production benchmarks, and company achievements from Senior Full-Stack & AI Engineer iLikaris.">
+    <meta property="og:url" content="https://ilikaris.tech/blog.html">
+    <meta property="og:image" content="https://ilikaris.tech/assets/private-rag-ai-assistant.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog & Achievements | iLikaris">
+    <meta name="twitter:description"
+        content="Technical essays, production AI benchmarks, and engineering milestones.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #060818;
+            --bg-secondary: #0c1129;
+            --bg-card: rgba(255, 255, 255, 0.045);
+            --bg-card-hover: rgba(255, 255, 255, 0.09);
+            --accent-cyan: #00cfff;
+            --accent-purple: #7c3aed;
+            --accent-pink: #e879f9;
+            --accent-teal: #06d6a0;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b8d0;
+            --text-muted: #5a6a82;
+            --border-glow: rgba(0, 207, 255, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.09);
+            --gradient-brand: linear-gradient(135deg, #00cfff 0%, #7c3aed 100%);
+            --gradient-accent: linear-gradient(135deg, #00f5ff 0%, #7c3aed 50%, #e879f9 100%);
+            --gradient-warm: linear-gradient(135deg, #7c3aed 0%, #e879f9 100%);
+            --shadow-neon: 0 0 30px rgba(0, 207, 255, 0.3), 0 0 60px rgba(124, 58, 237, 0.15);
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at 15% 15%, #0f1535 0%, var(--bg-primary) 55%, #030610 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .mono-font {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        /* Ambient Glow & Canvas */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glow-orb-1 {
+            top: 10%;
+            left: 5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #00cfff 0%, transparent 70%);
+        }
+
+        .glow-orb-2 {
+            top: 60%;
+            right: 5%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+        }
+
+        .gradient-text {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.1rem 5%;
+            transition: var(--transition);
+            background: rgba(6, 8, 24, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        nav {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.45rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .logo-text-gradient {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #fff;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-brand);
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-brand);
+            color: #fff;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 207, 255, 0.45);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .mobile-only-cta {
+            display: none;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            padding: 9.5rem 5% 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 207, 255, 0.08);
+            border: 1px solid rgba(0, 207, 255, 0.35);
+            color: var(--accent-cyan);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 20px rgba(0, 207, 255, 0.15);
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-hero p {
+            font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Search & Filter Controls */
+        .blog-controls {
+            max-width: 840px;
+            margin: 0 auto 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .search-box-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+        }
+
+        .search-box-wrap i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-cyan);
+            font-size: 0.95rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1.2rem 0.85rem 2.8rem;
+            background: rgba(12, 17, 41, 0.85);
+            border: 1px solid var(--border-glow);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 0.92rem;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 207, 255, 0.3);
+            background: rgba(16, 24, 60, 0.95);
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cat-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.5rem 1.15rem;
+            border-radius: 25px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .cat-tab:hover {
+            color: #fff;
+            border-color: rgba(0, 207, 255, 0.4);
+            background: rgba(0, 207, 255, 0.08);
+        }
+
+        .cat-tab.active {
+            color: #fff;
+            background: var(--gradient-brand);
+            border-color: transparent;
+            box-shadow: 0 4px 18px rgba(0, 207, 255, 0.35);
+        }
+
+        /* Milestones Showcase Grid */
+        .milestones-section {
+            margin-bottom: 4.5rem;
+        }
+
+        .section-header-inline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-tag-small {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+        }
+
+        .milestone-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .milestone-card:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 34px rgba(0, 207, 255, 0.12);
+        }
+
+        .milestone-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            background: rgba(6, 214, 160, 0.15);
+            color: #06d6a0;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        .milestone-card h3 {
+            font-size: 1.15rem;
+            color: #fff;
+            margin-top: 0.2rem;
+        }
+
+        .milestone-card p {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Featured Story Banner */
+        .featured-story-wrap {
+            margin-bottom: 4.5rem;
+        }
+
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            background: linear-gradient(135deg, rgba(16, 24, 60, 0.9) 0%, rgba(6, 8, 24, 0.95) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 207, 255, 0.15);
+            transition: var(--transition);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.75), 0 0 50px rgba(0, 207, 255, 0.25);
+            border-color: rgba(0, 207, 255, 0.55);
+        }
+
+        .featured-thumb-wrap {
+            position: relative;
+            min-height: 340px;
+            overflow: hidden;
+            background: #040716;
+        }
+
+        .featured-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .featured-card:hover .featured-thumb-wrap img {
+            transform: scale(1.04);
+        }
+
+        .featured-content {
+            padding: 2.8rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .story-pill {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(0, 207, 255, 0.12);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 207, 255, 0.3);
+        }
+
+        .story-time {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .featured-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .featured-desc {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tags-row {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .tag-bubble {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: #a8b8d0;
+            padding: 0.2rem 0.65rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 5rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 207, 255, 0.12);
+        }
+
+        .article-thumb {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            overflow: hidden;
+            background: #05081a;
+        }
+
+        .article-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .article-card:hover .article-thumb img {
+            transform: scale(1.05);
+        }
+
+        .article-thumb-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(6, 8, 24, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-glow);
+            color: var(--accent-cyan);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .article-body {
+            padding: 1.6rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .article-title {
+            font-size: 1.22rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            line-height: 1.35;
+        }
+
+        .article-snippet {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .article-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 0.9rem;
+            margin-top: auto;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--gradient-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .author-name {
+            font-size: 0.78rem;
+            color: #d1dced;
+            font-weight: 600;
+        }
+
+        .read-cta {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .read-cta {
+            transform: translateX(3px);
+            color: #fff;
+        }
+
+        /* Newsletter & CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(0, 207, 255, 0.08) 0%, rgba(124, 58, 237, 0.12) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 3.5rem 5%;
+            text-align: center;
+            margin-bottom: 5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-banner p {
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+        }
+
+        /* Article Reader Modal */
+        .reader-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 5, 16, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .reader-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .reader-container {
+            background: rgba(12, 17, 41, 0.98);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            max-width: 880px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 90px rgba(0, 207, 255, 0.3);
+            position: relative;
+            padding: 2.8rem 2.4rem;
+        }
+
+        .reader-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .reader-close:hover {
+            background: rgba(239, 68, 68, 0.85);
+        }
+
+        .reader-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+
+        .reader-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .reader-content h3 {
+            font-size: 1.25rem;
+            margin: 1.8rem 0 0.8rem;
+            color: var(--accent-cyan);
+        }
+
+        .reader-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.4rem;
+            color: var(--text-secondary);
+        }
+
+        .reader-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .reader-code-box {
+            background: #040716;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.2rem;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.85rem;
+            color: #00cfff;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(4, 6, 18, 0.95);
+            border-top: 1px solid var(--border-subtle);
+            padding: 4.5rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            max-width: 1240px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 1rem 0 1.5rem;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            background: rgba(0, 207, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-cyan);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .milestones-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(6, 8, 24, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.8rem;
+                padding: 2rem;
+                transition: right 0.4s ease;
+                border-left: 1px solid var(--border-subtle);
+                z-index: 2000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-only-cta {
+                display: block;
+            }
+
+            .header-cta-desktop {
+                display: none;
+            }
+
+            .milestones-grid, .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-content {
+                padding: 1.8rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ambient Glow Effects -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="bg-animation" id="particles"></div>
+
+    <!-- Header Navigation -->
+    <header id="mainHeader">
+        <nav>
+            <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                <svg class="logo-mark" viewBox="0 0 100 100" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navTopPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f2fe" />
+                            <stop offset="100%" stop-color="#0066ff" />
+                        </linearGradient>
+                        <linearGradient id="navMidPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00a2ff" />
+                            <stop offset="100%" stop-color="#6366f1" />
+                        </linearGradient>
+                        <linearGradient id="navBotPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4f46e5" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="44,12 55,17 51,30 40,26" fill="url(#navTopPiece)" />
+                    <polygon points="40,36 69,31 70,44 22,49" fill="url(#navMidPiece)" />
+                    <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#navBotPiece)" />
+                </svg>
+                <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" class="nav-item">Home</a></li>
+                <li><a href="index.html#services" class="nav-item">Services</a></li>
+                <li><a href="index.html#tech-stack" class="nav-item">Tech Stack</a></li>
+                <li><a href="index.html#portfolio" class="nav-item">Case Studies</a></li>
+                <li><a href="blog.html" class="nav-item active">Blog</a></li>
+                <li><a href="index.html#engagement" class="nav-item">Engagement</a></li>
+                <li><a href="index.html#about" class="nav-item">About</a></li>
+                <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="index.html#contact" class="cta-button" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-calendar-check"></i> Book Strategy Call
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="index.html#contact" class="cta-button header-cta-desktop">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
+                </a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Hero Header -->
+        <section class="blog-hero">
+            <div class="blog-badge">
+                <i class="fas fa-sparkles"></i>
+                <span>INSIGHTS, ENGINEERING &amp; ACHIEVEMENTS</span>
+            </div>
+            <h1>Engineering Notes &amp; <span class="gradient-text">Company Milestones</span></h1>
+            <p>
+                Real-world architectural lessons, production AI benchmarks, and verified milestone takeaways from building bespoke software and scaling systems worldwide.
+            </p>
+
+            <!-- Search & Filter Controls -->
+            <div class="blog-controls">
+                <div class="search-box-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="blogSearch" class="search-input" placeholder="Search essays, technologies, or achievements..." oninput="handleBlogSearch()">
+                </div>
+                <div class="category-tabs">
+                    <button class="cat-tab active" onclick="filterBlogCategory('all', this)"><i class="fas fa-layer-group"></i> All Posts</button>
+                    <button class="cat-tab" onclick="filterBlogCategory('milestone', this)">🏆 Milestones &amp; Achievements</button>
+                    <button class="cat-tab" onclick="filterBlogCategory('ai', this)">🧠 AI &amp; RAG Engineering</button>
+                    <button class="cat-tab" onclick="filterBlogCategory('web', this)">⚡ Web Architecture</button>
+                    <button class="cat-tab" onclick="filterBlogCategory('growth', this)">📈 Case Studies &amp; Growth</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Milestones & Verified Achievements Showcase -->
+        <section class="milestones-section" id="milestonesSection">
+            <div class="section-header-inline">
+                <div>
+                    <div class="section-tag-small"><i class="fas fa-medal"></i> Verified Track Record</div>
+                    <h2 style="font-size: 1.6rem; color: #fff; margin-top: 0.3rem;">Company Highlights &amp; Production Stats</h2>
+                </div>
+            </div>
+
+            <div class="milestones-grid">
+                <div class="milestone-card" data-category="milestone" data-title="worldwide client delivery network">
+                    <span class="milestone-badge-top"><i class="fas fa-globe"></i> Global Reach</span>
+                    <h3>10+ Countries Served</h3>
+                    <p>Delivered mission-critical applications across USA, UK, Germany, Netherlands, Finland, Poland, Luxembourg, Canada &amp; Australia.</p>
+                </div>
+
+                <div class="milestone-card" data-category="milestone" data-title="100% private rag zero data leakage">
+                    <span class="milestone-badge-top"><i class="fas fa-shield-alt"></i> Data Privacy</span>
+                    <h3>Zero-Leakage Private AI</h3>
+                    <p>100% GDPR-compliant on-premise &amp; private cloud vector search deployments protecting confidential enterprise IP.</p>
+                </div>
+
+                <div class="milestone-card" data-category="milestone" data-title="99.9% uptime architecture sla">
+                    <span class="milestone-badge-top"><i class="fas fa-bolt"></i> Reliability</span>
+                    <h3>99.9% SLA &amp; &lt;80ms Latency</h3>
+                    <p>Production-grade WebSocket streaming and optimized PostgreSQL telemetry architectures maintaining sub-100ms API speeds.</p>
+                </div>
+
+                <div class="milestone-card" data-category="milestone" data-title="ai lead intelligence pipeline revenue">
+                    <span class="milestone-badge-top"><i class="fas fa-chart-line"></i> Impact</span>
+                    <h3>$128k+ Pipeline Generated</h3>
+                    <p>Autonomous AI lead intelligence agents delivering measurable +15.7% to +22.4% conversion and revenue lift.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Story -->
+        <section class="featured-story-wrap" id="featuredSection">
+            <div class="featured-card" onclick="openArticleModal('rag-deep-dive')">
+                <div class="featured-thumb-wrap">
+                    <img src="assets/private-rag-ai-assistant.png" alt="Private RAG AI Assistant Architecture Breakdown" loading="lazy">
+                </div>
+                <div class="featured-content">
+                    <div class="story-meta">
+                        <span class="story-pill">Featured Technical Essay</span>
+                        <span class="story-time"><i class="fas fa-clock"></i> 6 min read</span>
+                        <span class="story-time"><i class="fas fa-calendar-alt"></i> August 2026</span>
+                    </div>
+                    <h2 class="featured-title">Building Private RAG Systems for Enterprise: Sub-Second Latency with 100% Data Confidentiality</h2>
+                    <p class="featured-desc">
+                        A detailed engineering breakdown of how we indexed 100k+ multi-format enterprise documents (PDF, DOCX, CSV) using FastAPI, LangChain, and Pgvector with strict GDPR compliance and zero public model leakage.
+                    </p>
+                    <div class="tags-row">
+                        <span class="tag-bubble">Python</span>
+                        <span class="tag-bubble">FastAPI</span>
+                        <span class="tag-bubble">Pgvector</span>
+                        <span class="tag-bubble">LangChain</span>
+                        <span class="tag-bubble">GDPR</span>
+                    </div>
+                    <div>
+                        <span class="cta-button" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+                            Read Full Breakdown <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section id="articlesSection">
+            <div class="section-header-inline">
+                <div>
+                    <div class="section-tag-small"><i class="fas fa-code"></i> Engineering Library</div>
+                    <h2 style="font-size: 1.6rem; color: #fff; margin-top: 0.3rem;">All Articles &amp; Case Breakdowns</h2>
+                </div>
+            </div>
+
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Article 1 -->
+                <article class="article-card" data-category="web" data-title="scaling multi-tenant saas dashboards real-time telemetry next.js 15 postgresql" onclick="openArticleModal('saas-architecture')">
+                    <div class="article-thumb">
+                        <img src="assets/saas-analytics-platform.png" alt="SaaS Analytics Platform Architecture" loading="lazy">
+                        <span class="article-thumb-badge">Web Architecture</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 5 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> Recent</span>
+                        </div>
+                        <h3 class="article-title">Scaling Multi-Tenant SaaS Dashboards with Real-Time Telemetry</h3>
+                        <p class="article-snippet">
+                            How we architected a high-throughput telemetry engine capable of tracking 24.8k active users, live revenue metrics, and geographical traffic with instant UI reactivity.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">Next.js 15</span>
+                            <span class="tag-bubble">TypeScript</span>
+                            <span class="tag-bubble">PostgreSQL</span>
+                            <span class="tag-bubble">Recharts</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card" data-category="growth" data-title="autonomous ai sales agents production outreach conversion crm" onclick="openArticleModal('sales-agent')">
+                    <div class="article-thumb">
+                        <img src="assets/ecommerce-ai-sales-agent.jpg" alt="Autonomous AI Sales Agent Architecture" loading="lazy">
+                        <span class="article-thumb-badge">Case Studies &amp; Growth</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 4 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> Recent</span>
+                        </div>
+                        <h3 class="article-title">Autonomous AI Sales Agents in Production: Converting Leads 24/7</h3>
+                        <p class="article-snippet">
+                            Designing and deploying intelligent multi-stage sales agents that automate lead enrichment, calendar scheduling, and global map discovery without generic robotic answers.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">OpenAI API</span>
+                            <span class="tag-bubble">Redis</span>
+                            <span class="tag-bubble">Webhooks</span>
+                            <span class="tag-bubble">Python</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card" data-category="ai" data-title="gdpr compliant ai architecture privacy by design european businesses" onclick="openArticleModal('gdpr-ai')">
+                    <div class="article-thumb">
+                        <img src="assets/private-rag-ai-assistant.jpg" alt="GDPR Compliant AI Architecture" loading="lazy">
+                        <span class="article-thumb-badge">AI &amp; RAG Engineering</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 7 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> Insights</span>
+                        </div>
+                        <h3 class="article-title">GDPR-Compliant AI Architecture: Privacy by Design for Ambitious Companies</h3>
+                        <p class="article-snippet">
+                            A complete compliance guide to Article 25 EU GDPR data residency, tenant vector isolation, zero-retention LLM inference, and verifiable audit logging.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">GDPR</span>
+                            <span class="tag-bubble">Data Security</span>
+                            <span class="tag-bubble">Private Cloud</span>
+                            <span class="tag-bubble">AI Auditing</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card" data-category="growth" data-title="direct 1-on-1 senior engineering vs traditional agencies delivery velocity" onclick="openArticleModal('direct-engineering')">
+                    <div class="article-thumb">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Direct 1-on-1 Senior Engineering Model" loading="lazy">
+                        <span class="article-thumb-badge">Engineering Practices</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 4 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> Strategy</span>
+                        </div>
+                        <h3 class="article-title">Why 1-on-1 Senior Engineering Outperforms Traditional Agencies</h3>
+                        <p class="article-snippet">
+                            Cutting through junior handoffs, bloated management tiers, and endless sync meetings to ship production software 3x faster with direct senior expertise.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">Agile</span>
+                            <span class="tag-bubble">Async Delivery</span>
+                            <span class="tag-bubble">Senior Dev</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card" data-category="ai" data-title="vector embeddings at scale qdrant vs pgvector document search" onclick="openArticleModal('vector-db')">
+                    <div class="article-thumb">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Vector DB Comparison" loading="lazy">
+                        <span class="article-thumb-badge">AI &amp; RAG Engineering</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 6 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> Deep-Dive</span>
+                        </div>
+                        <h3 class="article-title">Vector DBs at Scale: Benchmarking Qdrant vs Pgvector</h3>
+                        <p class="article-snippet">
+                            A real-world benchmark evaluating indexing overhead, memory footprints, query latency, and operational complexity when scaling past 1 million embeddings.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">Pgvector</span>
+                            <span class="tag-bubble">Qdrant</span>
+                            <span class="tag-bubble">Embeddings</span>
+                            <span class="tag-bubble">HNSW Index</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card" data-category="web" data-title="zero downtime rolling deployments docker kubernetes aws" onclick="openArticleModal('devops-uptime')">
+                    <div class="article-thumb">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Cloud & DevOps Deployments" loading="lazy">
+                        <span class="article-thumb-badge">Web Architecture</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="story-meta">
+                            <span class="story-time"><i class="fas fa-clock"></i> 5 min read</span>
+                            <span class="story-time"><i class="fas fa-calendar-alt"></i> DevOps</span>
+                        </div>
+                        <h3 class="article-title">Architecting 99.9% Uptime with Zero-Downtime Rolling Deploys</h3>
+                        <p class="article-snippet">
+                            Step-by-step implementation of containerized health checks, automated GitHub Actions CI/CD pipelines, and automated database schema migrations.
+                        </p>
+                        <div class="tags-row" style="margin-bottom: 1rem;">
+                            <span class="tag-bubble">Docker</span>
+                            <span class="tag-bubble">CI/CD</span>
+                            <span class="tag-bubble">AWS ECS</span>
+                            <span class="tag-bubble">PostgreSQL</span>
+                        </div>
+                        <div class="article-footer">
+                            <div class="author-box">
+                                <div class="author-avatar">S</div>
+                                <span class="author-name">Sourabh Sharma</span>
+                            </div>
+                            <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Newsletter / Direct Engagement Banner -->
+        <section class="cta-banner">
+            <div class="blog-badge" style="margin-bottom: 0.8rem;">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>DIRECT CONSULTATION</span>
+            </div>
+            <h2>Have a Complex AI or Web Platform to Build?</h2>
+            <p>
+                Get direct access to senior full-stack &amp; AI engineering. We deliver production systems with rapid velocity, GDPR compliance, and guaranteed SLAs.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html#contact" class="cta-button" style="padding: 0.85rem 2.2rem; font-size: 1.05rem;">
+                    <i class="fas fa-calendar-alt"></i> Book a Free Strategy Call
+                </a>
+                <a href="index.html#portfolio" class="cta-button" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-glow); padding: 0.85rem 2.2rem; font-size: 1.05rem;">
+                    <i class="fas fa-laptop-code"></i> Explore Case Studies
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Article Reader Modal -->
+    <div class="reader-modal" id="readerModal" onclick="if(event.target===this) closeArticleModal()">
+        <div class="reader-container">
+            <button class="reader-close" onclick="closeArticleModal()">&times;</button>
+            <div id="readerContent" class="reader-content">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                    <svg class="logo-mark" viewBox="0 0 100 100" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="44,12 55,17 51,30 40,26" fill="url(#navTopPiece)" />
+                        <polygon points="40,36 69,31 70,44 22,49" fill="url(#navMidPiece)" />
+                        <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#navBotPiece)" />
+                    </svg>
+                    <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+                </a>
+                <p>
+                    Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems for ambitious teams worldwide.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#tech-stack">Tech Stack</a></li>
+                    <li><a href="index.html#portfolio">Case Studies</a></li>
+                    <li><a href="blog.html">Blog &amp; Achievements</a></li>
+                    <li><a href="index.html#engagement">Engagement</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Web &amp; SaaS Engineering</a></li>
+                    <li><a href="index.html#services">Private Data AI &amp; RAG</a></li>
+                    <li><a href="index.html#services">Autonomous Chatbots</a></li>
+                    <li><a href="index.html#services">Fractional Tech Advisory</a></li>
+                    <li><a href="index.html#services">Cloud &amp; DevOps</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Direct Contact</h4>
+                <ul>
+                    <li><a href="mailto:ilikaris.tech@gmail.com"><i class="fas fa-envelope" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> ilikaris.tech@gmail.com</a></li>
+                    <li><a href="tel:+919521124440"><i class="fas fa-phone-alt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> +91 (952) 112-4440</a></li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> Bengaluru, India (Remote &amp; Worldwide)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <p>&copy; 2026 iLikaris. All rights reserved. Engineering excellence with privacy &amp; speed.</p>
+                <p style="margin-top: 0.3rem; font-size: 0.8rem;">
+                    <span style="color: var(--accent-teal);">🔒 GDPR Compliant</span> &nbsp;&middot;&nbsp;
+                    Privacy-First AI &nbsp;&middot;&nbsp;
+                    Timezone-Flexible for EU &amp; North America
+                </p>
+            </div>
+            <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
+                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Search & Filtering Logic -->
+    <script>
+        // Article Data for Reader Modal
+        const articlesDatabase = {
+            'rag-deep-dive': {
+                title: "Building Private RAG Systems for Enterprise: Sub-Second Latency with 100% Data Confidentiality",
+                meta: "6 min read · August 2026 · AI Engineering",
+                content: `
+                    <h2>Architectural Blueprint: Private Retrieval Augmented Generation</h2>
+                    <p>Enterprise data is proprietary. Companies cannot simply send sensitive internal schematics, financial disclosures, or customer records to public LLMs without risking IP disclosure and violating EU GDPR standards.</p>
+                    
+                    <h3>1. Pipeline Architecture</h3>
+                    <p>We built a multi-stage document ingestion pipeline using Python FastAPI and LangChain. Incoming documents (PDF, DOCX, TXT, CSV) are parsed, sanitized, split using recursive chunking with 15% overlap, and transformed into dense vector representations.</p>
+
+                    <div class="reader-code-box">
+# Vector Ingestion & Semantic Chunking
+embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
+vector_store = PGVector(
+    connection_string=DATABASE_URL,
+    embedding_function=embeddings,
+    collection_name="enterprise_knowledge_vault",
+    distance_strategy=DistanceStrategy.COSINE
+)
+                    </div>
+
+                    <h3>2. Sub-Second Query Execution</h3>
+                    <p>By leveraging HNSW (Hierarchical Navigable Small World) indexing in PostgreSQL with Pgvector, vector similarity lookups execute in &lt; 40ms. Filtered context is passed to private self-hosted or tenant-isolated LLM endpoints.</p>
+
+                    <h3>3. Key Results</h3>
+                    <ul>
+                        <li><strong>100% Data Residency:</strong> Fully compliant with GDPR Article 25 (Privacy by Design).</li>
+                        <li><strong>1.23s Average Query Latency:</strong> Real-time response with cited document page numbers.</li>
+                        <li><strong>Zero Hallucination Guardrails:</strong> Automatic fallback to verified sources only.</li>
+                    </ul>
+                `
+            },
+            'saas-architecture': {
+                title: "Scaling Multi-Tenant SaaS Dashboards with Real-Time Telemetry",
+                meta: "5 min read · Web Architecture",
+                content: `
+                    <h2>High-Throughput Analytics with Next.js 15 & PostgreSQL</h2>
+                    <p>Modern SaaS applications require high-density data visualizations with instantaneous filtering and live updates. Storing time-series metrics alongside relational user records requires careful partitioning and caching.</p>
+                    
+                    <h3>1. Incremental Static Regeneration & Server Components</h3>
+                    <p>Using React Server Components (RSC) and streaming SSR, heavy metric aggregations are pre-computed on edge servers while user interaction widgets hydrate instantly.</p>
+
+                    <h3>2. Database Partitioning Strategy</h3>
+                    <p>Telemetry tables are range-partitioned by timestamp (weekly partitions) with automated rollups. This maintains &lt; 80ms API latency even with millions of event logs.</p>
+                `
+            },
+            'sales-agent': {
+                title: "Autonomous AI Sales Agents in Production: Converting Leads 24/7",
+                meta: "4 min read · Case Studies & Growth",
+                content: `
+                    <h2>Automating the Outreach-to-Meeting Pipeline</h2>
+                    <p>Traditional static forms suffer from high drop-off rates. An interactive AI Sales Agent bridges the gap by qualifying visitor intent in real time, answering technical questions, and booking strategy calls directly into the founder's calendar.</p>
+                    
+                    <h3>1. Multi-Stage Pipeline Tracking</h3>
+                    <p>Leads are categorized through 6 lifecycle stages: New Lead &rarr; Contacted &rarr; Qualified &rarr; Proposal &rarr; Negotiation &rarr; Closed Won. Over $128,690 in pipeline value was generated within the first 60 days of deployment.</p>
+                `
+            },
+            'gdpr-ai': {
+                title: "GDPR-Compliant AI Architecture: Privacy by Design for European Businesses",
+                meta: "7 min read · AI & Compliance",
+                content: `
+                    <h2>Building European-Compliant Intelligent Systems</h2>
+                    <p>Operating AI software in Europe requires compliance with GDPR, the EU AI Act, and data sovereignty laws. We outline our standard architecture for private vector stores, encrypted tenant segregation, and verifiable audit logging.</p>
+                `
+            },
+            'direct-engineering': {
+                title: "Why 1-on-1 Senior Engineering Outperforms Traditional Agencies",
+                meta: "4 min read · Engineering Practices",
+                content: `
+                    <h2>Speed, Accountability & Direct Technical Dialogue</h2>
+                    <p>Traditional software agencies often assign project managers and junior developers to client work, resulting in miscommunication and wasted budget. Working directly with a Senior Engineer ensures every line of code is production-ready from day one.</p>
+                `
+            },
+            'vector-db': {
+                title: "Vector DBs at Scale: Benchmarking Qdrant vs Pgvector",
+                meta: "6 min read · AI Research",
+                content: `
+                    <h2>Choosing the Right Vector Database for Production RAG</h2>
+                    <p>We benchmarked search latency, index creation times, and memory footprints between standalone vector engines (Qdrant) and integrated relational extensions (Pgvector) across 1M+ embedding vectors.</p>
+                `
+            },
+            'devops-uptime': {
+                title: "Architecting 99.9% Uptime with Zero-Downtime Rolling Deploys",
+                meta: "5 min read · DevOps & Cloud",
+                content: `
+                    <h2>Resilient Cloud Deployments on AWS & Docker</h2>
+                    <p>A comprehensive walkthrough of blue-green deployments, automated database migrations, health checks, and 24/7 automated telemetry monitoring for enterprise stability.</p>
+                `
+            }
+        };
+
+        // Modal Open / Close
+        function openArticleModal(articleId) {
+            const data = articlesDatabase[articleId];
+            if (!data) return;
+            const modal = document.getElementById('readerModal');
+            const content = document.getElementById('readerContent');
+            content.innerHTML = `
+                <div class="story-meta" style="margin-bottom: 0.8rem;">
+                    <span class="story-pill">${data.meta}</span>
+                </div>
+                ${data.content}
+                <div style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <a href="index.html#contact" class="cta-button" onclick="closeArticleModal()"><i class="fas fa-calendar-check"></i> Discuss Your Project</a>
+                    <button class="cta-button" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-subtle);" onclick="closeArticleModal()">Close Article</button>
+                </div>
+            `;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('readerModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Category Filtering
+        function filterBlogCategory(category, btn) {
+            document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const articles = document.querySelectorAll('.article-card');
+            const milestonesSection = document.getElementById('milestonesSection');
+            const featuredSection = document.getElementById('featuredSection');
+
+            // Hide/show milestones section if filtering specifically
+            if (category === 'milestone') {
+                milestonesSection.style.display = 'block';
+                featuredSection.style.display = 'none';
+            } else if (category === 'all') {
+                milestonesSection.style.display = 'block';
+                featuredSection.style.display = 'block';
+            } else {
+                milestonesSection.style.display = 'none';
+                featuredSection.style.display = category === 'ai' ? 'block' : 'none';
+            }
+
+            articles.forEach(art => {
+                const artCat = art.getAttribute('data-category');
+                if (category === 'all' || artCat === category) {
+                    art.style.display = 'flex';
+                } else {
+                    art.style.display = 'none';
+                }
+            });
+        }
+
+        // Real-Time Search Filtering
+        function handleBlogSearch() {
+            const query = document.getElementById('blogSearch').value.toLowerCase().trim();
+            const articles = document.querySelectorAll('.article-card');
+            const milestoneCards = document.querySelectorAll('.milestone-card');
+
+            articles.forEach(art => {
+                const title = art.getAttribute('data-title') || '';
+                const text = art.innerText.toLowerCase();
+                if (!query || title.includes(query) || text.includes(query)) {
+                    art.style.display = 'flex';
+                } else {
+                    art.style.display = 'none';
+                }
+            });
+
+            milestoneCards.forEach(card => {
+                const title = card.getAttribute('data-title') || '';
+                const text = card.innerText.toLowerCase();
+                if (!query || title.includes(query) || text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        // Header Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 40) {
+                header.style.padding = '0.75rem 5%';
+                header.style.background = 'rgba(6, 8, 24, 0.95)';
+            } else {
+                header.style.padding = '1.1rem 5%';
+                header.style.background = 'rgba(6, 8, 24, 0.85)';
+            }
+        });
+    </script>
+</body>
+
+</html>
