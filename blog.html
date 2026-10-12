@@ -4,36 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Blog & Achievements | iLikaris — Engineering Insights, AI Research & Milestones</title>
     <meta name="description"
         content="Technical essays, architectural breakdowns, production benchmarks, and company milestones from Senior Full-Stack & AI Engineer iLikaris.">
     <meta name="keywords"
         content="iLikaris blog, AI engineering articles, private RAG architecture, Next.js 15 performance, SaaS analytics engineering, GDPR compliant AI insights">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="canonical" href="https://ilikaris.tech/blog.html">
 
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Blog & Achievements | iLikaris — Engineering Insights & Milestones">
+    <meta property="og:type" content="blog">
+    <meta property="og:site_name" content="iLikaris">
+    <meta property="og:title" content="Blog &amp; Achievements | iLikaris — Engineering Insights &amp; Milestones">
     <meta property="og:description"
-        content="Deep-dive technical essays, production benchmarks, and company achievements from Senior Full-Stack & AI Engineer iLikaris.">
+        content="Deep-dive technical essays, production benchmarks, and company achievements from Senior Full-Stack &amp; AI Engineer iLikaris.">
     <meta property="og:url" content="https://ilikaris.tech/blog.html">
-    <meta property="og:image" content="https://ilikaris.tech/assets/private-rag-ai-assistant.jpg">
+    <meta property="og:image" content="https://ilikaris.tech/og-image.png">
+    <meta property="og:image:secure_url" content="https://ilikaris.tech/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="iLikaris Engineering Blog &amp; Insights">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog & Achievements | iLikaris">
+    <meta name="twitter:title" content="Blog &amp; Achievements | iLikaris">
     <meta name="twitter:description"
         content="Technical essays, production AI benchmarks, and engineering milestones.">
+    <meta name="twitter:image" content="https://ilikaris.tech/og-image.png">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Master Stylesheet (Modular & Cacheable) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JSON-LD Blog & Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Blog",
+                "@id": "https://ilikaris.tech/blog.html",
+                "url": "https://ilikaris.tech/blog.html",
+                "name": "iLikaris Engineering Blog & Technical Insights",
+                "description": "Deep-dive technical essays, architectural benchmarks, and production AI engineering breakdowns.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "iLikaris",
+                    "url": "https://ilikaris.tech"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://ilikaris.tech/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog & Achievements",
+                        "item": "https://ilikaris.tech/blog.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -1117,26 +1167,43 @@
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .mobile-menu-toggle,
+            .mobile-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: rgba(0, 207, 255, 0.08);
+                border: 1px solid rgba(0, 207, 255, 0.25);
+                color: var(--accent-cyan);
+                font-size: 1.2rem;
+                cursor: pointer;
             }
 
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
-                max-width: 320px;
+                width: 86%;
+                max-width: 340px;
                 height: 100vh;
-                background: rgba(6, 8, 24, 0.98);
-                backdrop-filter: blur(20px);
+                height: 100dvh;
+                background: rgba(6, 9, 26, 0.97);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
-                justify-content: center;
-                gap: 1.8rem;
-                padding: 2rem;
-                transition: right 0.4s ease;
-                border-left: 1px solid var(--border-subtle);
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0.35rem;
+                padding: 5rem 1.5rem 2.5rem;
+                transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                border-left: 1px solid rgba(0, 207, 255, 0.2);
+                box-shadow: -15px 0 45px rgba(0, 0, 0, 0.85);
                 z-index: 2000;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links.active {
@@ -1276,7 +1343,7 @@
             <div class="blog-controls">
                 <div class="search-box-wrap">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="blogSearch" class="search-input" placeholder="Search essays, technologies, or achievements..." oninput="handleBlogSearch()">
+                    <input type="text" id="blogSearch" class="search-input" placeholder="Search essays, technologies, or achievements..." aria-label="Search essays, technologies, or achievements" oninput="handleBlogSearch()">
                 </div>
                 <div class="category-tabs">
                     <button class="cat-tab active" onclick="filterBlogCategory('all', this)"><i class="fas fa-layer-group"></i> All Posts</button>
@@ -1328,7 +1395,7 @@
         <section class="featured-story-wrap" id="featuredSection">
             <div class="featured-card" onclick="openArticleModal('rag-deep-dive')">
                 <div class="featured-thumb-wrap">
-                    <img src="assets/private-rag-ai-assistant.png" alt="Private RAG AI Assistant Architecture Breakdown" loading="lazy">
+                    <img src="assets/private-rag-ai-assistant.webp" alt="Private RAG AI Assistant Architecture Breakdown" width="1024" height="682" loading="lazy">
                 </div>
                 <div class="featured-content">
                     <div class="story-meta">
@@ -1369,7 +1436,7 @@
                 <!-- Article 1 -->
                 <article class="article-card" data-category="web" data-title="scaling multi-tenant saas dashboards real-time telemetry next.js 15 postgresql" onclick="openArticleModal('saas-architecture')">
                     <div class="article-thumb">
-                        <img src="assets/saas-analytics-platform.png" alt="SaaS Analytics Platform Architecture" loading="lazy">
+                        <img src="assets/saas-analytics-platform.webp" alt="SaaS Analytics Platform Architecture" width="1024" height="682" loading="lazy">
                         <span class="article-thumb-badge">Web Architecture</span>
                     </div>
                     <div class="article-body">
@@ -1389,7 +1456,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1400,7 +1467,7 @@
                 <!-- Article 2 -->
                 <article class="article-card" data-category="growth" data-title="autonomous ai sales agents production outreach conversion crm" onclick="openArticleModal('sales-agent')">
                     <div class="article-thumb">
-                        <img src="assets/ecommerce-ai-sales-agent.jpg" alt="Autonomous AI Sales Agent Architecture" loading="lazy">
+                        <img src="assets/ecommerce-ai-sales-agent.webp" alt="Autonomous AI Sales Agent Architecture" width="1024" height="682" loading="lazy">
                         <span class="article-thumb-badge">Case Studies &amp; Growth</span>
                     </div>
                     <div class="article-body">
@@ -1420,7 +1487,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1431,7 +1498,7 @@
                 <!-- Article 3 -->
                 <article class="article-card" data-category="ai" data-title="gdpr compliant ai architecture privacy by design european businesses" onclick="openArticleModal('gdpr-ai')">
                     <div class="article-thumb">
-                        <img src="assets/private-rag-ai-assistant.jpg" alt="GDPR Compliant AI Architecture" loading="lazy">
+                        <img src="assets/private-rag-ai-assistant.webp" alt="GDPR Compliant AI Architecture" width="1024" height="682" loading="lazy">
                         <span class="article-thumb-badge">AI &amp; RAG Engineering</span>
                     </div>
                     <div class="article-body">
@@ -1451,7 +1518,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1481,7 +1548,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1512,7 +1579,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1543,7 +1610,7 @@
                         </div>
                         <div class="article-footer">
                             <div class="author-box">
-                                <img src="assets/sourabh-sharma.jpg" class="author-avatar" alt="Sourabh Sharma">
+                                <img src="assets/sourabh-sharma.webp" class="author-avatar" alt="Sourabh Sharma" width="40" height="40">
                                 <span class="author-name">Sourabh Sharma</span>
                             </div>
                             <span class="read-cta">Read Article <i class="fas fa-chevron-right"></i></span>
@@ -1575,9 +1642,9 @@
     </main>
 
     <!-- Interactive Article Reader Modal -->
-    <div class="reader-modal" id="readerModal" onclick="if(event.target===this) closeArticleModal()">
+    <div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-label="Technical Essay Reader" onclick="if(event.target===this) closeArticleModal()">
         <div class="reader-container">
-            <button class="reader-close" onclick="closeArticleModal()">&times;</button>
+            <button class="reader-close" onclick="closeArticleModal()" aria-label="Close article reader dialog">&times;</button>
             <div id="readerContent" class="reader-content">
                 <!-- Injected via JavaScript -->
             </div>
@@ -1600,9 +1667,9 @@
                     Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems for ambitious teams worldwide.
                 </p>
                 <div class="footer-socials">
-                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1651,9 +1718,9 @@
                 </p>
             </div>
             <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="privacy.html#cookies" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
             </div>
         </div>
     </footer>
@@ -1775,9 +1842,30 @@ vector_store = PGVector(
 
         function closeArticleModal() {
             const modal = document.getElementById('readerModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
         }
+
+        // Keyboard Escape key to close modal
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeArticleModal();
+            }
+        });
+
+        // Keyboard accessibility (Tab + Enter) for article cards
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.article-card, .featured-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+        });
 
         // Category Filtering
         function filterBlogCategory(category, btn) {
@@ -1836,25 +1924,10 @@ vector_store = PGVector(
                 }
             });
         }
-
-        // Mobile Menu
-        function toggleMobileMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
-
-        // Header Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (header) {
-                if (window.scrollY > 40) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            }
-        });
     </script>
+
+    <!-- Core Platform Application JS (Modular OOP) -->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

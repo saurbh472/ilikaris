@@ -4,30 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Leadership | iLikaris — Senior Engineering &amp; Architecture</title>
     <meta name="description"
         content="Meet Sourabh Sharma, Founder and Principal Full-Stack & AI Engineer at iLikaris. Discover our technical philosophy, track record, and direct engineering commitments.">
     <meta name="keywords"
         content="iLikaris leadership, Sourabh Sharma, principal AI engineer, senior full-stack consultant, RAG architect, software consulting leadership">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="canonical" href="https://ilikaris.tech/leadership.html">
 
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="iLikaris">
     <meta property="og:title" content="Leadership | iLikaris — Principal Engineering Practice">
     <meta property="og:description"
-        content="Meet Sourabh Sharma, Founder & Principal AI/Web Engineer. Direct 1-on-1 senior technical partnership for ambitious companies.">
+        content="Meet Sourabh Sharma, Founder &amp; Principal AI/Web Engineer. Direct 1-on-1 senior technical partnership for ambitious companies.">
     <meta property="og:url" content="https://ilikaris.tech/leadership.html">
-    <meta property="og:image" content="https://ilikaris.tech/assets/private-rag-ai-assistant.jpg">
+    <meta property="og:image" content="https://ilikaris.tech/assets/sourabh-sharma.webp">
+    <meta property="og:image:secure_url" content="https://ilikaris.tech/assets/sourabh-sharma.webp">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="682">
+    <meta property="og:image:alt" content="Sourabh Sharma — Founder &amp; Principal AI Engineer at iLikaris">
 
-    <!-- Google Fonts -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leadership | iLikaris — Principal Engineering Practice">
+    <meta name="twitter:description"
+        content="Meet Sourabh Sharma, Founder &amp; Principal AI/Web Engineer. Direct 1-on-1 senior technical partnership.">
+    <meta name="twitter:image" content="https://ilikaris.tech/assets/sourabh-sharma.webp">
+
+    <!-- Google Fonts & Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Master Stylesheet (Modular & Cacheable) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JSON-LD Profile & Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfilePage",
+                "@id": "https://ilikaris.tech/leadership.html",
+                "url": "https://ilikaris.tech/leadership.html",
+                "name": "Leadership | Sourabh Sharma — iLikaris",
+                "mainEntity": {
+                    "@type": "Person",
+                    "@id": "https://ilikaris.tech/#sourabh-sharma",
+                    "name": "Sourabh Sharma",
+                    "jobTitle": "Founder & Principal Full-Stack/AI Engineer",
+                    "image": "https://ilikaris.tech/assets/sourabh-sharma.webp",
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "iLikaris",
+                        "url": "https://ilikaris.tech"
+                    },
+                    "email": "ilikaris.tech@gmail.com",
+                    "knowsAbout": [
+                        "Artificial Intelligence",
+                        "Retrieval-Augmented Generation (RAG)",
+                        "Large Language Models",
+                        "Next.js Architecture",
+                        "Python FastAPI",
+                        "PostgreSQL High Performance",
+                        "GDPR Compliance"
+                    ]
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://ilikaris.tech/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Leadership",
+                        "item": "https://ilikaris.tech/leadership.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -822,26 +894,43 @@
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .mobile-menu-toggle,
+            .mobile-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: rgba(0, 207, 255, 0.08);
+                border: 1px solid rgba(0, 207, 255, 0.25);
+                color: var(--accent-cyan);
+                font-size: 1.2rem;
+                cursor: pointer;
             }
 
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
-                max-width: 320px;
+                width: 86%;
+                max-width: 340px;
                 height: 100vh;
-                background: rgba(6, 8, 24, 0.98);
-                backdrop-filter: blur(20px);
+                height: 100dvh;
+                background: rgba(6, 9, 26, 0.97);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
-                justify-content: center;
-                gap: 1.6rem;
-                padding: 2rem;
-                transition: right 0.4s ease;
-                border-left: 1px solid var(--border-subtle);
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0.35rem;
+                padding: 5rem 1.5rem 2.5rem;
+                transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                border-left: 1px solid rgba(0, 207, 255, 0.2);
+                box-shadow: -15px 0 45px rgba(0, 0, 0, 0.85);
                 z-index: 2000;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links.active {
@@ -998,7 +1087,7 @@
             <div class="leader-avatar-side">
                 <div class="avatar-glow-wrap">
                     <div class="avatar-img-inner">
-                        <img src="assets/sourabh-sharma.jpg" alt="Sourabh Sharma — Founder &amp; Principal Full-Stack / AI Engineer at iLikaris" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+                        <img src="assets/sourabh-sharma.webp" alt="Sourabh Sharma — Founder &amp; Principal Full-Stack / AI Engineer at iLikaris" width="914" height="1024" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
                     </div>
                 </div>
                 <h3 class="leader-name">Sourabh Sharma</h3>
@@ -1007,8 +1096,8 @@
                     <span style="color: var(--text-secondary); font-size: 0.84rem; font-weight: 500;">Principal Full-Stack &amp; AI Architect</span>
                 </div>
                 <div class="leader-socials-row">
-                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1167,9 +1256,9 @@
                     Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems for ambitious teams worldwide.
                 </p>
                 <div class="footer-socials">
-                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1218,31 +1307,15 @@
                 </p>
             </div>
             <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="privacy.html#cookies" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
             </div>
         </div>
     </footer>
 
-    <!-- Header Scroll & Mobile Script -->
-    <script>
-        function toggleMobileMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
-
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (header) {
-                if (window.scrollY > 40) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            }
-        });
-    </script>
+    <!-- Core Platform Application JS (Modular OOP) -->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

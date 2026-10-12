@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage / Primary Hub -->
+    <url>
+        <loc>https://ilikaris.tech/</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/" />
+        <xhtml:link rel="alternate" hreflang="en-us" href="https://ilikaris.tech/" />
+        <xhtml:link rel="alternate" hreflang="en-gb" href="https://ilikaris.tech/" />
+        <xhtml:link rel="alternate" hreflang="en-ca" href="https://ilikaris.tech/" />
+        <image:image>
+            <image:loc>https://ilikaris.tech/og-image.png</image:loc>
+            <image:title>iLikaris | Senior Full-Stack Web &amp; Private AI Engineer</image:title>
+            <image:caption>Direct 1-on-1 senior software engineering and GDPR-compliant private AI for USA, UK, Canada &amp; Europe</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Why Choose Us / Value Proposition & Agency Alternative -->
+    <url>
+        <loc>https://ilikaris.tech/why-choose-us.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/why-choose-us.html" />
+    </url>
+
+    <!-- Technical Blog & AI Engineering Insights -->
+    <url>
+        <loc>https://ilikaris.tech/blog.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/blog.html" />
+    </url>
+
+    <!-- About Company & Engineering Philosophy -->
+    <url>
+        <loc>https://ilikaris.tech/about.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/about.html" />
+    </url>
+
+    <!-- Leadership / Founder Authority (Sourabh Sharma) -->
+    <url>
+        <loc>https://ilikaris.tech/leadership.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/leadership.html" />
+    </url>
+
+    <!-- Privacy Policy & GDPR Compliance -->
+    <url>
+        <loc>https://ilikaris.tech/privacy.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/privacy.html" />
+    </url>
+
+    <!-- Terms of Service & Engagement Terms -->
+    <url>
+        <loc>https://ilikaris.tech/terms.html</loc>
+        <lastmod>2026-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ilikaris.tech/terms.html" />
+    </url>
+
+</urlset>

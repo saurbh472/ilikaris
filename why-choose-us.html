@@ -4,30 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Why Choose Us | iLikaris — Direct Senior Engineering vs Agency Model</title>
     <meta name="description"
         content="Discover the iLikaris advantage: Direct 1-on-1 Senior Engineering, GDPR-compliant private AI, 99.9% uptime SLAs, and rapid async velocity compared to traditional software agencies.">
     <meta name="keywords"
         content="Why choose iLikaris, software agency alternative, senior engineer vs agency, private AI development, direct engineering consultant">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="canonical" href="https://ilikaris.tech/why-choose-us.html">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="iLikaris">
     <meta property="og:title" content="Why Choose Us | iLikaris — Senior Engineering vs Agency Model">
     <meta property="og:description"
         content="Compare iLikaris vs traditional software agencies. Direct senior engineering, zero junior handoffs, GDPR privacy, and guaranteed 99.9% SLAs.">
     <meta property="og:url" content="https://ilikaris.tech/why-choose-us.html">
-    <meta property="og:image" content="https://ilikaris.tech/assets/private-rag-ai-assistant.jpg">
+    <meta property="og:image" content="https://ilikaris.tech/og-image.png">
+    <meta property="og:image:secure_url" content="https://ilikaris.tech/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Why Choose iLikaris — Direct Senior Engineering">
 
-    <!-- Google Fonts -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Choose Us | iLikaris — Senior Engineering vs Agency Model">
+    <meta name="twitter:description"
+        content="Compare iLikaris vs traditional software agencies. Direct senior engineering, zero junior handoffs, and GDPR-compliant private AI.">
+    <meta name="twitter:image" content="https://ilikaris.tech/og-image.png">
+
+    <!-- Google Fonts & Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Master Stylesheet (Modular & Cacheable) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JSON-LD Breadcrumb & WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://ilikaris.tech/why-choose-us.html",
+                "url": "https://ilikaris.tech/why-choose-us.html",
+                "name": "Why Choose Us | iLikaris — Direct Senior Engineering vs Agency Model",
+                "description": "Comprehensive comparison between iLikaris direct senior engineering and traditional agencies.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "url": "https://ilikaris.tech",
+                    "name": "iLikaris"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://ilikaris.tech/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Why Choose Us",
+                        "item": "https://ilikaris.tech/why-choose-us.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -727,26 +783,43 @@
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .mobile-menu-toggle,
+            .mobile-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: rgba(0, 207, 255, 0.08);
+                border: 1px solid rgba(0, 207, 255, 0.25);
+                color: var(--accent-cyan);
+                font-size: 1.2rem;
+                cursor: pointer;
             }
 
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
-                max-width: 320px;
+                width: 86%;
+                max-width: 340px;
                 height: 100vh;
-                background: rgba(6, 8, 24, 0.98);
-                backdrop-filter: blur(20px);
+                height: 100dvh;
+                background: rgba(6, 9, 26, 0.97);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
-                justify-content: center;
-                gap: 1.6rem;
-                padding: 2rem;
-                transition: right 0.4s ease;
-                border-left: 1px solid var(--border-subtle);
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0.35rem;
+                padding: 5rem 1.5rem 2.5rem;
+                transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                border-left: 1px solid rgba(0, 207, 255, 0.2);
+                box-shadow: -15px 0 45px rgba(0, 0, 0, 0.85);
                 z-index: 2000;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links.active {
@@ -1116,9 +1189,9 @@
                     Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems for ambitious teams worldwide.
                 </p>
                 <div class="footer-socials">
-                    <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1167,31 +1240,15 @@
                 </p>
             </div>
             <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
-                <a href="#" onclick="return false;" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="privacy.html#cookies" style="color: var(--text-muted); text-decoration: none;">Cookie Policy</a>
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
             </div>
         </div>
     </footer>
 
-    <!-- Header Scroll & Mobile Script -->
-    <script>
-        function toggleMobileMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
-
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (header) {
-                if (window.scrollY > 40) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            }
-        });
-    </script>
+    <!-- Core Platform Application JS (Modular OOP) -->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

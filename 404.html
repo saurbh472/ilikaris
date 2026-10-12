@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>404 — Page Not Found | iLikaris</title>
+    <meta name="description" content="The page you are looking for does not exist or has been moved. Return to iLikaris homepage.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: var(--bg-primary); color: var(--text-primary);">
+    <div style="max-width: 600px; width: 100%; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 3.5rem 2rem; box-shadow: var(--shadow-card); backdrop-filter: blur(20px);">
+        <div style="margin-bottom: 1.5rem;">
+            <svg viewBox="0 0 100 100" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="errTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f2fe" />
+                        <stop offset="100%" stop-color="#0066ff" />
+                    </linearGradient>
+                    <linearGradient id="errMid" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00a2ff" />
+                        <stop offset="100%" stop-color="#6366f1" />
+                    </linearGradient>
+                    <linearGradient id="errBot" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4f46e5" />
+                        <stop offset="100%" stop-color="#8b5cf6" />
+                    </linearGradient>
+                </defs>
+                <polygon points="44,12 55,17 51,30 40,26" fill="url(#errTop)" />
+                <polygon points="40,36 69,31 70,44 22,49" fill="url(#errMid)" />
+                <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#errBot)" />
+            </svg>
+        </div>
+
+        <div style="font-size: clamp(4rem, 10vw, 6rem); font-family: 'Space Grotesk', sans-serif; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">
+            404
+        </div>
+
+        <h1 style="font-size: 1.75rem; font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem; color: var(--text-primary);">
+            Page Not Found
+        </h1>
+
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+            The endpoint you navigated to does not exist or has been restructured. Let’s get you back on track to exploring senior engineering and private AI solutions.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.8rem;">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="index.html#contact" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.8rem; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: var(--text-primary); text-decoration: none; border-radius: 999px;">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

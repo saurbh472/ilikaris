@@ -1,0 +1,22 @@
+# ==========================================
+# Robots.txt for iLikaris (https://ilikaris.tech)
+# Senior Full-Stack & Private AI Engineering
+# ==========================================
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /og-image.png
+Allow: /og-image.jpg
+
+# Crawl Optimization
+Crawl-delay: 1
+
+# Disallow internal scratch/git directories
+Disallow: /scratch/
+Disallow: /.git/
+
+# Explicit search engine sitemap
+Sitemap: https://ilikaris.tech/sitemap.xml
