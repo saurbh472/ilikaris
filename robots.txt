@@ -1,5 +1,5 @@
 # ==========================================
-# Robots.txt for iLikaris (https://ilikaris.tech)
+# Robots.txt for iLikaris (https://ilikaris.com)
 # Senior Full-Stack & Private AI Engineering
 # ==========================================
 
@@ -19,4 +19,4 @@ Disallow: /scratch/
 Disallow: /.git/
 
 # Explicit search engine sitemap
-Sitemap: https://ilikaris.tech/sitemap.xml
+Sitemap: https://ilikaris.com/sitemap.xml

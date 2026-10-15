@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="google-site-verification" content="V_WFJUBCOr53PXVxgdsfc1no9KHClJN9mOB0sNpz7Yc" />
+    <title>iLikaris Labs | Proprietary AI Products, RAG Engines &amp; Developer Tools</title>
+    <meta name="description"
+        content="Discover proprietary AI platforms and developer tooling incubated by iLikaris Labs: KarisRAG (air-gapped enterprise vector knowledge engine) and KarisAgent (autonomous cloud observability watchdog).">
+    <meta name="keywords"
+        content="iLikaris Labs, AI products, proprietary AI software, KarisRAG, private RAG platform, autonomous AI agents, enterprise search, air-gapped AI, software incubator, tech venture co-build">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="canonical" href="https://ilikaris.com/products.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="iLikaris">
+    <meta property="og:title" content="iLikaris Labs | Proprietary AI Products &amp; Developer Tooling">
+    <meta property="og:description"
+        content="From bespoke engineering to proprietary products. Explore KarisRAG and KarisAgent, built for privacy-conscious enterprises and ambitious engineering teams.">
+    <meta property="og:url" content="https://ilikaris.com/products.html">
+    <meta property="og:image" content="https://ilikaris.com/og-image.png">
+    <meta property="og:image:secure_url" content="https://ilikaris.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="iLikaris Labs — Proprietary AI Products &amp; Tools">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iLikaris Labs | Proprietary AI Products &amp; Developer Tooling">
+    <meta name="twitter:description"
+        content="Explore proprietary AI platforms from iLikaris Labs: KarisRAG, KarisAgent, and our Venture Co-Build Program.">
+    <meta name="twitter:image" content="https://ilikaris.com/og-image.png">
+
+    <!-- Google Fonts & Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Dedicated Product Page Enhancement Styles -->
+    <style>
+        .page-hero {
+            padding: 8.5rem 5% 4rem;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .page-hero .section-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.3rem, 5vw, 3.6rem);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            line-height: 1.18;
+            margin-bottom: 1.4rem;
+            color: #ffffff;
+        }
+
+        .page-hero p {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-badges-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 0.45rem 1rem;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-stat-badge i {
+            color: var(--accent-cyan);
+        }
+
+        /* Product Deep Dive Container */
+        .product-showcase-section {
+            padding: 4rem 5%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .deep-product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 28px;
+            padding: 3.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: var(--transition);
+        }
+
+        .deep-product-card:hover {
+            border-color: rgba(0, 242, 254, 0.35);
+            box-shadow: 0 20px 50px rgba(0, 242, 254, 0.1);
+        }
+
+        .product-badge-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .badge-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-icon-large {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(99, 102, 241, 0.15));
+            border: 1px solid rgba(0, 242, 254, 0.35);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .product-icon-large.purple {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
+            border-color: rgba(168, 85, 247, 0.35);
+            color: #c084fc;
+        }
+
+        .badge-left-text h2 {
+            font-size: 2.2rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .badge-left-text span {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .product-main-layout {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .product-pitch h3 {
+            font-size: 1.45rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.35;
+        }
+
+        .product-pitch p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1.1rem 1.2rem;
+        }
+
+        .spec-item .spec-label {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+
+        .spec-item .spec-value {
+            font-size: 0.94rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .spec-item .spec-value i {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+        }
+
+        /* Architecture Visual Box */
+        .arch-pipeline-box {
+            background: rgba(8, 12, 28, 0.8);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .arch-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pipeline-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .pipeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .pipeline-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(0, 242, 254, 0.12);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pipeline-content h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .pipeline-content p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .pipeline-arrow {
+            display: flex;
+            justify-content: center;
+            margin: -0.4rem 0 0.8rem 1rem;
+            color: rgba(0, 242, 254, 0.4);
+            font-size: 0.75rem;
+        }
+
+        /* Pilot Form Card */
+        .pilot-section {
+            background: linear-gradient(135deg, rgba(8, 14, 34, 0.95) 0%, rgba(13, 19, 44, 0.95) 100%);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            border-radius: 28px;
+            padding: 3.5rem;
+            max-width: 1000px;
+            margin: 2rem auto 5rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .product-main-layout {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .deep-product-card {
+                padding: 2.2rem 1.6rem;
+            }
+
+            .pilot-section {
+                padding: 2.2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero {
+                padding-top: 6.5rem;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Breadcrumb & Product Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://ilikaris.com/products.html",
+                "url": "https://ilikaris.com/products.html",
+                "name": "iLikaris Labs | Proprietary AI Products & Developer Tools",
+                "description": "Discover proprietary AI platforms and developer tooling incubated by iLikaris Labs: KarisRAG and KarisAgent.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "@id": "https://ilikaris.com/#website",
+                    "url": "https://ilikaris.com/",
+                    "name": "iLikaris"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "KarisRAG Enterprise",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Linux, Cloud, On-Premise VPC",
+                "description": "Air-gapped private vector search and enterprise document synthesis platform running 100% within customer VPC.",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/PreOrder",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "KarisAgent Suite",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Cloud, Kubernetes",
+                "description": "Autonomous cloud architecture, latency telemetry, and automated codebase self-healing agent.",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/PreOrder",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Ambient Glow Effects -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- Master Header Navigation -->
+    <header id="mainHeader">
+        <nav>
+            <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                <svg class="logo-mark" viewBox="0 0 100 100" width="36" height="36" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navTopPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f2fe" />
+                            <stop offset="100%" stop-color="#0066ff" />
+                        </linearGradient>
+                        <linearGradient id="navMidPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00a2ff" />
+                            <stop offset="100%" stop-color="#6366f1" />
+                        </linearGradient>
+                        <linearGradient id="navBotPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4f46e5" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="44,12 55,17 51,30 40,26" fill="url(#navTopPiece)" />
+                    <polygon points="40,36 69,31 70,44 22,49" fill="url(#navMidPiece)" />
+                    <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#navBotPiece)" />
+                </svg>
+                <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="products.html" class="nav-item active">Products <span class="nav-labs-pill">Labs</span></a></li>
+                <li><a href="index.html#services" class="nav-item">Services</a></li>
+                <li><a href="index.html#portfolio" class="nav-item">Case Studies</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-item dropdown-toggle">
+                        Company <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-building"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">About Us</span>
+                                <span class="dropdown-item-desc">Mission, values &amp; story</span>
+                            </div>
+                        </a>
+                        <a href="leadership.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Leadership</span>
+                                <span class="dropdown-item-desc">Founder profile &amp; vision</span>
+                            </div>
+                        </a>
+                        <a href="why-choose-us.html" class="dropdown-item">
+                            <div class="dropdown-item-icon"><i class="fas fa-award"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Why Choose Us</span>
+                                <span class="dropdown-item-desc">Senior 1-on-1 vs agencies</span>
+                            </div>
+                        </a>
+                        <a href="index.html#tech-stack" class="dropdown-item" onclick="closeMobileMenu()">
+                            <div class="dropdown-item-icon"><i class="fas fa-layer-group"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Tech Stack</span>
+                                <span class="dropdown-item-desc">Modern architecture &amp; tools</span>
+                            </div>
+                        </a>
+                        <a href="index.html#engagement" class="dropdown-item" onclick="closeMobileMenu()">
+                            <div class="dropdown-item-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-item-title">Engagement Models</span>
+                                <span class="dropdown-item-desc">Sprint &amp; retainer packages</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li class="mobile-only-cta">
+                    <a href="#pilot-form" class="cta-button" style="width: 100%; justify-content: center;"
+                        onclick="closeMobileMenu()">
+                        <i class="fas fa-paper-plane"></i> Request Pilot
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="#pilot-form" class="cta-button header-cta-desktop">
+                    <i class="fas fa-paper-plane"></i> Request Pilot
+                </a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Page Hero -->
+    <main>
+        <section class="page-hero">
+            <div class="section-pill">
+                <i class="fas fa-flask"></i>
+                <span>iLikaris Labs &bull; Proprietary R&amp;D Platform</span>
+            </div>
+            <h1>Where Deep Engineering Meets <span class="gradient-text">Proprietary AI Products</span></h1>
+            <p>
+                In addition to engineering custom web platforms and private AI systems for global enterprise partners, our internal R&amp;D lab designs, stresses, and incubates our own autonomous agents and sovereign data infrastructure.
+            </p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#karisrag" class="cta-button">
+                    <i class="fas fa-brain"></i> Explore KarisRAG
+                </a>
+                <a href="#karisagent" class="cta-button secondary" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: #fff;">
+                    <i class="fas fa-robot"></i> Explore KarisAgent
+                </a>
+                <a href="#cobuild" class="cta-button secondary" style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc;">
+                    <i class="fas fa-handshake"></i> Venture Co-Build
+                </a>
+            </div>
+
+            <div class="hero-badges-row">
+                <div class="hero-stat-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Air-Gapped &bull; On-Prem / VPC</span>
+                </div>
+                <div class="hero-stat-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>&lt;90ms Hybrid Vector Retrieval</span>
+                </div>
+                <div class="hero-stat-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Zero Data Retention &bull; GDPR Ready</span>
+                </div>
+                <div class="hero-stat-badge">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Automated Self-Healing Code PRs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase Section -->
+        <section class="product-showcase-section">
+
+            <!-- PRODUCT 1: KarisRAG -->
+            <div class="deep-product-card" id="karisrag">
+                <div class="product-badge-bar">
+                    <div class="badge-left">
+                        <div class="product-icon-large">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="badge-left-text">
+                            <span>Enterprise AI &bull; Document Knowledge Engine</span>
+                            <h2>KarisRAG<span style="color: var(--accent-cyan);">.</span></h2>
+                        </div>
+                    </div>
+                    <span class="product-status-tag status-beta">
+                        <span class="pulse-dot-green"></span> Private Beta &bull; Enterprise Pilot
+                    </span>
+                </div>
+
+                <div class="product-main-layout">
+                    <div class="product-pitch">
+                        <h3>Air-Gapped Private Knowledge Engine &amp; Hybrid Vector Search</h3>
+                        <p>
+                            Most enterprise RAG pipelines leak sensitive corporate data to third-party model providers or fail when parsing messy PDFs, complex tables, and proprietary SQL schemas.
+                        </p>
+                        <p>
+                            <strong>KarisRAG</strong> is engineered for high-security environments: healthcare, legal, fintech, and defense tech. It deploys completely inside your VPC or on bare-metal servers, ensuring 100% data sovereignty with sub-second retrieval accuracy.
+                        </p>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Retrieval Latency</span>
+                                <div class="spec-value"><i class="fas fa-tachometer-alt"></i> &lt; 90ms Sub-Second Indexing</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Search Algorithm</span>
+                                <div class="spec-value"><i class="fas fa-layer-group"></i> Hybrid BM25 + Dense Graph Rerank</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Deployment Targets</span>
+                                <div class="spec-value"><i class="fas fa-server"></i> AWS VPC, GCP, Azure, Bare-Metal</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Supported LLM Backends</span>
+                                <div class="spec-value"><i class="fas fa-microchip"></i> Ollama, vLLM, Claude, Llama 3</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a href="#pilot-form" class="cta-button" onclick="selectProductInForm('KarisRAG Enterprise Beta')">
+                                <i class="fas fa-key"></i> Request Beta Access
+                            </a>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">
+                                <i class="fas fa-check-circle" style="color: var(--accent-teal);"></i> Free 14-day technical proof-of-concept
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Pipeline Architecture -->
+                    <div class="arch-pipeline-box">
+                        <div class="arch-title">
+                            <i class="fas fa-network-wired"></i> S-Tier Zero-Leakage Architecture
+                        </div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num">1</div>
+                            <div class="pipeline-content">
+                                <h4>Multi-Modal Ingestion Engine</h4>
+                                <p>Extracts unstructured PDFs, Notion, Confluence, Jira, and SQL with structural hierarchy preserved.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num">2</div>
+                            <div class="pipeline-content">
+                                <h4>Semantic Chunking &amp; On-Prem Embeddings</h4>
+                                <p>Local vector generation running on secure GPU clusters without calling public internet APIs.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num">3</div>
+                            <div class="pipeline-content">
+                                <h4>Hybrid Vector-Graph Memory Index</h4>
+                                <p>Combines keyword density (BM25) with semantic embeddings and Reciprocal Rank Fusion.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num">4</div>
+                            <div class="pipeline-content">
+                                <h4>Hallucination-Audited Output</h4>
+                                <p>Every assertion is strictly cross-referenced against source documents with clickable citation links.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2: KarisAgent -->
+            <div class="deep-product-card" id="karisagent">
+                <div class="product-badge-bar">
+                    <div class="badge-left">
+                        <div class="product-icon-large purple">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="badge-left-text">
+                            <span>Autonomous Systems &bull; Cloud Observability</span>
+                            <h2>KarisAgent<span style="color: #c084fc;">.</span></h2>
+                        </div>
+                    </div>
+                    <span class="product-status-tag status-rnd">
+                        <span class="pulse-dot-purple"></span> In Active R&amp;D &bull; Launching Q1 2027
+                    </span>
+                </div>
+
+                <div class="product-main-layout">
+                    <div class="product-pitch">
+                        <h3>Autonomous Cloud Architecture &amp; Telemetry Watchdog</h3>
+                        <p>
+                            Modern microservices suffer from silent latency regressions, unindexed database query blowouts, and runaway cloud costs that take human on-call engineers days to trace and remediate.
+                        </p>
+                        <p>
+                            <strong>KarisAgent</strong> operates as an autonomous senior reliability engineer inside your infrastructure. It continuously parses distributed OpenTelemetry traces, pinpoints root-cause regressions at the AST (Abstract Syntax Tree) level, and opens complete Pull Requests with verified code fixes.
+                        </p>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Code Integration</span>
+                                <div class="spec-value"><i class="fab fa-github"></i> GitHub &amp; GitLab Automated PRs</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Telemetry Compatibility</span>
+                                <div class="spec-value"><i class="fas fa-chart-line"></i> OpenTelemetry, Datadog, Grafana</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Verification Sandbox</span>
+                                <div class="spec-value"><i class="fab fa-docker"></i> Isolated Ephemeral Test Containers</div>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Alert Channels</span>
+                                <div class="spec-value"><i class="fab fa-slack"></i> Slack, Discord &amp; PagerDuty</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a href="#pilot-form" class="cta-button" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="selectProductInForm('KarisAgent Developer Waitlist')">
+                                <i class="fas fa-bell"></i> Join Developer Waitlist
+                            </a>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">
+                                Limited private developer alpha batch
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Workflow Architecture Box -->
+                    <div class="arch-pipeline-box" style="border-color: rgba(168, 85, 247, 0.25);">
+                        <div class="arch-title" style="color: #c084fc;">
+                            <i class="fas fa-cogs"></i> Autonomous Remediation Loop
+                        </div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">1</div>
+                            <div class="pipeline-content">
+                                <h4>Continuous Trace &amp; Query Ingestion</h4>
+                                <p>Analyzes live production traffic for p95/p99 latency spikes and memory leakage anomalies.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2</div>
+                            <div class="pipeline-content">
+                                <h4>AST-Level Root Cause Diagnosis</h4>
+                                <p>Pinpoints the exact function, database query, or ORM loop causing the performance regression.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">3</div>
+                            <div class="pipeline-content">
+                                <h4>Docker Sandbox Testing &amp; Benchmarking</h4>
+                                <p>Applies proposed patch in an ephemeral environment and verifies test suites pass before touching git.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+
+                        <div class="pipeline-step">
+                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">4</div>
+                            <div class="pipeline-content">
+                                <h4>Ready-to-Merge Pull Request</h4>
+                                <p>Generates an annotated PR with diff benchmarks, explanation of the fix, and instant rollback plan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-Build Venture Partnership Banner -->
+            <div class="cobuild-banner" id="cobuild">
+                <div class="cobuild-content">
+                    <div class="cobuild-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="cobuild-text">
+                        <h4>Have a visionary product thesis or vertical AI idea?</h4>
+                        <p>iLikaris Labs co-founds and co-builds with domain experts, enterprise operators, and founders. We provide senior architecture, AI engineering, and product velocity under an equity or revenue-share partnership.</p>
+                    </div>
+                </div>
+                <a href="#pilot-form" class="cta-button" style="white-space: nowrap; padding: 0.85rem 1.8rem;" onclick="selectProductInForm('Venture Co-Build Partnership')">
+                    <i class="fas fa-rocket"></i> Discuss Co-Building
+                </a>
+            </div>
+
+            <!-- Enterprise Pilot & Waitlist Signup Form -->
+            <div class="pilot-section" id="pilot-form">
+                <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem;">
+                    <div class="section-pill" style="margin-bottom: 0.8rem;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>LABS ACCESS REQUEST</span>
+                    </div>
+                    <h2 style="font-size: 2.1rem; color: #fff; margin-bottom: 0.6rem; font-family: 'Outfit', sans-serif;">Request Pilot Access or Co-Build</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
+                        Submit your details below to schedule an architectural demo, join the private beta, or discuss co-founding a product with iLikaris Labs.
+                    </p>
+                </div>
+
+                <form id="productInquiryForm" novalidate onsubmit="handleProductInquiry(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pName">Your Name *</label>
+                            <input type="text" id="pName" name="name" required placeholder="e.g. Tom Beaumont" minlength="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="pEmail">Work Email *</label>
+                            <input type="email" id="pEmail" name="email" required placeholder="e.g. tom@company.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pProduct">Product of Interest *</label>
+                            <select id="pProduct" name="product" required>
+                                <option value="KarisRAG Enterprise Beta">KarisRAG Enterprise &mdash; Private Beta Pilot</option>
+                                <option value="KarisAgent Developer Waitlist">KarisAgent Suite &mdash; Developer Waitlist (Q1 2027)</option>
+                                <option value="Venture Co-Build Partnership">Venture Co-Build &mdash; Co-Founding Partnership</option>
+                                <option value="Custom Product Architecture">Custom Proprietary AI Architecture</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pTimeline">Target Deployment Timeline</label>
+                            <select id="pTimeline" name="timeline">
+                                <option value="Immediate (< 4 weeks)">Immediate (&lt; 4 weeks)</option>
+                                <option value="1 - 3 Months">1 &ndash; 3 Months</option>
+                                <option value="Planning / Exploring">Planning / Exploring</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pMessage">Company Context &amp; Use Case *</label>
+                        <textarea id="pMessage" name="message" required minlength="10" rows="4"
+                            placeholder="Tell us about your data infrastructure, user volume, cloud setup (AWS/GCP/Azure/On-Prem), or product idea..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+                        <i class="fas fa-lock"></i> Submit Request &bull; Priority Response within 24h
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Master Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#home" class="logo" aria-label="iLikaris Home">
+                    <svg class="logo-mark" viewBox="0 0 100 100" width="36" height="36" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="footTopPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#0066ff" />
+                            </linearGradient>
+                            <linearGradient id="footMidPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00a2ff" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                            <linearGradient id="footBotPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4f46e5" />
+                                <stop offset="100%" stop-color="#8b5cf6" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="44,12 55,17 51,30 40,26" fill="url(#footTopPiece)" />
+                        <polygon points="40,36 69,31 70,44 22,49" fill="url(#footMidPiece)" />
+                        <polygon points="6,71 83,53 84,63 44,74 59,81 93,81 57,94 6,71" fill="url(#footBotPiece)" />
+                    </svg>
+                    <span class="logo-text">i<span class="logo-text-gradient">Likaris</span></span>
+                </a>
+                <p>
+                    Architecting high-velocity web platforms, intelligent autonomous agents, and private AI/ML systems
+                    for ambitious teams worldwide.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                        aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                        aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:ilikaris.tech@gmail.com" class="social-btn" aria-label="Email"><i
+                        class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="products.html">Products (Labs)</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Case Studies</a></li>
+                    <li><a href="blog.html">Blog &amp; Insights</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Labs &amp; Products</h4>
+                <ul>
+                    <li><a href="#karisrag">KarisRAG Enterprise</a></li>
+                    <li><a href="#karisagent">KarisAgent Suite</a></li>
+                    <li><a href="#cobuild">Venture Co-Build</a></li>
+                    <li><a href="index.html#services">Custom Engineering</a></li>
+                    <li><a href="index.html#tech-stack">Tech Architecture</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Direct Contact</h4>
+                <ul>
+                    <li><a href="mailto:ilikaris.tech@gmail.com"><i class="fas fa-envelope"
+                                style="color: var(--accent-cyan); margin-right: 0.4rem;"></i>
+                            ilikaris.tech@gmail.com</a></li>
+                    <li><a href="tel:+919521124440"><i class="fas fa-phone-alt"
+                                style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> +91 (952) 112-4440</a>
+                    </li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt"
+                            style="color: var(--accent-cyan); margin-right: 0.4rem;"></i> Bengaluru, India (Remote &amp; Worldwide)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <p>&copy; 2026 iLikaris. All rights reserved. Engineering excellence with privacy &amp; speed.</p>
+                <p style="margin-top: 0.3rem; font-size: 0.8rem;">
+                    <span style="color: var(--accent-teal);">🔒 GDPR Compliant</span> &nbsp;&middot;&nbsp;
+                    Privacy-First AI &nbsp;&middot;&nbsp;
+                    Timezone-Flexible for EU &amp; North America &nbsp;&middot;&nbsp;
+                    Web &amp; AI Engineering Consultancy
+                </p>
+            </div>
+            <div style="display:flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;">Privacy Policy</a>
+                <a href="privacy.html#cookies" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;">Cookie Policy</a>
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">
+        <i class="fas fa-check-circle" style="color: #10b981; font-size: 1.2rem;"></i>
+        <span id="toastMessage">Request submitted successfully! Our team will reach out within 24 hours.</span>
+    </div>
+
+    <!-- Floating AI Assistant Widget -->
+    <div class="chatbot-widget">
+        <div class="chat-window" id="chatWindow" role="region" aria-label="iLikaris AI Assistant">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <i class="fas fa-brain" style="font-size: 1.3rem;"></i>
+                    <div>
+                        <h4>iLikaris Assistant</h4>
+                        <p>Ask about products, tech specs &amp; pilots</p>
+                    </div>
+                </div>
+                <button class="chat-close-btn" onclick="toggleChat()" aria-label="Close assistant chat"
+                    style="background:none; border:none; color:inherit; cursor:pointer; padding:0.2rem;">
+                    <i class="fas fa-times" style="font-size: 1.1rem;"></i>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+                <div class="message bot">
+                    👋 Hello! I can help you with technical specs for KarisRAG, KarisAgent, or our venture co-build program. What would you like to know?
+                </div>
+            </div>
+
+            <div class="chat-suggestions">
+                <button class="chip-btn" onclick="quickAsk('Tell me about KarisRAG architecture')">KarisRAG</button>
+                <button class="chip-btn" onclick="quickAsk('How does KarisAgent self-heal code?')">KarisAgent</button>
+                <button class="chip-btn" onclick="quickAsk('How does the Co-Build program work?')">Co-Build</button>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Ask a question..."
+                    aria-label="Type your message to iLikaris Assistant"
+                    onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()" aria-label="Send Message"><i class="fas fa-arrow-up"></i></button>
+            </div>
+        </div>
+
+        <button class="chat-button" onclick="toggleChat()" aria-label="Open iLikaris AI Assistant chat" type="button">
+            <span class="chat-ping"></span>
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <!-- App JavaScript -->
+    <script src="assets/js/app.js"></script>
+    <script>
+        function selectProductInForm(prodName) {
+            const selectEl = document.getElementById('pProduct');
+            if (selectEl) {
+                for (let i = 0; i < selectEl.options.length; i++) {
+                    if (selectEl.options[i].value === prodName || selectEl.options[i].text.includes(prodName)) {
+                        selectEl.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function handleProductInquiry(e) {
+            e.preventDefault();
+            const form = document.getElementById('productInquiryForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const name = document.getElementById('pName').value.trim();
+            const product = document.getElementById('pProduct').value;
+            
+            // Show toast
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            if (toast && toastMsg) {
+                toastMsg.textContent = `Thank you ${name}! Your request for ${product} has been received. We will reply within 24 hours.`;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 5000);
+            }
+            form.reset();
+        }
+    </script>
+</body>
+
+</html>

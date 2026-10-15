@@ -332,7 +332,7 @@ class ChatbotWidget {
             botMsg.className = 'message bot';
 
             const lower = message.toLowerCase();
-            let reply = "Thanks for asking! I can help you with full-stack web applications, private AI/RAG solutions, custom chatbots, and technical consulting. Feel free to use the contact form below or reach out directly at ilikaris.tech@gmail.com.";
+            let reply = "Thanks for asking! We specialize in production-grade web & SaaS platforms, enterprise private AI/RAG systems, autonomous agent workflows, and proprietary software products. Feel free to use the contact form below or reach out directly at ilikaris.tech@gmail.com.";
 
             for (const item of this.knowledgeBase) {
                 if (item.keywords.some(k => lower.includes(k))) {
@@ -423,114 +423,6 @@ class GdprConsentManager {
     }
 }
 
-/**
- * Class 10: GeoPricingManager
- * Detects visitor country and displays localized pricing currency pills.
- */
-class GeoPricingManager {
-    constructor() {
-        this.bar = document.getElementById('geoCurrencyBar');
-        this.flagEl = document.getElementById('geoFlag');
-        this.countryEl = document.getElementById('geoCountry');
-        this.pricesContainer = document.getElementById('currencyPrices');
-        this.countrySelect = document.getElementById('country');
-        this.basePriceUsd = 2500;
-
-        this.currencyMap = {
-            US: { flag: '🇺🇸', name: 'United States', currency: 'USD', symbol: '$', rate: 1.0 },
-            CA: { flag: '🇨🇦', name: 'Canada', currency: 'CAD', symbol: 'CA$', rate: 1.36 },
-            FI: { flag: '🇫🇮', name: 'Finland', currency: 'EUR', symbol: '€', rate: 0.93 },
-            LU: { flag: '🇱🇺', name: 'Luxembourg', currency: 'EUR', symbol: '€', rate: 0.93 },
-            DE: { flag: '🇩🇪', name: 'Germany', currency: 'EUR', symbol: '€', rate: 0.93 },
-            NL: { flag: '🇳🇱', name: 'Netherlands', currency: 'EUR', symbol: '€', rate: 0.93 },
-            FR: { flag: '🇫🇷', name: 'France', currency: 'EUR', symbol: '€', rate: 0.93 },
-            AT: { flag: '🇦🇹', name: 'Austria', currency: 'EUR', symbol: '€', rate: 0.93 },
-            BE: { flag: '🇧🇪', name: 'Belgium', currency: 'EUR', symbol: '€', rate: 0.93 },
-            ES: { flag: '🇪🇸', name: 'Spain', currency: 'EUR', symbol: '€', rate: 0.93 },
-            IT: { flag: '🇮🇹', name: 'Italy', currency: 'EUR', symbol: '€', rate: 0.93 },
-            GB: { flag: '🇬🇧', name: 'United Kingdom', currency: 'GBP', symbol: '£', rate: 0.79 },
-            PL: { flag: '🇵🇱', name: 'Poland', currency: 'PLN', symbol: 'zł', rate: 4.05 },
-            SE: { flag: '🇸🇪', name: 'Sweden', currency: 'SEK', symbol: 'kr', rate: 10.7 },
-            NO: { flag: '🇳🇴', name: 'Norway', currency: 'NOK', symbol: 'kr', rate: 10.6 },
-            DK: { flag: '🇩🇰', name: 'Denmark', currency: 'DKK', symbol: 'kr', rate: 7.0 },
-            CH: { flag: '🇨🇭', name: 'Switzerland', currency: 'CHF', symbol: 'CHF', rate: 0.9 },
-            AU: { flag: '🇦🇺', name: 'Australia', currency: 'AUD', symbol: 'A$', rate: 1.53 },
-            IN: { flag: '🇮🇳', name: 'India', currency: 'INR', symbol: '₹', rate: 83.5 },
-            SG: { flag: '🇸🇬', name: 'Singapore', currency: 'SGD', symbol: 'S$', rate: 1.34 }
-        };
-
-        this.init();
-    }
-
-    init() {
-        if (!this.bar) return;
-        window.addEventListener('load', () => {
-            setTimeout(() => this.detectAndRender(), 800);
-        });
-    }
-
-    formatPrice(amount, symbol) {
-        if (amount >= 1000) {
-            return symbol + (amount / 1000).toFixed(1).replace('.0', '') + 'K';
-        }
-        return symbol + Math.round(amount).toLocaleString();
-    }
-
-    async detectAndRender() {
-        try {
-            const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(4000) });
-            if (!res.ok) return;
-            const data = await res.json();
-            const countryCode = data.country_code;
-            const countryData = this.currencyMap[countryCode];
-
-            if (this.bar && countryData) {
-                if (this.flagEl) this.flagEl.textContent = countryData.flag;
-                if (this.countryEl) this.countryEl.textContent = countryData.name;
-
-                const localPrice = this.basePriceUsd * countryData.rate;
-                if (this.pricesContainer) {
-                    this.pricesContainer.innerHTML = '';
-
-                    // Local currency pill
-                    const localPill = document.createElement('span');
-                    localPill.className = 'price-pill';
-                    localPill.innerHTML = `<span class="flag">${countryData.flag}</span> ${this.formatPrice(localPrice, countryData.symbol)} ${countryData.currency}`;
-                    this.pricesContainer.appendChild(localPill);
-
-                    // USD pill if not USD
-                    if (countryData.currency !== 'USD') {
-                        const usdPill = document.createElement('span');
-                        usdPill.className = 'price-pill';
-                        usdPill.innerHTML = `<span class="flag">💵</span> $${this.basePriceUsd.toLocaleString()} USD`;
-                        this.pricesContainer.appendChild(usdPill);
-                    }
-
-                    // EUR pill if applicable
-                    if (countryData.currency !== 'EUR' && countryData.currency !== 'USD') {
-                        const eurPrice = this.basePriceUsd * 0.93;
-                        const eurPill = document.createElement('span');
-                        eurPill.className = 'price-pill';
-                        eurPill.innerHTML = `<span class="flag">🇪🇺</span> ${this.formatPrice(eurPrice, '€')} EUR`;
-                        this.pricesContainer.appendChild(eurPill);
-                    }
-                }
-
-                this.bar.style.display = 'flex';
-                this.bar.style.animation = 'fadeInDown 0.4s ease';
-
-                if (this.countrySelect) {
-                    const option = this.countrySelect.querySelector(`option[value="${countryCode.toLowerCase()}"]`);
-                    if (option) this.countrySelect.value = countryCode.toLowerCase();
-                }
-            } else if (this.bar) {
-                this.bar.style.display = 'flex';
-            }
-        } catch (err) {
-            if (this.bar) this.bar.style.display = 'flex';
-        }
-    }
-}
 
 /**
  * Class 11: ContactFormManager
@@ -566,7 +458,7 @@ class ContactFormManager {
             // Anti-Spam Honeypot check: If bots fill this invisible field, silently trap and discard
             const honeypot = document.getElementById('contactSecurityCheck');
             if (honeypot && honeypot.value.trim() !== '') {
-                this.toast.show('Inquiry submitted successfully! I will reach out within 24 hours.', 'success');
+                this.toast.show('Inquiry submitted successfully! Our team will reach out within 24 hours.', 'success');
                 this.form.reset();
                 return;
             }
@@ -639,7 +531,7 @@ class ContactFormManager {
             submitBtn.disabled = false;
 
             if (result.success) {
-                this.toast.show(`Thank you ${name}! Your inquiry has been transmitted to ${this.recipientEmail}. I will reply within 24 hours.`, 'success', 6000);
+                this.toast.show(`Thank you ${name}! Your inquiry has been transmitted to ${this.recipientEmail}. Our team will reply within 24 hours.`, 'success', 6000);
                 this.form.reset();
             } else if (result.fallbackMailto) {
                 this.toast.show(`Drafting direct email to ${this.recipientEmail}... Please click Send in your email client.`, 'success', 6500);
@@ -862,7 +754,6 @@ class Application {
         this.chatbot = new ChatbotWidget();
         this.scrollReveal = new ScrollRevealManager();
         this.gdpr = new GdprConsentManager();
-        this.geoPricing = new GeoPricingManager();
         this.contactForm = new ContactFormManager(this.toast);
         this.heroDemo = new HeroDemoSwitcher();
         this.lightbox = new PortfolioLightbox();
@@ -887,7 +778,20 @@ window.switchHeroDemo = (type, btn) => window.App?.heroDemo.switchDemo(type, btn
 window.openLightbox = (src, title, desc, tags) => window.App?.lightbox.open(src, title, desc, tags);
 window.closeLightbox = () => window.App?.lightbox.close();
 window.filterMapRegion = (reg, btn) => window.App?.worldMap.filter(reg, btn);
-window.closeGeoBar = () => {
-    const bar = document.getElementById('geoCurrencyBar');
-    if (bar) bar.style.display = 'none';
+window.closeGeoBar = () => {};
+window.prefillContactProduct = (productName) => {
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+            if (serviceSelect.options[i].value.includes('ai') || serviceSelect.options[i].value.includes('saas') || serviceSelect.options[i].value.includes('web')) {
+                serviceSelect.selectedIndex = i;
+                break;
+            }
+        }
+    }
+    const messageField = document.getElementById('message');
+    if (messageField) {
+        messageField.value = `Hi iLikaris team,\n\nI am interested in early access / beta details regarding ${productName}.\n\nOur company context and use case: `;
+        messageField.focus();
+    }
 };
