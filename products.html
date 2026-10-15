@@ -259,19 +259,326 @@
             font-size: 0.85rem;
         }
 
-        /* Architecture Visual Box */
-        .arch-pipeline-box {
-            background: rgba(8, 12, 28, 0.8);
-            border: 1px solid rgba(0, 242, 254, 0.2);
+        /* Modern Interactive Simulator & Showcase Panel */
+        .interactive-showcase-panel {
+            background: #080c1e;
+            border: 1px solid rgba(0, 242, 254, 0.25);
             border-radius: 20px;
-            padding: 2rem;
-            position: relative;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(0, 242, 254, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
         }
 
-        .arch-title {
-            font-size: 0.85rem;
+        .interactive-showcase-panel.purple {
+            border-color: rgba(168, 85, 247, 0.35);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(168, 85, 247, 0.08);
+        }
+
+        .panel-header-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(13, 19, 44, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.65rem 1rem;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .window-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .tab-buttons-group {
+            display: flex;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+        }
+
+        .panel-tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 7px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .panel-tab-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .panel-tab-btn.active {
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.12);
+            border-color: rgba(0, 242, 254, 0.35);
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+        }
+
+        .panel-tab-btn.purple.active {
+            color: #c084fc;
+            background: rgba(168, 85, 247, 0.16);
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+        }
+
+        .tab-body {
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .tab-body.active {
+            display: block;
+            animation: tabFadeIn 0.25s ease-out;
+        }
+
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Live Neural Query Sandbox */
+        .sandbox-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.85rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .sandbox-topbar-title {
+            font-size: 0.76rem;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.6px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .sandbox-status-pill {
+            font-size: 0.72rem;
+            background: rgba(6, 214, 160, 0.12);
+            border: 1px solid rgba(6, 214, 160, 0.3);
+            color: var(--accent-teal);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+        }
+
+        .pulse-dot-teal {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            box-shadow: 0 0 8px var(--accent-teal);
+            animation: pulseTeal 2s infinite;
+        }
+
+        @keyframes pulseTeal {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .sandbox-presets {
+            display: flex;
+            gap: 0.45rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .preset-label {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            margin-right: 0.2rem;
+        }
+
+        .preset-chip {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.74rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .preset-chip:hover, .preset-chip.active {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: rgba(0, 242, 254, 0.35);
+            color: #ffffff;
+        }
+
+        .sandbox-query-input-wrap {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(4, 7, 20, 0.85);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 12px;
+            padding: 0.4rem 0.5rem 0.4rem 0.9rem;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .sandbox-query-input-wrap input {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-family: inherit;
+            flex: 1;
+            outline: none;
+        }
+
+        .sandbox-exec-btn {
+            background: linear-gradient(135deg, #00f2fe, #0066ff);
+            border: none;
+            color: #ffffff;
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .sandbox-exec-btn:hover {
+            box-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .sandbox-result-box {
+            background: rgba(13, 19, 44, 0.75);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 14px;
+            padding: 1.1rem;
+        }
+
+        .result-meta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .meta-stat {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .meta-stat.score {
+            color: #10b981;
+        }
+
+        .result-answer-text {
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+            margin-bottom: 0.9rem;
+        }
+
+        .result-answer-text mark {
+            background: rgba(0, 242, 254, 0.22);
+            color: #00f2fe;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .citation-box {
+            background: rgba(4, 7, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.75rem 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .citation-icon {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+            margin-top: 0.15rem;
+        }
+
+        .citation-details h5 {
+            font-size: 0.78rem;
+            color: #ffffff;
+            margin-bottom: 0.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .citation-details p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin: 0;
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .sovereignty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            color: var(--accent-teal);
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px solid rgba(6, 214, 160, 0.25);
+            padding: 0.3rem 0.7rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Architecture Visual Box & Steps */
+        .arch-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
             color: var(--accent-cyan);
             font-weight: 700;
             margin-bottom: 1.2rem;
@@ -283,9 +590,24 @@
         .pipeline-step {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
+            gap: 0.9rem;
+            margin-bottom: 0.9rem;
             position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            transition: var(--transition);
+        }
+
+        .pipeline-step:hover {
+            background: rgba(0, 242, 254, 0.04);
+            border-color: rgba(0, 242, 254, 0.25);
+        }
+
+        .pipeline-step.purple:hover {
+            background: rgba(168, 85, 247, 0.04);
+            border-color: rgba(168, 85, 247, 0.25);
         }
 
         .pipeline-step:last-child {
@@ -293,8 +615,8 @@
         }
 
         .pipeline-num {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 8px;
             background: rgba(0, 242, 254, 0.12);
             border: 1px solid rgba(0, 242, 254, 0.3);
@@ -302,31 +624,406 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             flex-shrink: 0;
         }
 
         .pipeline-content h4 {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: var(--text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
             font-weight: 600;
         }
 
         .pipeline-content p {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.45;
             margin: 0;
         }
 
         .pipeline-arrow {
             display: flex;
             justify-content: center;
-            margin: -0.4rem 0 0.8rem 1rem;
+            margin: -0.4rem 0 0.5rem 1rem;
             color: rgba(0, 242, 254, 0.4);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+        }
+
+        /* Terminal Window & Code View */
+        .terminal-code-wrap {
+            background: #050714;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.1rem;
+            position: relative;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.78rem;
+            line-height: 1.65;
+            overflow-x: auto;
+        }
+
+        .code-copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .code-copy-btn:hover {
+            background: rgba(0, 242, 254, 0.15);
+            color: #ffffff;
+            border-color: rgba(0, 242, 254, 0.4);
+        }
+
+        .terminal-log-line {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 0.35rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .log-time {
+            color: #64748b;
+            flex-shrink: 0;
+        }
+
+        .log-tag {
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .tag-alert { color: #f87171; }
+        .tag-trace { color: #60a5fa; }
+        .tag-ast { color: #c084fc; }
+        .tag-docker { color: #38bdf8; }
+        .tag-pr { color: #4ade80; }
+        .tag-perf { color: #facc15; }
+
+        .log-msg {
+            color: #cbd5e1;
+        }
+
+        /* Diff styling */
+        .diff-container {
+            background: #040716;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.9rem;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.76rem;
+            line-height: 1.65;
+            overflow-x: auto;
+        }
+
+        .diff-header {
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .diff-del {
+            background: rgba(239, 68, 68, 0.14);
+            color: #fca5a5;
+            display: block;
+            padding: 0.1rem 0.4rem;
+            border-left: 3px solid #ef4444;
+            margin: 0.1rem 0;
+        }
+
+        .diff-add {
+            background: rgba(34, 197, 94, 0.14);
+            color: #86efac;
+            display: block;
+            padding: 0.1rem 0.4rem;
+            border-left: 3px solid #22c55e;
+            margin: 0.1rem 0;
+        }
+
+        .diff-ctx {
+            color: #64748b;
+            display: block;
+            padding: 0.1rem 0.4rem;
+        }
+
+        /* Product Interactive Filter Pill Bar */
+        .product-filter-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin: 2rem auto 3.5rem;
+            max-width: 980px;
+        }
+
+        .filter-nav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.25rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 0.84rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-nav-pill:hover {
+            color: #ffffff;
+            border-color: rgba(0, 242, 254, 0.35);
+            background: rgba(0, 242, 254, 0.08);
+            box-shadow: 0 0 16px rgba(0, 242, 254, 0.15);
+        }
+
+        .filter-nav-pill.active {
+            color: #ffffff;
+            border-color: rgba(0, 242, 254, 0.5);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.18), rgba(0, 102, 255, 0.18));
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.22);
+        }
+
+        .filter-nav-pill i {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+        }
+
+        /* Enterprise Comparison Matrix */
+        .comparison-matrix-wrapper {
+            margin: 5rem auto;
+            max-width: 1240px;
+            padding: 0 1rem;
+        }
+
+        .matrix-header-box {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .matrix-header-box h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .matrix-header-box p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .matrix-table-card {
+            background: rgba(10, 15, 36, 0.85);
+            border: 1px solid rgba(0, 242, 254, 0.22);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .matrix-table-scroll {
+            overflow-x: auto;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .matrix-table th {
+            padding: 1.35rem 1.4rem;
+            background: rgba(14, 21, 50, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.96rem;
+        }
+
+        .matrix-table th.col-karis {
+            background: rgba(0, 242, 254, 0.12);
+            border-left: 1px solid rgba(0, 242, 254, 0.35);
+            border-right: 1px solid rgba(0, 242, 254, 0.35);
+            color: var(--accent-cyan);
+            position: relative;
+        }
+
+        .col-badge-rec {
+            display: inline-block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            background: var(--accent-cyan);
+            color: #060818;
+            font-weight: 800;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+
+        .matrix-table td {
+            padding: 1.15rem 1.4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            line-height: 1.5;
+            vertical-align: middle;
+        }
+
+        .matrix-table td.col-karis {
+            background: rgba(0, 242, 254, 0.04);
+            border-left: 1px solid rgba(0, 242, 254, 0.25);
+            border-right: 1px solid rgba(0, 242, 254, 0.25);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .matrix-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .matrix-table tr:hover td.col-karis {
+            background: rgba(0, 242, 254, 0.08);
+        }
+
+        .val-good {
+            color: #34d399;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-weight: 600;
+        }
+
+        .val-mid {
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .val-poor {
+            color: #f87171;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        /* Security & Compliance Trust Strip */
+        .security-trust-strip {
+            margin: 4.5rem auto 3rem;
+            max-width: 1240px;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(8, 14, 34, 0.85) 0%, rgba(13, 22, 54, 0.85) 100%);
+            border: 1px solid rgba(0, 242, 254, 0.22);
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+        }
+
+        .trust-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .trust-item h4 {
+            font-size: 0.98rem;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .trust-item p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Venture Co-Build 4-Phase Roadmap */
+        .cobuild-phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .cobuild-phase-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(168, 85, 247, 0.22);
+            border-radius: 16px;
+            padding: 1.3rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .cobuild-phase-card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(168, 85, 247, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .phase-number-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #c084fc;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .cobuild-phase-card h5 {
+            font-size: 0.95rem;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .cobuild-phase-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
         }
 
         /* Pilot Form Card */
@@ -336,7 +1033,7 @@
             border-radius: 28px;
             padding: 3.5rem;
             max-width: 1000px;
-            margin: 2rem auto 5rem;
+            margin: 4rem auto 5rem;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
@@ -354,6 +1051,11 @@
             .pilot-section {
                 padding: 2.2rem 1.5rem;
             }
+
+            .security-trust-strip {
+                padding: 1.8rem 1.4rem;
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
@@ -363,6 +1065,26 @@
 
             .page-hero {
                 padding-top: 6.5rem;
+            }
+
+            .panel-header-tabs {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tab-buttons-group {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 0.2rem;
+            }
+
+            .sandbox-query-input-wrap {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .sandbox-exec-btn {
+                justify-content: center;
             }
         }
     </style>
@@ -558,8 +1280,27 @@
             </div>
         </section>
 
+        <!-- Interactive Product Filter Bar -->
+        <div class="product-filter-bar" id="productFilterBar">
+            <button class="filter-nav-pill active" onclick="filterProductView('all', this)" id="filterBtnAll">
+                <i class="fas fa-layer-group"></i> All Labs Innovations
+            </button>
+            <button class="filter-nav-pill" onclick="filterProductView('karisrag', this)" id="filterBtnRag">
+                <i class="fas fa-brain"></i> KarisRAG (Private Vector Engine)
+            </button>
+            <button class="filter-nav-pill" onclick="filterProductView('karisagent', this)" id="filterBtnAgent">
+                <i class="fas fa-robot"></i> KarisAgent (Autonomous SRE)
+            </button>
+            <button class="filter-nav-pill" onclick="filterProductView('matrix', this)" id="filterBtnMatrix">
+                <i class="fas fa-balance-scale"></i> Enterprise Comparison
+            </button>
+            <button class="filter-nav-pill" onclick="filterProductView('cobuild', this)" id="filterBtnCobuild">
+                <i class="fas fa-handshake"></i> Venture Co-Build
+            </button>
+        </div>
+
         <!-- Product Showcase Section -->
-        <section class="product-showcase-section">
+        <section class="product-showcase-section" id="productShowcaseSection">
 
             <!-- PRODUCT 1: KarisRAG -->
             <div class="deep-product-card" id="karisrag">
@@ -611,50 +1352,157 @@
                             <a href="#pilot-form" class="cta-button" onclick="selectProductInForm('KarisRAG Enterprise Beta')">
                                 <i class="fas fa-key"></i> Request Beta Access
                             </a>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">
-                                <i class="fas fa-check-circle" style="color: var(--accent-teal);"></i> Free 14-day technical proof-of-concept
-                            </span>
+                            <button type="button" class="cta-button secondary" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: #fff;" onclick="switchRAGTab('sandbox')">
+                                <i class="fas fa-play"></i> Try Sandbox Demo
+                            </button>
                         </div>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: var(--accent-teal);"></i> Free 14-day technical proof-of-concept in your isolated VPC
+                        </p>
                     </div>
 
-                    <!-- Visual Pipeline Architecture -->
-                    <div class="arch-pipeline-box">
-                        <div class="arch-title">
-                            <i class="fas fa-network-wired"></i> S-Tier Zero-Leakage Architecture
-                        </div>
-
-                        <div class="pipeline-step">
-                            <div class="pipeline-num">1</div>
-                            <div class="pipeline-content">
-                                <h4>Multi-Modal Ingestion Engine</h4>
-                                <p>Extracts unstructured PDFs, Notion, Confluence, Jira, and SQL with structural hierarchy preserved.</p>
+                    <!-- Interactive Live Showcase Simulator -->
+                    <div class="interactive-showcase-panel" id="karisragShowcase">
+                        <div class="panel-header-tabs">
+                            <div class="window-dots">
+                                <span class="window-dot dot-red"></span>
+                                <span class="window-dot dot-yellow"></span>
+                                <span class="window-dot dot-green"></span>
+                                <span style="font-size: 0.74rem; color: #94a3b8; font-weight: 600; margin-left: 0.35rem; font-family: 'Space Grotesk', monospace;">KarisRAG // VPC Console v2.4</span>
+                            </div>
+                            <div class="tab-buttons-group">
+                                <button class="panel-tab-btn active" id="ragTabBtn-sandbox" onclick="switchRAGTab('sandbox', this)">
+                                    <i class="fas fa-terminal"></i> Live Sandbox
+                                </button>
+                                <button class="panel-tab-btn" id="ragTabBtn-pipeline" onclick="switchRAGTab('pipeline', this)">
+                                    <i class="fas fa-network-wired"></i> Zero-Leakage Pipeline
+                                </button>
+                                <button class="panel-tab-btn" id="ragTabBtn-sdk" onclick="switchRAGTab('sdk', this)">
+                                    <i class="fas fa-code"></i> VPC SDK
+                                </button>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num">2</div>
-                            <div class="pipeline-content">
-                                <h4>Semantic Chunking &amp; On-Prem Embeddings</h4>
-                                <p>Local vector generation running on secure GPU clusters without calling public internet APIs.</p>
+                        <!-- Tab 1: Live Neural Sandbox -->
+                        <div class="tab-body active" id="ragTab-sandbox">
+                            <div class="sandbox-topbar">
+                                <span class="sandbox-topbar-title">
+                                    <i class="fas fa-search-nodes"></i> Sub-Second Hybrid Query Inspector
+                                </span>
+                                <span class="sandbox-status-pill">
+                                    <span class="pulse-dot-teal"></span> 100% Air-Gapped VPC
+                                </span>
+                            </div>
+
+                            <div class="sandbox-presets">
+                                <span class="preset-label">Query Presets:</span>
+                                <button class="preset-chip active" id="chip-clinical" onclick="loadRAGPreset('clinical', this)">Clinical Study TX-904</button>
+                                <button class="preset-chip" id="chip-sec" onclick="loadRAGPreset('sec', this)">10-K Debt Covenants</button>
+                                <button class="preset-chip" id="chip-hipaa" onclick="loadRAGPreset('hipaa', this)">AWS HIPAA S3 Policy</button>
+                            </div>
+
+                            <div class="sandbox-query-input-wrap">
+                                <i class="fas fa-search" style="color: var(--accent-cyan); font-size: 0.85rem;"></i>
+                                <input type="text" id="ragQueryInput" value="What are the clinical trial contraindications and drug interactions for TX-904?" readonly aria-label="Simulated search query">
+                                <button class="sandbox-exec-btn" onclick="simulateRAGSearch()" id="ragSearchBtn" aria-label="Execute simulated hybrid query">
+                                    <i class="fas fa-bolt"></i> Run Hybrid Query
+                                </button>
+                            </div>
+
+                            <div class="sandbox-result-box" id="ragResultBox">
+                                <div class="result-meta-bar">
+                                    <span class="meta-stat" id="ragLatencyStat">
+                                        <i class="fas fa-stopwatch"></i> Latency: <strong>64ms</strong> (BM25 + Dense Graph)
+                                    </span>
+                                    <span class="meta-stat score" id="ragScoreStat">
+                                        <i class="fas fa-check-double"></i> Rerank Confidence: <strong>99.4%</strong>
+                                    </span>
+                                </div>
+                                <p class="result-answer-text" id="ragAnswerText">
+                                    TX-904 is strictly <mark>contraindicated</mark> in patients with severe hepatic impairment (Child-Pugh Class C) or concurrent administration of strong CYP3A4 inhibitors. Prior myocardial infarction within 6 months mandates continuous 12-lead ECG telemetric monitoring.
+                                </p>
+                                <div class="citation-box" id="ragCitationBox">
+                                    <i class="fas fa-file-contract citation-icon"></i>
+                                    <div class="citation-details">
+                                        <h5 id="ragCitationDoc">
+                                            <i class="fas fa-shield-alt" style="color: #10b981;"></i> Verified Citation &bull; Protocol_TX-904_V3.pdf
+                                        </h5>
+                                        <p id="ragCitationLoc">Page 142 &bull; Section 8.2.1 &bull; Chunk Vector #904-B3 &bull; SHA-256 Verified</p>
+                                    </div>
+                                </div>
+                                <div class="sovereignty-badge">
+                                    <i class="fas fa-lock"></i> Zero Data Leakage: 0 outbound public API requests &bull; Executed 100% on local VPC cluster
+                                </div>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num">3</div>
-                            <div class="pipeline-content">
-                                <h4>Hybrid Vector-Graph Memory Index</h4>
-                                <p>Combines keyword density (BM25) with semantic embeddings and Reciprocal Rank Fusion.</p>
+                        <!-- Tab 2: Zero-Leakage Pipeline -->
+                        <div class="tab-body" id="ragTab-pipeline">
+                            <div class="arch-title">
+                                <i class="fas fa-network-wired"></i> S-Tier Zero-Leakage Architecture Pipeline
+                            </div>
+                            <div class="pipeline-step">
+                                <div class="pipeline-num">1</div>
+                                <div class="pipeline-content">
+                                    <h4>Multi-Modal Ingestion Engine</h4>
+                                    <p>Extracts unstructured PDFs, Notion, Confluence, Jira, and SQL with structural hierarchy preserved.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="pipeline-step">
+                                <div class="pipeline-num">2</div>
+                                <div class="pipeline-content">
+                                    <h4>Semantic Chunking &amp; On-Prem Embeddings</h4>
+                                    <p>Local vector generation running on secure GPU clusters without calling public internet APIs.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="pipeline-step">
+                                <div class="pipeline-num">3</div>
+                                <div class="pipeline-content">
+                                    <h4>Hybrid Vector-Graph Memory Index</h4>
+                                    <p>Combines keyword density (BM25) with semantic embeddings and Reciprocal Rank Fusion.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="pipeline-step">
+                                <div class="pipeline-num">4</div>
+                                <div class="pipeline-content">
+                                    <h4>Hallucination-Audited Output</h4>
+                                    <p>Every assertion is strictly cross-referenced against source documents with clickable citation links.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num">4</div>
-                            <div class="pipeline-content">
-                                <h4>Hallucination-Audited Output</h4>
-                                <p>Every assertion is strictly cross-referenced against source documents with clickable citation links.</p>
+                        <!-- Tab 3: VPC SDK -->
+                        <div class="tab-body" id="ragTab-sdk">
+                            <div class="terminal-code-wrap">
+                                <button class="code-copy-btn" onclick="copyCode(this, 'rag-code-snippet')">
+                                    <i class="fas fa-copy"></i> Copy Snippet
+                                </button>
+                                <pre id="rag-code-snippet" style="margin: 0; color: #e2e8f0;"><code># Install KarisRAG Enterprise VPC SDK
+pip install karisrag
+
+from karisrag import KarisEngine
+
+# Connect directly to air-gapped private VPC endpoint
+engine = KarisEngine(
+    endpoint="https://rag.vpc.internal:8443",
+    api_key="sk-karis-private-vpc",
+    air_gapped=True
+)
+
+# Execute hybrid semantic search with citation cross-audit
+result = engine.search(
+    query="Clinical trial contraindications TX-904",
+    collection="pharma_trials_2026",
+    hybrid_alpha=0.65,    # 65% dense vector, 35% BM25
+    audit_hallucination=True
+)
+
+print(f"Latency: {result.latency_ms}ms | Recall: {result.confidence}")
+print(f"Top Citation: {result.citations[0].source_doc} (Page {result.citations[0].page})")
+</code></pre>
                             </div>
                         </div>
                     </div>
@@ -711,70 +1559,334 @@
                             <a href="#pilot-form" class="cta-button" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="selectProductInForm('KarisAgent Developer Waitlist')">
                                 <i class="fas fa-bell"></i> Join Developer Waitlist
                             </a>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">
-                                Limited private developer alpha batch
-                            </span>
+                            <button type="button" class="cta-button secondary" style="background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.35); color: #c084fc;" onclick="switchAgentTab('diff')">
+                                <i class="fas fa-code-branch"></i> View Auto-Fix Diff
+                            </button>
                         </div>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
+                            <i class="fas fa-shield-alt" style="color: #c084fc;"></i> Sandboxed execution with zero direct production modification
+                        </p>
                     </div>
 
-                    <!-- Workflow Architecture Box -->
-                    <div class="arch-pipeline-box" style="border-color: rgba(168, 85, 247, 0.25);">
-                        <div class="arch-title" style="color: #c084fc;">
-                            <i class="fas fa-cogs"></i> Autonomous Remediation Loop
-                        </div>
-
-                        <div class="pipeline-step">
-                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">1</div>
-                            <div class="pipeline-content">
-                                <h4>Continuous Trace &amp; Query Ingestion</h4>
-                                <p>Analyzes live production traffic for p95/p99 latency spikes and memory leakage anomalies.</p>
+                    <!-- Interactive KarisAgent Watchdog Console -->
+                    <div class="interactive-showcase-panel purple" id="karisagentShowcase">
+                        <div class="panel-header-tabs">
+                            <div class="window-dots">
+                                <span class="window-dot dot-red"></span>
+                                <span class="window-dot dot-yellow"></span>
+                                <span class="window-dot dot-green"></span>
+                                <span style="font-size: 0.74rem; color: #94a3b8; font-weight: 600; margin-left: 0.35rem; font-family: 'Space Grotesk', monospace;">KarisAgent // SRE Daemon v1.1</span>
+                            </div>
+                            <div class="tab-buttons-group">
+                                <button class="panel-tab-btn purple active" id="agentTabBtn-trace" onclick="switchAgentTab('trace', this)">
+                                    <i class="fas fa-stream"></i> Live Watchdog Trace
+                                </button>
+                                <button class="panel-tab-btn purple" id="agentTabBtn-diff" onclick="switchAgentTab('diff', this)">
+                                    <i class="fas fa-code-compare"></i> AST Code Diff
+                                </button>
+                                <button class="panel-tab-btn purple" id="agentTabBtn-loop" onclick="switchAgentTab('loop', this)">
+                                    <i class="fas fa-cogs"></i> Remediation Loop
+                                </button>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2</div>
-                            <div class="pipeline-content">
-                                <h4>AST-Level Root Cause Diagnosis</h4>
-                                <p>Pinpoints the exact function, database query, or ORM loop causing the performance regression.</p>
+                        <!-- Tab 1: Live Watchdog Console -->
+                        <div class="tab-body active" id="agentTab-trace">
+                            <div class="terminal-code-wrap" style="background: #040716; min-height: 250px;">
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:02.108]</span>
+                                    <span class="log-tag tag-alert">[ALERT]</span>
+                                    <span class="log-msg">Endpoint /api/v1/orders/checkout p99 latency surged to 840ms (+410ms over threshold)</span>
+                                </div>
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:02.215]</span>
+                                    <span class="log-tag tag-trace">[TRACE]</span>
+                                    <span class="log-msg">Correlating 3,840 OpenTelemetry spans with Git commit 7d9a11f by @dev-core</span>
+                                </div>
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:02.390]</span>
+                                    <span class="log-tag tag-ast">[AST_DIAG]</span>
+                                    <span class="log-msg">N+1 query regression isolated in OrderService.ts:L114 inside forEach loop</span>
+                                </div>
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:02.812]</span>
+                                    <span class="log-tag tag-docker">[SANDBOX]</span>
+                                    <span class="log-msg">Spun ephemeral Docker container; applied batch SQL patch; 28/28 tests PASSED</span>
+                                </div>
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:03.110]</span>
+                                    <span class="log-tag tag-pr">[PULL_REQ]</span>
+                                    <span class="log-msg">Auto-opened GitHub PR #419: "[Auto-Fix] Batch preload customer billing addresses"</span>
+                                </div>
+                                <div class="terminal-log-line">
+                                    <span class="log-time">[02:14:03.150]</span>
+                                    <span class="log-tag tag-perf">[BENCHMARK]</span>
+                                    <span class="log-msg">Latency restored: 840ms &rarr; 46ms (-94.5% improvement verified)</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">3</div>
-                            <div class="pipeline-content">
-                                <h4>Docker Sandbox Testing &amp; Benchmarking</h4>
-                                <p>Applies proposed patch in an ephemeral environment and verifies test suites pass before touching git.</p>
+                        <!-- Tab 2: AST Code Diff -->
+                        <div class="tab-body" id="agentTab-diff">
+                            <div class="diff-container">
+                                <div class="diff-header">
+                                    <i class="fab fa-github"></i> PR #419 &bull; src/services/OrderService.ts (AST Patch)
+                                </div>
+                                <span class="diff-ctx">@@ -111,7 +111,8 @@ export async function getOrderSummaries(userIds: string[]) {</span>
+                                <span class="diff-ctx">   const orders = await orderRepository.findPending(userIds);</span>
+                                <span class="diff-del">-  for (const order of orders) {</span>
+                                <span class="diff-del">-    order.customer = await db.customers.findById(order.customerId); // N+1 Latency Leak</span>
+                                <span class="diff-del">-  }</span>
+                                <span class="diff-add">+  const customerIds = [...new Set(orders.map(o => o.customerId))];</span>
+                                <span class="diff-add">+  const customers = await db.customers.findInBatch(customerIds); // Batched O(1) Fetch</span>
+                                <span class="diff-add">+  orders.forEach(o => o.customer = customers.get(o.customerId));</span>
+                                <span class="diff-ctx">   return orders;</span>
                             </div>
                         </div>
-                        <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
 
-                        <div class="pipeline-step">
-                            <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">4</div>
-                            <div class="pipeline-content">
-                                <h4>Ready-to-Merge Pull Request</h4>
-                                <p>Generates an annotated PR with diff benchmarks, explanation of the fix, and instant rollback plan.</p>
+                        <!-- Tab 3: Remediation Loop -->
+                        <div class="tab-body" id="agentTab-loop">
+                            <div class="arch-title" style="color: #c084fc;">
+                                <i class="fas fa-cogs"></i> Autonomous Self-Healing Loop
+                            </div>
+                            <div class="pipeline-step purple">
+                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">1</div>
+                                <div class="pipeline-content">
+                                    <h4>Continuous Trace &amp; Query Ingestion</h4>
+                                    <p>Analyzes live production traffic for p95/p99 latency spikes and memory leakage anomalies.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                            <div class="pipeline-step purple">
+                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2</div>
+                                <div class="pipeline-content">
+                                    <h4>AST-Level Root Cause Diagnosis</h4>
+                                    <p>Pinpoints the exact function, database query, or ORM loop causing the performance regression.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                            <div class="pipeline-step purple">
+                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">3</div>
+                                <div class="pipeline-content">
+                                    <h4>Docker Sandbox Testing &amp; Benchmarking</h4>
+                                    <p>Applies proposed patch in an ephemeral environment and verifies test suites pass before touching git.</p>
+                                </div>
+                            </div>
+                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                            <div class="pipeline-step purple">
+                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">4</div>
+                                <div class="pipeline-content">
+                                    <h4>Ready-to-Merge Pull Request</h4>
+                                    <p>Generates an annotated PR with diff benchmarks, explanation of the fix, and instant rollback plan.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Co-Build Venture Partnership Banner -->
-            <div class="cobuild-banner" id="cobuild">
-                <div class="cobuild-content">
-                    <div class="cobuild-icon">
-                        <i class="fas fa-handshake"></i>
+            <!-- ENTERPRISE COMPARISON MATRIX -->
+            <div class="comparison-matrix-wrapper" id="marketComparison">
+                <div class="matrix-header-box">
+                    <div class="section-pill" style="margin-bottom: 0.8rem;">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>MARKET ARCHITECTURE COMPARISON</span>
                     </div>
-                    <div class="cobuild-text">
-                        <h4>Have a visionary product thesis or vertical AI idea?</h4>
-                        <p>iLikaris Labs co-founds and co-builds with domain experts, enterprise operators, and founders. We provide senior architecture, AI engineering, and product velocity under an equity or revenue-share partnership.</p>
+                    <h2>Why Security-Conscious CTOs Choose KarisRAG</h2>
+                    <p>
+                        Compare our air-gapped private vector search infrastructure against public AI model APIs and fragile DIY open-source scripts.
+                    </p>
+                </div>
+
+                <div class="matrix-table-card">
+                    <div class="matrix-table-scroll">
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Capability / Architecture Spec</th>
+                                    <th class="col-karis" style="width: 28%;">
+                                        KarisRAG Enterprise <span class="col-badge-rec">RECOMMENDED</span>
+                                    </th>
+                                    <th style="width: 23%;">Public AI APIs (OpenAI / Claude)</th>
+                                    <th style="width: 24%;">Generic DIY (LangChain / LlamaIndex)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Data Sovereignty &amp; Egress</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-check-circle"></i> 100% Air-Gapped in your VPC</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Zero bytes leave your network infrastructure</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-times-circle"></i> Sent to multi-tenant cloud</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">External transit risk</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-exclamation-triangle"></i> Manual VPC config</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">High risk of misconfiguration</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Training Retention &amp; IP Protection</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-check-circle"></i> Zero Data Retention Guarantee</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Your proprietary IP never trains public models</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-exclamation-circle"></i> Requires custom legal addendums</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Provider logs queries up to 30 days</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-info-circle"></i> Depends on selected API backend</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Search Precision &amp; Latency</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-bolt"></i> &lt; 90ms Hybrid BM25 + Graph</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Sub-second Reciprocal Rank Fusion</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-clock"></i> 800ms &ndash; 2,500ms API roundtrip</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Standard vector distance only</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-clock"></i> 300ms &ndash; 1,200ms latency</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Unoptimized python runtime</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hallucination &amp; Citation Auditing</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-check-circle"></i> Hard Citation-Audited Output</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Every sentence verified against source chunk</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-times-circle"></i> Frequent unflagged hallucinations</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">No automatic citation back-propagation</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-times-circle"></i> Requires manual prompt scaffolding</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Brittle regular expression verifiers</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Document Ingestion (Tables &amp; PDFs)</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-check-circle"></i> Layout-Aware Table Parser</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Preserves row-column coordinates &amp; headers</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-times-circle"></i> Raw text strips table columns</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Loses table context and footnotes</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-exclamation-triangle"></i> Naive text splitting chunks</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Breaks paragraphs mid-sentence</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Maintenance &amp; Enterprise Support</strong></td>
+                                    <td class="col-karis">
+                                        <div class="val-good"><i class="fas fa-headset"></i> Turnkey Deployment with SLA</div>
+                                        <small style="color: #94a3b8; display: block; margin-top: 0.2rem;">Managed upgrades &amp; dedicated engineer</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-mid"><i class="fas fa-info-circle"></i> Standard cloud status page</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Subject to global rate limits &amp; outages</small>
+                                    </td>
+                                    <td>
+                                        <div class="val-poor"><i class="fas fa-tools"></i> 100% internal engineering debt</div>
+                                        <small style="color: #64748b; display: block; margin-top: 0.2rem;">Constant breaking library version changes</small>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <a href="#pilot-form" class="cta-button" style="white-space: nowrap; padding: 0.85rem 1.8rem;" onclick="selectProductInForm('Venture Co-Build Partnership')">
-                    <i class="fas fa-rocket"></i> Discuss Co-Building
-                </a>
+            </div>
+
+            <!-- SECURITY & COMPLIANCE TRUST STRIP -->
+            <div class="security-trust-strip">
+                <div class="trust-item">
+                    <div class="trust-item-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4>HIPAA Safe-Harbor Ready</h4>
+                        <p>Deploy directly in healthcare-grade VPCs with signed Business Associate Agreements (BAAs).</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h4>SOC 2 Type II Alignment</h4>
+                        <p>Immutable append-only access audit trails, TLS 1.3 in transit, and AES-256 encrypted vectors at rest.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h4>GDPR Art. 25 &amp; 32 By Design</h4>
+                        <p>Zero third-party telemetry, ephemeral memory pools, and immediate cryptographic right-to-erasure.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h4>100% Customer IP Ownership</h4>
+                        <p>No vendor lock-in. All embeddings, memory indexes, and fine-tuned weights remain exclusively yours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-Build Venture Partnership Banner & 4-Phase Roadmap -->
+            <div class="cobuild-banner" id="cobuild">
+                <div style="width: 100%;">
+                    <div class="cobuild-content" style="margin-bottom: 1.5rem;">
+                        <div class="cobuild-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="cobuild-text">
+                            <h4>Have a visionary product thesis or vertical AI idea?</h4>
+                            <p>iLikaris Labs co-founds and co-builds with domain experts, enterprise operators, and founders. We provide senior architecture, AI engineering, and product velocity under an equity or revenue-share partnership.</p>
+                        </div>
+                        <a href="#pilot-form" class="cta-button" style="white-space: nowrap; padding: 0.85rem 1.8rem;" onclick="selectProductInForm('Venture Co-Build Partnership')">
+                            <i class="fas fa-rocket"></i> Discuss Co-Building
+                        </a>
+                    </div>
+
+                    <!-- 4-Phase Co-Build Roadmap Grid -->
+                    <div class="cobuild-phases-grid">
+                        <div class="cobuild-phase-card">
+                            <span class="phase-number-tag">Phase 01 &bull; Weeks 1-2</span>
+                            <h5>Thesis &amp; Architectural Blueprint</h5>
+                            <p>Deep domain scoping, proprietary data pipeline mapping, and technology stack selection.</p>
+                        </div>
+                        <div class="cobuild-phase-card">
+                            <span class="phase-number-tag">Phase 02 &bull; Weeks 3-6</span>
+                            <h5>Alpha Engine &amp; MVP Sandbox</h5>
+                            <p>Rapid core engine development, internal benchmarking, and prototype testing with pilot users.</p>
+                        </div>
+                        <div class="cobuild-phase-card">
+                            <span class="phase-number-tag">Phase 03 &bull; Weeks 7-10</span>
+                            <h5>Enterprise Hardening &amp; Security</h5>
+                            <p>SOC 2 compliance prep, penetration testing, VPC packaging, and enterprise SLA readiness.</p>
+                        </div>
+                        <div class="cobuild-phase-card">
+                            <span class="phase-number-tag">Phase 04 &bull; Weeks 11+</span>
+                            <h5>Commercial Launch &amp; Scale</h5>
+                            <p>Go-to-market execution, ongoing high-velocity feature sprints, and tier-1 infrastructure support.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Enterprise Pilot & Waitlist Signup Form -->
@@ -989,6 +2101,7 @@
     <!-- App JavaScript -->
     <script src="assets/js/app.js"></script>
     <script>
+        // Form Product Pre-Selection
         function selectProductInForm(prodName) {
             const selectEl = document.getElementById('pProduct');
             if (selectEl) {
@@ -1001,6 +2114,163 @@
             }
         }
 
+        // Filter Nav Bar
+        function filterProductView(category, btn) {
+            document.querySelectorAll('.filter-nav-pill').forEach(p => p.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            if (category === 'all') {
+                document.getElementById('karisrag').style.display = 'block';
+                document.getElementById('karisagent').style.display = 'block';
+                document.getElementById('marketComparison').style.display = 'block';
+                document.getElementById('cobuild').style.display = 'block';
+            } else if (category === 'karisrag') {
+                document.getElementById('karisrag').style.display = 'block';
+                document.getElementById('karisrag').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (category === 'karisagent') {
+                document.getElementById('karisagent').style.display = 'block';
+                document.getElementById('karisagent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (category === 'matrix') {
+                document.getElementById('marketComparison').style.display = 'block';
+                document.getElementById('marketComparison').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (category === 'cobuild') {
+                document.getElementById('cobuild').style.display = 'block';
+                document.getElementById('cobuild').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // KarisRAG Showcase Tab Switcher
+        function switchRAGTab(tabName, btn) {
+            const tabs = ['sandbox', 'pipeline', 'sdk'];
+            tabs.forEach(t => {
+                const body = document.getElementById(`ragTab-${t}`);
+                const btnEl = document.getElementById(`ragTabBtn-${t}`);
+                if (body) body.classList.remove('active');
+                if (btnEl) btnEl.classList.remove('active');
+            });
+
+            const activeBody = document.getElementById(`ragTab-${tabName}`);
+            if (activeBody) activeBody.classList.add('active');
+
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                const targetBtn = document.getElementById(`ragTabBtn-${tabName}`);
+                if (targetBtn) targetBtn.classList.add('active');
+            }
+        }
+
+        // KarisAgent Showcase Tab Switcher
+        function switchAgentTab(tabName, btn) {
+            const tabs = ['trace', 'diff', 'loop'];
+            tabs.forEach(t => {
+                const body = document.getElementById(`agentTab-${t}`);
+                const btnEl = document.getElementById(`agentTabBtn-${t}`);
+                if (body) body.classList.remove('active');
+                if (btnEl) btnEl.classList.remove('active');
+            });
+
+            const activeBody = document.getElementById(`agentTab-${tabName}`);
+            if (activeBody) activeBody.classList.add('active');
+
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                const targetBtn = document.getElementById(`agentTabBtn-${tabName}`);
+                if (targetBtn) targetBtn.classList.add('active');
+            }
+        }
+
+        // KarisRAG Neural Sandbox Presets
+        const ragPresets = {
+            clinical: {
+                query: "What are the clinical trial contraindications and drug interactions for TX-904?",
+                latency: "64ms",
+                score: "99.4%",
+                answer: "TX-904 is strictly <mark>contraindicated</mark> in patients with severe hepatic impairment (Child-Pugh Class C) or concurrent administration of strong CYP3A4 inhibitors. Prior myocardial infarction within 6 months mandates continuous 12-lead ECG telemetric monitoring.",
+                doc: "Protocol_TX-904_V3.pdf",
+                loc: "Page 142 • Section 8.2.1 • Chunk Vector #904-B3 • SHA-256 Verified"
+            },
+            sec: {
+                query: "What are the EBITDA debt covenant default triggers and cure periods in Credit Agreement §4.1?",
+                latency: "52ms",
+                score: "98.9%",
+                answer: "Consolidated Net Leverage Ratio must not exceed <mark>3.75:1.00</mark> at any fiscal quarter-end. A default occurs if un-remedied within a <mark>30-day grace period</mark> following written notice from Administrative Agent.",
+                doc: "Credit_Agreement_2026_Exhibit10.pdf",
+                loc: "Page 87 • Section 4.1.2 • Chunk Vector #CA-410 • SHA-256 Verified"
+            },
+            hipaa: {
+                query: "List all S3 bucket encryption and TLS 1.3 enforcement policies for HIPAA safe harbor.",
+                latency: "44ms",
+                score: "99.8%",
+                answer: "All PHI storage buckets must enforce <mark>aws:SecureTransport: true</mark> (TLS 1.3 minimum) with server-side encryption via customer-managed KMS keys (<mark>aws:kms</mark>) with automatic 365-day key rotation enabled.",
+                doc: "AWS_VPC_HIPAA_Compliance_Policy.md",
+                loc: "Line 104 • Policy Block 3 • Chunk Vector #IAM-902 • SHA-256 Verified"
+            }
+        };
+
+        function loadRAGPreset(presetKey, chipEl) {
+            document.querySelectorAll('.sandbox-presets .preset-chip').forEach(c => c.classList.remove('active'));
+            if (chipEl) chipEl.classList.add('active');
+
+            const p = ragPresets[presetKey];
+            if (!p) return;
+
+            const inputEl = document.getElementById('ragQueryInput');
+            if (inputEl) inputEl.value = p.query;
+
+            const latencyEl = document.getElementById('ragLatencyStat');
+            if (latencyEl) latencyEl.innerHTML = `<i class="fas fa-stopwatch"></i> Latency: <strong>${p.latency}</strong> (BM25 + Dense Graph)`;
+
+            const scoreEl = document.getElementById('ragScoreStat');
+            if (scoreEl) scoreEl.innerHTML = `<i class="fas fa-check-double"></i> Rerank Confidence: <strong>${p.score}</strong>`;
+
+            const ansEl = document.getElementById('ragAnswerText');
+            if (ansEl) ansEl.innerHTML = p.answer;
+
+            const docEl = document.getElementById('ragCitationDoc');
+            if (docEl) docEl.innerHTML = `<i class="fas fa-shield-alt" style="color: #10b981;"></i> Verified Citation &bull; ${p.doc}`;
+
+            const locEl = document.getElementById('ragCitationLoc');
+            if (locEl) locEl.textContent = p.loc;
+        }
+
+        function simulateRAGSearch() {
+            const btn = document.getElementById('ragSearchBtn');
+            const origText = btn.innerHTML;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Vectorizing...`;
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fas fa-check"></i> Retrieved &lt;70ms`;
+                btn.style.opacity = '1';
+
+                const box = document.getElementById('ragResultBox');
+                if (box) {
+                    box.style.boxShadow = '0 0 25px rgba(0, 242, 254, 0.4)';
+                    setTimeout(() => {
+                        box.style.boxShadow = 'none';
+                        btn.innerHTML = origText;
+                    }, 1400);
+                }
+            }, 300);
+        }
+
+        // Code Copy Helper
+        function copyCode(btn, codeId) {
+            const codeEl = document.getElementById(codeId);
+            if (!codeEl) return;
+            const text = codeEl.innerText || codeEl.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = `<i class="fas fa-check" style="color: #10b981;"></i> Copied!`;
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                }, 2000);
+            });
+        }
+
+        // Handle Product Inquiry Form Submission
         function handleProductInquiry(e) {
             e.preventDefault();
             const form = document.getElementById('productInquiryForm');
