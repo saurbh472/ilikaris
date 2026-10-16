@@ -117,29 +117,60 @@
             color: var(--accent-cyan);
         }
 
-        /* Product Deep Dive Container */
+        /* Product Showcase Section & 2-Column Duo Grid */
         .product-showcase-section {
-            padding: 4rem 5%;
-            max-width: 1240px;
+            padding: 3rem 4%;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .deep-product-card {
+        .products-duo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.2rem;
+            margin-bottom: 4rem;
+            align-items: stretch;
+        }
+
+        .product-duo-card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            border-radius: 28px;
-            padding: 3.5rem;
-            margin-bottom: 4rem;
+            border-radius: 26px;
+            padding: 2.4rem 2.2rem;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .deep-product-card:hover {
-            border-color: rgba(0, 242, 254, 0.35);
-            box-shadow: 0 20px 50px rgba(0, 242, 254, 0.1);
+        .product-duo-card:hover {
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 242, 254, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .product-duo-card.purple:hover {
+            border-color: rgba(168, 85, 247, 0.45);
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
+        }
+
+        .card-glow-top {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.14) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .product-duo-card.purple .card-glow-top {
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, transparent 70%);
         }
 
         .product-badge-bar {
@@ -147,29 +178,30 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
+            gap: 0.8rem;
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.2rem;
             border-bottom: 1px solid var(--border-subtle);
         }
 
         .badge-left {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.9rem;
         }
 
         .product-icon-large {
-            width: 64px;
-            height: 64px;
-            border-radius: 18px;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
             background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(99, 102, 241, 0.15));
             border: 1px solid rgba(0, 242, 254, 0.35);
             color: var(--accent-cyan);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            flex-shrink: 0;
         }
 
         .product-icon-large.purple {
@@ -179,74 +211,77 @@
         }
 
         .badge-left-text h2 {
-            font-size: 2.2rem;
+            font-size: 1.9rem;
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
             color: #ffffff;
             margin: 0;
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.25rem;
         }
 
         .badge-left-text span {
             color: var(--accent-cyan);
-            font-size: 0.85rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             font-weight: 600;
             display: block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.15rem;
         }
 
-        .product-main-layout {
-            display: grid;
-            grid-template-columns: 1.25fr 1fr;
-            gap: 3.5rem;
-            align-items: start;
+        .product-duo-card.purple .badge-left-text span {
+            color: #c084fc;
+        }
+
+        .product-card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-pitch h3 {
-            font-size: 1.45rem;
+            font-size: 1.25rem;
             color: var(--text-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.65rem;
             font-family: 'Outfit', sans-serif;
             line-height: 1.35;
         }
 
         .product-pitch p {
             color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
         }
 
         .spec-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-            margin: 2rem 0;
+            gap: 0.75rem;
+            margin: 1rem 0 1.5rem;
         }
 
         .spec-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 1.1rem 1.2rem;
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
         }
 
         .spec-item .spec-label {
-            font-size: 0.74rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
             font-weight: 600;
             display: block;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.25rem;
         }
 
         .spec-item .spec-value {
-            font-size: 0.94rem;
+            font-size: 0.86rem;
             color: var(--text-primary);
             font-weight: 600;
             display: flex;
@@ -256,7 +291,22 @@
 
         .spec-item .spec-value i {
             color: var(--accent-cyan);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+        }
+
+        .product-duo-card.purple .spec-item .spec-value i {
+            color: #c084fc;
+        }
+
+        .card-cta-footer {
+            margin-top: 1.6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         /* Modern Interactive Simulator & Showcase Panel */
@@ -1039,13 +1089,13 @@
         }
 
         @media (max-width: 992px) {
-            .product-main-layout {
+            .products-duo-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
 
-            .deep-product-card {
-                padding: 2.2rem 1.6rem;
+            .product-duo-card {
+                padding: 2rem 1.6rem;
             }
 
             .pilot-section {
@@ -1302,388 +1352,385 @@
         <!-- Product Showcase Section -->
         <section class="product-showcase-section" id="productShowcaseSection">
 
-            <!-- PRODUCT 1: KarisRAG -->
-            <div class="deep-product-card" id="karisrag">
-                <div class="product-badge-bar">
-                    <div class="badge-left">
-                        <div class="product-icon-large">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="badge-left-text">
-                            <span>Enterprise AI &bull; Document Knowledge Engine</span>
-                            <h2>KarisRAG<span style="color: var(--accent-cyan);">.</span></h2>
-                        </div>
-                    </div>
-                    <span class="product-status-tag status-beta">
-                        <span class="pulse-dot-green"></span> Private Beta &bull; Enterprise Pilot
-                    </span>
-                </div>
+            <!-- 2-COLUMN DUO GRID: Both products visible together on 1 screen -->
+            <div class="products-duo-grid" id="productsDuoGrid">
 
-                <div class="product-main-layout">
-                    <div class="product-pitch">
-                        <h3>Air-Gapped Private Knowledge Engine &amp; Hybrid Vector Search</h3>
-                        <p>
-                            Most enterprise RAG pipelines leak sensitive corporate data to third-party model providers or fail when parsing messy PDFs, complex tables, and proprietary SQL schemas.
-                        </p>
-                        <p>
-                            <strong>KarisRAG</strong> is engineered for high-security environments: healthcare, legal, fintech, and defense tech. It deploys completely inside your VPC or on bare-metal servers, ensuring 100% data sovereignty with sub-second retrieval accuracy.
-                        </p>
+                <!-- PRODUCT 1: KarisRAG -->
+                <div class="product-duo-card" id="karisrag">
+                    <div class="card-glow-top"></div>
 
-                        <div class="spec-grid">
-                            <div class="spec-item">
-                                <span class="spec-label">Retrieval Latency</span>
-                                <div class="spec-value"><i class="fas fa-tachometer-alt"></i> &lt; 90ms Sub-Second Indexing</div>
+                    <div class="product-badge-bar">
+                        <div class="badge-left">
+                            <div class="product-icon-large">
+                                <i class="fas fa-brain"></i>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Search Algorithm</span>
-                                <div class="spec-value"><i class="fas fa-layer-group"></i> Hybrid BM25 + Dense Graph Rerank</div>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Deployment Targets</span>
-                                <div class="spec-value"><i class="fas fa-server"></i> AWS VPC, GCP, Azure, Bare-Metal</div>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Supported LLM Backends</span>
-                                <div class="spec-value"><i class="fas fa-microchip"></i> Ollama, vLLM, Claude, Llama 3</div>
+                            <div class="badge-left-text">
+                                <span>Enterprise AI &bull; Knowledge Engine</span>
+                                <h2>KarisRAG<span style="color: var(--accent-cyan);">.</span></h2>
                             </div>
                         </div>
-
-                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 2rem;">
-                            <a href="#pilot-form" class="cta-button" onclick="selectProductInForm('KarisRAG Enterprise Beta')">
-                                <i class="fas fa-key"></i> Request Beta Access
-                            </a>
-                            <button type="button" class="cta-button secondary" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: #fff;" onclick="switchRAGTab('sandbox')">
-                                <i class="fas fa-play"></i> Try Sandbox Demo
-                            </button>
-                        </div>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-teal);"></i> Free 14-day technical proof-of-concept in your isolated VPC
-                        </p>
+                        <span class="product-status-tag status-beta">
+                            <span class="pulse-dot-green"></span> Private Beta &bull; Enterprise Pilot
+                        </span>
                     </div>
 
-                    <!-- Interactive Live Showcase Simulator -->
-                    <div class="interactive-showcase-panel" id="karisragShowcase">
-                        <div class="panel-header-tabs">
-                            <div class="window-dots">
-                                <span class="window-dot dot-red"></span>
-                                <span class="window-dot dot-yellow"></span>
-                                <span class="window-dot dot-green"></span>
-                                <span style="font-size: 0.74rem; color: #94a3b8; font-weight: 600; margin-left: 0.35rem; font-family: 'Space Grotesk', monospace;">KarisRAG // VPC Console v2.4</span>
-                            </div>
-                            <div class="tab-buttons-group">
-                                <button class="panel-tab-btn active" id="ragTabBtn-sandbox" onclick="switchRAGTab('sandbox', this)">
-                                    <i class="fas fa-terminal"></i> Live Sandbox
-                                </button>
-                                <button class="panel-tab-btn" id="ragTabBtn-pipeline" onclick="switchRAGTab('pipeline', this)">
-                                    <i class="fas fa-network-wired"></i> Zero-Leakage Pipeline
-                                </button>
-                                <button class="panel-tab-btn" id="ragTabBtn-sdk" onclick="switchRAGTab('sdk', this)">
-                                    <i class="fas fa-code"></i> VPC SDK
-                                </button>
+                    <div class="product-card-body">
+                        <div class="product-pitch">
+                            <h3>Air-Gapped Private Knowledge Engine &amp; Hybrid Vector Search</h3>
+                            <p>
+                                Engineered for high-security environments: healthcare, legal, fintech, and defense tech. Deploys 100% inside your VPC or bare-metal servers, ensuring zero data leakage with sub-second retrieval.
+                            </p>
+
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">Retrieval Latency</span>
+                                    <div class="spec-value"><i class="fas fa-tachometer-alt"></i> &lt; 90ms Indexing</div>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Search Algorithm</span>
+                                    <div class="spec-value"><i class="fas fa-layer-group"></i> Hybrid BM25 + Graph</div>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Deployment Targets</span>
+                                    <div class="spec-value"><i class="fas fa-server"></i> AWS, GCP, Azure, On-Prem</div>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">LLM Backends</span>
+                                    <div class="spec-value"><i class="fas fa-microchip"></i> Ollama, vLLM, Claude</div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Tab 1: Live Neural Sandbox -->
-                        <div class="tab-body active" id="ragTab-sandbox">
-                            <div class="sandbox-topbar">
-                                <span class="sandbox-topbar-title">
-                                    <i class="fas fa-search-nodes"></i> Sub-Second Hybrid Query Inspector
-                                </span>
-                                <span class="sandbox-status-pill">
-                                    <span class="pulse-dot-teal"></span> 100% Air-Gapped VPC
-                                </span>
+                        <!-- Interactive Live Showcase Simulator -->
+                        <div class="interactive-showcase-panel" id="karisragShowcase">
+                            <div class="panel-header-tabs">
+                                <div class="window-dots">
+                                    <span class="window-dot dot-red"></span>
+                                    <span class="window-dot dot-yellow"></span>
+                                    <span class="window-dot dot-green"></span>
+                                    <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600; margin-left: 0.3rem; font-family: 'Space Grotesk', monospace;">KarisRAG // v2.4</span>
+                                </div>
+                                <div class="tab-buttons-group">
+                                    <button class="panel-tab-btn active" id="ragTabBtn-sandbox" onclick="switchRAGTab('sandbox', this)">
+                                        <i class="fas fa-terminal"></i> Sandbox
+                                    </button>
+                                    <button class="panel-tab-btn" id="ragTabBtn-pipeline" onclick="switchRAGTab('pipeline', this)">
+                                        <i class="fas fa-network-wired"></i> Pipeline
+                                    </button>
+                                    <button class="panel-tab-btn" id="ragTabBtn-sdk" onclick="switchRAGTab('sdk', this)">
+                                        <i class="fas fa-code"></i> SDK
+                                    </button>
+                                </div>
                             </div>
 
-                            <div class="sandbox-presets">
-                                <span class="preset-label">Query Presets:</span>
-                                <button class="preset-chip active" id="chip-clinical" onclick="loadRAGPreset('clinical', this)">Clinical Study TX-904</button>
-                                <button class="preset-chip" id="chip-sec" onclick="loadRAGPreset('sec', this)">10-K Debt Covenants</button>
-                                <button class="preset-chip" id="chip-hipaa" onclick="loadRAGPreset('hipaa', this)">AWS HIPAA S3 Policy</button>
-                            </div>
-
-                            <div class="sandbox-query-input-wrap">
-                                <i class="fas fa-search" style="color: var(--accent-cyan); font-size: 0.85rem;"></i>
-                                <input type="text" id="ragQueryInput" value="What are the clinical trial contraindications and drug interactions for TX-904?" readonly aria-label="Simulated search query">
-                                <button class="sandbox-exec-btn" onclick="simulateRAGSearch()" id="ragSearchBtn" aria-label="Execute simulated hybrid query">
-                                    <i class="fas fa-bolt"></i> Run Hybrid Query
-                                </button>
-                            </div>
-
-                            <div class="sandbox-result-box" id="ragResultBox">
-                                <div class="result-meta-bar">
-                                    <span class="meta-stat" id="ragLatencyStat">
-                                        <i class="fas fa-stopwatch"></i> Latency: <strong>64ms</strong> (BM25 + Dense Graph)
+                            <!-- Tab 1: Live Neural Sandbox -->
+                            <div class="tab-body active" id="ragTab-sandbox">
+                                <div class="sandbox-topbar">
+                                    <span class="sandbox-topbar-title">
+                                        <i class="fas fa-search-nodes"></i> Sub-Second Hybrid Query Inspector
                                     </span>
-                                    <span class="meta-stat score" id="ragScoreStat">
-                                        <i class="fas fa-check-double"></i> Rerank Confidence: <strong>99.4%</strong>
+                                    <span class="sandbox-status-pill">
+                                        <span class="pulse-dot-teal"></span> 100% Air-Gapped VPC
                                     </span>
                                 </div>
-                                <p class="result-answer-text" id="ragAnswerText">
-                                    TX-904 is strictly <mark>contraindicated</mark> in patients with severe hepatic impairment (Child-Pugh Class C) or concurrent administration of strong CYP3A4 inhibitors. Prior myocardial infarction within 6 months mandates continuous 12-lead ECG telemetric monitoring.
-                                </p>
-                                <div class="citation-box" id="ragCitationBox">
-                                    <i class="fas fa-file-contract citation-icon"></i>
-                                    <div class="citation-details">
-                                        <h5 id="ragCitationDoc">
-                                            <i class="fas fa-shield-alt" style="color: #10b981;"></i> Verified Citation &bull; Protocol_TX-904_V3.pdf
-                                        </h5>
-                                        <p id="ragCitationLoc">Page 142 &bull; Section 8.2.1 &bull; Chunk Vector #904-B3 &bull; SHA-256 Verified</p>
+
+                                <div class="sandbox-presets">
+                                    <span class="preset-label">Presets:</span>
+                                    <button class="preset-chip active" id="chip-clinical" onclick="loadRAGPreset('clinical', this)">Clinical TX-904</button>
+                                    <button class="preset-chip" id="chip-sec" onclick="loadRAGPreset('sec', this)">10-K Debt</button>
+                                    <button class="preset-chip" id="chip-hipaa" onclick="loadRAGPreset('hipaa', this)">AWS HIPAA S3</button>
+                                </div>
+
+                                <div class="sandbox-query-input-wrap">
+                                    <i class="fas fa-search" style="color: var(--accent-cyan); font-size: 0.82rem;"></i>
+                                    <input type="text" id="ragQueryInput" value="What are the clinical trial contraindications and drug interactions for TX-904?" readonly aria-label="Simulated search query">
+                                    <button class="sandbox-exec-btn" onclick="simulateRAGSearch()" id="ragSearchBtn" aria-label="Execute simulated hybrid query">
+                                        <i class="fas fa-bolt"></i> Run Query
+                                    </button>
+                                </div>
+
+                                <div class="sandbox-result-box" id="ragResultBox">
+                                    <div class="result-meta-bar">
+                                        <span class="meta-stat" id="ragLatencyStat">
+                                            <i class="fas fa-stopwatch"></i> Latency: <strong>64ms</strong>
+                                        </span>
+                                        <span class="meta-stat score" id="ragScoreStat">
+                                            <i class="fas fa-check-double"></i> Confidence: <strong>99.4%</strong>
+                                        </span>
+                                    </div>
+                                    <p class="result-answer-text" id="ragAnswerText">
+                                        TX-904 is strictly <mark>contraindicated</mark> in patients with severe hepatic impairment (Child-Pugh Class C) or concurrent administration of strong CYP3A4 inhibitors. Prior myocardial infarction within 6 months mandates continuous 12-lead ECG telemetric monitoring.
+                                    </p>
+                                    <div class="citation-box" id="ragCitationBox">
+                                        <i class="fas fa-file-contract citation-icon"></i>
+                                        <div class="citation-details">
+                                            <h5 id="ragCitationDoc">
+                                                <i class="fas fa-shield-alt" style="color: #10b981;"></i> Protocol_TX-904_V3.pdf
+                                            </h5>
+                                            <p id="ragCitationLoc">Page 142 &bull; Section 8.2.1 &bull; Chunk #904-B3 &bull; SHA-256 Verified</p>
+                                        </div>
+                                    </div>
+                                    <div class="sovereignty-badge">
+                                        <i class="fas fa-lock"></i> Zero Data Leakage: 0 outbound public API requests
                                     </div>
                                 </div>
-                                <div class="sovereignty-badge">
-                                    <i class="fas fa-lock"></i> Zero Data Leakage: 0 outbound public API requests &bull; Executed 100% on local VPC cluster
-                                </div>
                             </div>
-                        </div>
 
-                        <!-- Tab 2: Zero-Leakage Pipeline -->
-                        <div class="tab-body" id="ragTab-pipeline">
-                            <div class="arch-title">
-                                <i class="fas fa-network-wired"></i> S-Tier Zero-Leakage Architecture Pipeline
-                            </div>
-                            <div class="pipeline-step">
-                                <div class="pipeline-num">1</div>
-                                <div class="pipeline-content">
-                                    <h4>Multi-Modal Ingestion Engine</h4>
-                                    <p>Extracts unstructured PDFs, Notion, Confluence, Jira, and SQL with structural hierarchy preserved.</p>
+                            <!-- Tab 2: Zero-Leakage Pipeline -->
+                            <div class="tab-body" id="ragTab-pipeline">
+                                <div class="arch-title">
+                                    <i class="fas fa-network-wired"></i> Zero-Leakage Pipeline Architecture
+                                </div>
+                                <div class="pipeline-step">
+                                    <div class="pipeline-num">1</div>
+                                    <div class="pipeline-content">
+                                        <h4>Multi-Modal Ingestion Engine</h4>
+                                        <p>Extracts unstructured PDFs, Notion, Confluence, Jira, and SQL with structural hierarchy preserved.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                                <div class="pipeline-step">
+                                    <div class="pipeline-num">2</div>
+                                    <div class="pipeline-content">
+                                        <h4>Semantic Chunking &amp; On-Prem Embeddings</h4>
+                                        <p>Local vector generation running on secure GPU clusters without calling public internet APIs.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                                <div class="pipeline-step">
+                                    <div class="pipeline-num">3</div>
+                                    <div class="pipeline-content">
+                                        <h4>Hybrid Vector-Graph Memory Index</h4>
+                                        <p>Combines keyword density (BM25) with semantic embeddings and Reciprocal Rank Fusion.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                                <div class="pipeline-step">
+                                    <div class="pipeline-num">4</div>
+                                    <div class="pipeline-content">
+                                        <h4>Hallucination-Audited Output</h4>
+                                        <p>Every assertion is strictly cross-referenced against source documents with clickable citation links.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
-                            <div class="pipeline-step">
-                                <div class="pipeline-num">2</div>
-                                <div class="pipeline-content">
-                                    <h4>Semantic Chunking &amp; On-Prem Embeddings</h4>
-                                    <p>Local vector generation running on secure GPU clusters without calling public internet APIs.</p>
-                                </div>
-                            </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
-                            <div class="pipeline-step">
-                                <div class="pipeline-num">3</div>
-                                <div class="pipeline-content">
-                                    <h4>Hybrid Vector-Graph Memory Index</h4>
-                                    <p>Combines keyword density (BM25) with semantic embeddings and Reciprocal Rank Fusion.</p>
-                                </div>
-                            </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
-                            <div class="pipeline-step">
-                                <div class="pipeline-num">4</div>
-                                <div class="pipeline-content">
-                                    <h4>Hallucination-Audited Output</h4>
-                                    <p>Every assertion is strictly cross-referenced against source documents with clickable citation links.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Tab 3: VPC SDK -->
-                        <div class="tab-body" id="ragTab-sdk">
-                            <div class="terminal-code-wrap">
-                                <button class="code-copy-btn" onclick="copyCode(this, 'rag-code-snippet')">
-                                    <i class="fas fa-copy"></i> Copy Snippet
-                                </button>
-                                <pre id="rag-code-snippet" style="margin: 0; color: #e2e8f0;"><code># Install KarisRAG Enterprise VPC SDK
+                            <!-- Tab 3: VPC SDK -->
+                            <div class="tab-body" id="ragTab-sdk">
+                                <div class="terminal-code-wrap">
+                                    <button class="code-copy-btn" onclick="copyCode(this, 'rag-code-snippet')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                    <pre id="rag-code-snippet" style="margin: 0; color: #e2e8f0;"><code># Install KarisRAG Enterprise VPC SDK
 pip install karisrag
 
 from karisrag import KarisEngine
 
-# Connect directly to air-gapped private VPC endpoint
+# Air-gapped VPC private cluster connection
 engine = KarisEngine(
     endpoint="https://rag.vpc.internal:8443",
     api_key="sk-karis-private-vpc",
     air_gapped=True
 )
 
-# Execute hybrid semantic search with citation cross-audit
+# Hybrid search with citation cross-audit
 result = engine.search(
     query="Clinical trial contraindications TX-904",
     collection="pharma_trials_2026",
-    hybrid_alpha=0.65,    # 65% dense vector, 35% BM25
+    hybrid_alpha=0.65,
     audit_hallucination=True
 )
 
-print(f"Latency: {result.latency_ms}ms | Recall: {result.confidence}")
-print(f"Top Citation: {result.citations[0].source_doc} (Page {result.citations[0].page})")
+print(f"Latency: {result.latency_ms}ms | Confidence: {result.confidence}")
+print(f"Source: {result.citations[0].source_doc} (Page {result.citations[0].page})")
 </code></pre>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="card-cta-footer">
+                        <a href="#pilot-form" class="cta-button" onclick="selectProductInForm('KarisRAG Enterprise Beta')">
+                            <i class="fas fa-key"></i> Request Beta Access
+                        </a>
+                        <span style="font-size: 0.82rem; color: var(--text-muted);">
+                            <i class="fas fa-check-circle" style="color: var(--accent-teal);"></i> Free 14-day VPC POC
+                        </span>
                     </div>
                 </div>
-            </div>
 
-            <!-- PRODUCT 2: KarisAgent -->
-            <div class="deep-product-card" id="karisagent">
-                <div class="product-badge-bar">
-                    <div class="badge-left">
-                        <div class="product-icon-large purple">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="badge-left-text">
-                            <span>Autonomous Systems &bull; Cloud Observability</span>
-                            <h2>KarisAgent<span style="color: #c084fc;">.</span></h2>
-                        </div>
-                    </div>
-                    <span class="product-status-tag status-rnd">
-                        <span class="pulse-dot-purple"></span> In Active R&amp;D &bull; Launching Q1 2027
-                    </span>
-                </div>
+                <!-- PRODUCT 2: KarisAgent -->
+                <div class="product-duo-card purple" id="karisagent">
+                    <div class="card-glow-top"></div>
 
-                <div class="product-main-layout">
-                    <div class="product-pitch">
-                        <h3>Autonomous Cloud Architecture &amp; Telemetry Watchdog</h3>
-                        <p>
-                            Modern microservices suffer from silent latency regressions, unindexed database query blowouts, and runaway cloud costs that take human on-call engineers days to trace and remediate.
-                        </p>
-                        <p>
-                            <strong>KarisAgent</strong> operates as an autonomous senior reliability engineer inside your infrastructure. It continuously parses distributed OpenTelemetry traces, pinpoints root-cause regressions at the AST (Abstract Syntax Tree) level, and opens complete Pull Requests with verified code fixes.
-                        </p>
-
-                        <div class="spec-grid">
-                            <div class="spec-item">
-                                <span class="spec-label">Code Integration</span>
-                                <div class="spec-value"><i class="fab fa-github"></i> GitHub &amp; GitLab Automated PRs</div>
+                    <div class="product-badge-bar">
+                        <div class="badge-left">
+                            <div class="product-icon-large purple">
+                                <i class="fas fa-robot"></i>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Telemetry Compatibility</span>
-                                <div class="spec-value"><i class="fas fa-chart-line"></i> OpenTelemetry, Datadog, Grafana</div>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Verification Sandbox</span>
-                                <div class="spec-value"><i class="fab fa-docker"></i> Isolated Ephemeral Test Containers</div>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Alert Channels</span>
-                                <div class="spec-value"><i class="fab fa-slack"></i> Slack, Discord &amp; PagerDuty</div>
+                            <div class="badge-left-text">
+                                <span>Autonomous Systems &bull; Observability</span>
+                                <h2>KarisAgent<span style="color: #c084fc;">.</span></h2>
                             </div>
                         </div>
-
-                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 2rem;">
-                            <a href="#pilot-form" class="cta-button" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="selectProductInForm('KarisAgent Developer Waitlist')">
-                                <i class="fas fa-bell"></i> Join Developer Waitlist
-                            </a>
-                            <button type="button" class="cta-button secondary" style="background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.35); color: #c084fc;" onclick="switchAgentTab('diff')">
-                                <i class="fas fa-code-branch"></i> View Auto-Fix Diff
-                            </button>
-                        </div>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem;">
-                            <i class="fas fa-shield-alt" style="color: #c084fc;"></i> Sandboxed execution with zero direct production modification
-                        </p>
+                        <span class="product-status-tag status-rnd">
+                            <span class="pulse-dot-purple"></span> In Active R&amp;D &bull; Q1 2027
+                        </span>
                     </div>
 
-                    <!-- Interactive KarisAgent Watchdog Console -->
-                    <div class="interactive-showcase-panel purple" id="karisagentShowcase">
-                        <div class="panel-header-tabs">
-                            <div class="window-dots">
-                                <span class="window-dot dot-red"></span>
-                                <span class="window-dot dot-yellow"></span>
-                                <span class="window-dot dot-green"></span>
-                                <span style="font-size: 0.74rem; color: #94a3b8; font-weight: 600; margin-left: 0.35rem; font-family: 'Space Grotesk', monospace;">KarisAgent // SRE Daemon v1.1</span>
-                            </div>
-                            <div class="tab-buttons-group">
-                                <button class="panel-tab-btn purple active" id="agentTabBtn-trace" onclick="switchAgentTab('trace', this)">
-                                    <i class="fas fa-stream"></i> Live Watchdog Trace
-                                </button>
-                                <button class="panel-tab-btn purple" id="agentTabBtn-diff" onclick="switchAgentTab('diff', this)">
-                                    <i class="fas fa-code-compare"></i> AST Code Diff
-                                </button>
-                                <button class="panel-tab-btn purple" id="agentTabBtn-loop" onclick="switchAgentTab('loop', this)">
-                                    <i class="fas fa-cogs"></i> Remediation Loop
-                                </button>
-                            </div>
-                        </div>
+                    <div class="product-card-body">
+                        <div class="product-pitch">
+                            <h3>Autonomous Cloud Architecture &amp; Telemetry Watchdog</h3>
+                            <p>
+                                Operates as an autonomous senior reliability engineer inside your infrastructure. Continuously parses OpenTelemetry traces, isolates AST root-causes, and opens verified PRs.
+                            </p>
 
-                        <!-- Tab 1: Live Watchdog Console -->
-                        <div class="tab-body active" id="agentTab-trace">
-                            <div class="terminal-code-wrap" style="background: #040716; min-height: 250px;">
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:02.108]</span>
-                                    <span class="log-tag tag-alert">[ALERT]</span>
-                                    <span class="log-msg">Endpoint /api/v1/orders/checkout p99 latency surged to 840ms (+410ms over threshold)</span>
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">Code Integration</span>
+                                    <div class="spec-value"><i class="fab fa-github"></i> GitHub &amp; GitLab PRs</div>
                                 </div>
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:02.215]</span>
-                                    <span class="log-tag tag-trace">[TRACE]</span>
-                                    <span class="log-msg">Correlating 3,840 OpenTelemetry spans with Git commit 7d9a11f by @dev-core</span>
+                                <div class="spec-item">
+                                    <span class="spec-label">Telemetry</span>
+                                    <div class="spec-value"><i class="fas fa-chart-line"></i> OpenTelemetry, Datadog</div>
                                 </div>
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:02.390]</span>
-                                    <span class="log-tag tag-ast">[AST_DIAG]</span>
-                                    <span class="log-msg">N+1 query regression isolated in OrderService.ts:L114 inside forEach loop</span>
+                                <div class="spec-item">
+                                    <span class="spec-label">Verification Sandbox</span>
+                                    <div class="spec-value"><i class="fab fa-docker"></i> Ephemeral Test Sandbox</div>
                                 </div>
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:02.812]</span>
-                                    <span class="log-tag tag-docker">[SANDBOX]</span>
-                                    <span class="log-msg">Spun ephemeral Docker container; applied batch SQL patch; 28/28 tests PASSED</span>
-                                </div>
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:03.110]</span>
-                                    <span class="log-tag tag-pr">[PULL_REQ]</span>
-                                    <span class="log-msg">Auto-opened GitHub PR #419: "[Auto-Fix] Batch preload customer billing addresses"</span>
-                                </div>
-                                <div class="terminal-log-line">
-                                    <span class="log-time">[02:14:03.150]</span>
-                                    <span class="log-tag tag-perf">[BENCHMARK]</span>
-                                    <span class="log-msg">Latency restored: 840ms &rarr; 46ms (-94.5% improvement verified)</span>
+                                <div class="spec-item">
+                                    <span class="spec-label">Alert Channels</span>
+                                    <div class="spec-value"><i class="fab fa-slack"></i> Slack, PagerDuty</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tab 2: AST Code Diff -->
-                        <div class="tab-body" id="agentTab-diff">
-                            <div class="diff-container">
-                                <div class="diff-header">
-                                    <i class="fab fa-github"></i> PR #419 &bull; src/services/OrderService.ts (AST Patch)
+                        <!-- Interactive KarisAgent Watchdog Console -->
+                        <div class="interactive-showcase-panel purple" id="karisagentShowcase">
+                            <div class="panel-header-tabs">
+                                <div class="window-dots">
+                                    <span class="window-dot dot-red"></span>
+                                    <span class="window-dot dot-yellow"></span>
+                                    <span class="window-dot dot-green"></span>
+                                    <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600; margin-left: 0.3rem; font-family: 'Space Grotesk', monospace;">KarisAgent // SRE Daemon</span>
                                 </div>
-                                <span class="diff-ctx">@@ -111,7 +111,8 @@ export async function getOrderSummaries(userIds: string[]) {</span>
-                                <span class="diff-ctx">   const orders = await orderRepository.findPending(userIds);</span>
-                                <span class="diff-del">-  for (const order of orders) {</span>
-                                <span class="diff-del">-    order.customer = await db.customers.findById(order.customerId); // N+1 Latency Leak</span>
-                                <span class="diff-del">-  }</span>
-                                <span class="diff-add">+  const customerIds = [...new Set(orders.map(o => o.customerId))];</span>
-                                <span class="diff-add">+  const customers = await db.customers.findInBatch(customerIds); // Batched O(1) Fetch</span>
-                                <span class="diff-add">+  orders.forEach(o => o.customer = customers.get(o.customerId));</span>
-                                <span class="diff-ctx">   return orders;</span>
+                                <div class="tab-buttons-group">
+                                    <button class="panel-tab-btn purple active" id="agentTabBtn-trace" onclick="switchAgentTab('trace', this)">
+                                        <i class="fas fa-stream"></i> Trace Logs
+                                    </button>
+                                    <button class="panel-tab-btn purple" id="agentTabBtn-diff" onclick="switchAgentTab('diff', this)">
+                                        <i class="fas fa-code-compare"></i> AST Diff
+                                    </button>
+                                    <button class="panel-tab-btn purple" id="agentTabBtn-loop" onclick="switchAgentTab('loop', this)">
+                                        <i class="fas fa-cogs"></i> Loop
+                                    </button>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Tab 3: Remediation Loop -->
-                        <div class="tab-body" id="agentTab-loop">
-                            <div class="arch-title" style="color: #c084fc;">
-                                <i class="fas fa-cogs"></i> Autonomous Self-Healing Loop
-                            </div>
-                            <div class="pipeline-step purple">
-                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">1</div>
-                                <div class="pipeline-content">
-                                    <h4>Continuous Trace &amp; Query Ingestion</h4>
-                                    <p>Analyzes live production traffic for p95/p99 latency spikes and memory leakage anomalies.</p>
+                            <!-- Tab 1: Live Watchdog Console -->
+                            <div class="tab-body active" id="agentTab-trace">
+                                <div class="terminal-code-wrap" style="background: #040716; min-height: 220px;">
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:02.108]</span>
+                                        <span class="log-tag tag-alert">[ALERT]</span>
+                                        <span class="log-msg">Endpoint /api/v1/orders/checkout p99 surged to 840ms (+410ms)</span>
+                                    </div>
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:02.215]</span>
+                                        <span class="log-tag tag-trace">[TRACE]</span>
+                                        <span class="log-msg">Correlating 3,840 OpenTelemetry spans with commit 7d9a11f</span>
+                                    </div>
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:02.390]</span>
+                                        <span class="log-tag tag-ast">[AST_DIAG]</span>
+                                        <span class="log-msg">N+1 query regression isolated in OrderService.ts:L114</span>
+                                    </div>
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:02.812]</span>
+                                        <span class="log-tag tag-docker">[SANDBOX]</span>
+                                        <span class="log-msg">Spun Docker container; applied batch patch; 28/28 tests PASSED</span>
+                                    </div>
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:03.110]</span>
+                                        <span class="log-tag tag-pr">[PULL_REQ]</span>
+                                        <span class="log-msg">Opened PR #419: "[Auto-Fix] Batch preload customer addresses"</span>
+                                    </div>
+                                    <div class="terminal-log-line">
+                                        <span class="log-time">[02:14:03.150]</span>
+                                        <span class="log-tag tag-perf">[BENCHMARK]</span>
+                                        <span class="log-msg">Latency restored: 840ms &rarr; 46ms (-94.5% verified)</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
-                            <div class="pipeline-step purple">
-                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2</div>
-                                <div class="pipeline-content">
-                                    <h4>AST-Level Root Cause Diagnosis</h4>
-                                    <p>Pinpoints the exact function, database query, or ORM loop causing the performance regression.</p>
+
+                            <!-- Tab 2: AST Code Diff -->
+                            <div class="tab-body" id="agentTab-diff">
+                                <div class="diff-container">
+                                    <div class="diff-header">
+                                        <i class="fab fa-github"></i> PR #419 &bull; src/services/OrderService.ts (AST Patch)
+                                    </div>
+                                    <span class="diff-ctx">@@ -111,7 +111,8 @@ export async function getOrderSummaries(userIds: string[]) {</span>
+                                    <span class="diff-ctx">   const orders = await orderRepository.findPending(userIds);</span>
+                                    <span class="diff-del">-  for (const order of orders) {</span>
+                                    <span class="diff-del">-    order.customer = await db.customers.findById(order.customerId); // N+1 Latency Leak</span>
+                                    <span class="diff-del">-  }</span>
+                                    <span class="diff-add">+  const customerIds = [...new Set(orders.map(o => o.customerId))];</span>
+                                    <span class="diff-add">+  const customers = await db.customers.findInBatch(customerIds); // Batched O(1) Fetch</span>
+                                    <span class="diff-add">+  orders.forEach(o => o.customer = customers.get(o.customerId));</span>
+                                    <span class="diff-ctx">   return orders;</span>
                                 </div>
                             </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
-                            <div class="pipeline-step purple">
-                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">3</div>
-                                <div class="pipeline-content">
-                                    <h4>Docker Sandbox Testing &amp; Benchmarking</h4>
-                                    <p>Applies proposed patch in an ephemeral environment and verifies test suites pass before touching git.</p>
+
+                            <!-- Tab 3: Remediation Loop -->
+                            <div class="tab-body" id="agentTab-loop">
+                                <div class="arch-title" style="color: #c084fc;">
+                                    <i class="fas fa-cogs"></i> Autonomous Self-Healing Loop
                                 </div>
-                            </div>
-                            <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
-                            <div class="pipeline-step purple">
-                                <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">4</div>
-                                <div class="pipeline-content">
-                                    <h4>Ready-to-Merge Pull Request</h4>
-                                    <p>Generates an annotated PR with diff benchmarks, explanation of the fix, and instant rollback plan.</p>
+                                <div class="pipeline-step purple">
+                                    <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">1</div>
+                                    <div class="pipeline-content">
+                                        <h4>Continuous Trace &amp; Query Ingestion</h4>
+                                        <p>Analyzes live production traffic for p95/p99 latency spikes and memory leakage anomalies.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                                <div class="pipeline-step purple">
+                                    <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2</div>
+                                    <div class="pipeline-content">
+                                        <h4>AST-Level Root Cause Diagnosis</h4>
+                                        <p>Pinpoints the exact function, database query, or ORM loop causing the regression.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                                <div class="pipeline-step purple">
+                                    <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">3</div>
+                                    <div class="pipeline-content">
+                                        <h4>Docker Sandbox Benchmarking</h4>
+                                        <p>Applies proposed patch in an ephemeral environment and verifies test suites pass.</p>
+                                    </div>
+                                </div>
+                                <div class="pipeline-arrow"><i class="fas fa-arrow-down" style="color: rgba(168, 85, 247, 0.4);"></i></div>
+                                <div class="pipeline-step purple">
+                                    <div class="pipeline-num" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">4</div>
+                                    <div class="pipeline-content">
+                                        <h4>Ready-to-Merge Pull Request</h4>
+                                        <p>Generates an annotated PR with diff benchmarks, explanation of fix, and rollback plan.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="card-cta-footer">
+                        <a href="#pilot-form" class="cta-button" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="selectProductInForm('KarisAgent Developer Waitlist')">
+                            <i class="fas fa-bell"></i> Join Developer Waitlist
+                        </a>
+                        <span style="font-size: 0.82rem; color: var(--text-muted);">
+                            <i class="fas fa-shield-alt" style="color: #c084fc;"></i> Ephemeral Docker verification
+                        </span>
                     </div>
                 </div>
-            </div>
+
+            </div><!-- End .products-duo-grid -->
 
             <!-- ENTERPRISE COMPARISON MATRIX -->
             <div class="comparison-matrix-wrapper" id="marketComparison">
@@ -2120,22 +2167,22 @@ print(f"Top Citation: {result.citations[0].source_doc} (Page {result.citations[0
             if (btn) btn.classList.add('active');
 
             if (category === 'all') {
-                document.getElementById('karisrag').style.display = 'block';
-                document.getElementById('karisagent').style.display = 'block';
-                document.getElementById('marketComparison').style.display = 'block';
-                document.getElementById('cobuild').style.display = 'block';
+                document.getElementById('karisrag').style.display = '';
+                document.getElementById('karisagent').style.display = '';
+                document.getElementById('marketComparison').style.display = '';
+                document.getElementById('cobuild').style.display = '';
             } else if (category === 'karisrag') {
-                document.getElementById('karisrag').style.display = 'block';
-                document.getElementById('karisrag').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('karisrag').style.display = '';
+                document.getElementById('karisrag').scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else if (category === 'karisagent') {
-                document.getElementById('karisagent').style.display = 'block';
-                document.getElementById('karisagent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('karisagent').style.display = '';
+                document.getElementById('karisagent').scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else if (category === 'matrix') {
-                document.getElementById('marketComparison').style.display = 'block';
+                document.getElementById('marketComparison').style.display = '';
                 document.getElementById('marketComparison').scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else if (category === 'cobuild') {
-                document.getElementById('cobuild').style.display = 'block';
-                document.getElementById('cobuild').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('cobuild').style.display = '';
+                document.getElementById('cobuild').scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
