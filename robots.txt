@@ -35,6 +35,7 @@ Allow: /
 # General rules for all crawlers
 User-agent: *
 Allow: /
+Allow: /favicon.ico
 Allow: /assets/
 Allow: /assets/css/
 Allow: /assets/js/
