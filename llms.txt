@@ -30,6 +30,5 @@ iLikaris (https://ilikaris.com) is a boutique senior software engineering consul
 ## Official Verification & Social Links
 
 - LinkedIn: https://www.linkedin.com/company/ilikaris
-- GitHub: https://github.com/saurbh472/ilikaris
 - Twitter / X: https://x.com/ilikaris
 - Email: ilikaris.tech@gmail.com
