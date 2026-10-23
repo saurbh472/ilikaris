@@ -1,0 +1,35 @@
+# iLikaris
+
+> Enterprise-Grade Web Platforms, Private AI/RAG Systems & Autonomous Agent Workflows.
+
+iLikaris (https://ilikaris.com) is a boutique senior software engineering consultancy and AI incubator founded by Principal Engineer Sourabh Sharma. iLikaris partners directly with ambitious founders, startups, and product teams across the United States, United Kingdom, Canada, and Europe.
+
+## Core Capabilities & Services
+
+- **Bespoke Web & SaaS Engineering**: High-velocity production web platforms engineered with Next.js, React, Node.js, Python FastAPI, and PostgreSQL.
+- **Private Data AI & Custom RAG**: GDPR Article 25 compliant, self-hosted, air-gapped vector search architectures with zero proprietary data retention.
+- **Autonomous AI Agents & Workflows**: Intelligent multi-agent systems, automated sales and customer conversion bots, and automated devops observability.
+- **Codebase Audits & Architecture Modernization**: Performance, security, and scalability refactoring for growing companies.
+
+## Proprietary Labs Products
+
+- **KarisRAG Enterprise**: Self-hosted, air-gapped private vector knowledge engine running 100% inside customer VPC.
+- **KarisAgent Suite**: Autonomous cloud architecture, telemetry, and automated self-healing codebase watchdog.
+
+## Core Sitemap & Documentation
+
+- [Homepage](https://ilikaris.com/): Overview of services, architecture capabilities, and client case studies.
+- [Products & Labs](https://ilikaris.com/products.html): KarisRAG and KarisAgent proprietary AI tooling.
+- [Why Choose Us](https://ilikaris.com/why-choose-us.html): Direct senior engineering vs traditional software agency comparison.
+- [About Us](https://ilikaris.com/about.html): Company mission, principles, and global client track record.
+- [Leadership](https://ilikaris.com/leadership.html): Founder background and engineering philosophy.
+- [Technical Blog](https://ilikaris.com/blog.html): Engineering deep dives, RAG benchmarks, and production insights.
+- [Privacy Policy](https://ilikaris.com/privacy.html): GDPR data protection and data sovereignty commitments.
+- [Terms of Service](https://ilikaris.com/terms.html): 100% intellectual property transfer and engagement terms.
+
+## Official Verification & Social Links
+
+- LinkedIn: https://www.linkedin.com/company/ilikaris
+- GitHub: https://github.com/saurbh472/ilikaris
+- Twitter / X: https://x.com/ilikaris
+- Email: ilikaris.tech@gmail.com
