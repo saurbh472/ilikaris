@@ -3,6 +3,36 @@
 # Senior Full-Stack & Private AI Engineering
 # ==========================================
 
+# Explicit instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI-driven search engines & citation bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# General rules for all crawlers
 User-agent: *
 Allow: /
 Allow: /assets/
@@ -11,12 +41,9 @@ Allow: /assets/js/
 Allow: /og-image.png
 Allow: /og-image.jpg
 
-# Crawl Optimization
-Crawl-delay: 1
-
 # Disallow internal scratch/git directories
 Disallow: /scratch/
 Disallow: /.git/
 
-# Explicit search engine sitemap
+# Sitemaps & modern LLM indexes
 Sitemap: https://ilikaris.com/sitemap.xml
